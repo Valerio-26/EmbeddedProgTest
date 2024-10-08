@@ -4,7 +4,7 @@
 
 **  File        : LinkerScript.ld
 **
-**  Author		: STM32CubeMX
+**  Author    : STM32CubeMX
 **
 **  Abstract    : Linker script for STM32F446RETx series
 **                512Kbytes FLASH and 128Kbytes RAM
@@ -53,7 +53,7 @@
 ENTRY(Reset_Handler)
 
 /* Highest address of the user mode stack */
-_estack = ORIGIN() + LENGTH();    /* end of RAM */
+_estack = ORIGIN(RAM) + LENGTH(RAM);    /* end of RAM */
 /* Generate a link error if heap and stack don't fit into RAM */
 _Min_Heap_Size = 0x200;      /* required amount of heap  */
 _Min_Stack_Size = 0x400; /* required amount of stack */
@@ -134,7 +134,7 @@ SECTIONS
   _sidata = LOADADDR(.data);
 
   /* Initialized data sections goes into RAM, load LMA copy after code */
-  .data : 
+  .data :
   {
     . = ALIGN(4);
     _sdata = .;        /* create a global symbol at data start */
@@ -143,9 +143,9 @@ SECTIONS
 
     . = ALIGN(4);
     _edata = .;        /* define a global symbol at data end */
-  } > AT> FLASH
+  } >RAM AT> FLASH
 
-  
+ 
   /* Uninitialized data section */
   . = ALIGN(4);
   .bss :
@@ -160,7 +160,7 @@ SECTIONS
     . = ALIGN(4);
     _ebss = .;         /* define a global symbol at bss end */
     __bss_end__ = _ebss;
-  } >
+  } >RAM
 
   /* User_heap_stack section, used to check that there is enough RAM left */
   ._user_heap_stack :
@@ -171,9 +171,9 @@ SECTIONS
     . = . + _Min_Heap_Size;
     . = . + _Min_Stack_Size;
     . = ALIGN(8);
-  } >
+  } >RAM
 
-  
+ 
 
   /* Remove information from the standard libraries */
   /DISCARD/ :
@@ -184,5 +184,3 @@ SECTIONS
   }
 
 }
-
-
