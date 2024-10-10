@@ -70,7 +70,7 @@ static void MX_TIM3_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void send_to_serial(char *msg) {
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 }
 
 /* USER CODE END 0 */
@@ -426,8 +426,8 @@ void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
-  change_state(&fsm, FSMERROR);
-  fsm_run(&fsm);
+  //change_state(&fsm, FSMERROR);
+  //fsm_run(&fsm);
 
   __disable_irq();
   while (1)

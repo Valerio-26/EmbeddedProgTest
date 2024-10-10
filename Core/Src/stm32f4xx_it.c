@@ -43,10 +43,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-extern UART_HandleTypeDef huart2;  
-extern ADC_HandleTypeDef hadc1;  
-extern int is_magnet_detected;  
-extern FsmController fsm;
+int led_state = 0;
+int is_magnet_detected;  
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,6 +61,9 @@ extern FsmController fsm;
 extern DMA_HandleTypeDef hdma_adc1;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
+extern UART_HandleTypeDef huart2;  
+extern ADC_HandleTypeDef hadc1;  
+extern FsmController fsm;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -215,12 +216,12 @@ void EXTI0_IRQHandler(void)
   // Vedi code begin 0 e 1 per gestire rising falling
 
   // Leggi lo stato del sensore digitale
-  int digital_value = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
+  is_magnet_detected = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
 
   char msg[50];  // Buffer per inviare messaggi via UART
-
+  
   // Invia il valore digitale via UART
-  sprintf(msg, "Digital: %d\r\n", digital_value);
+  sprintf(msg, "Digital: %d\r\n", is_magnet_detected);
   HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
     
   /* USER CODE END EXTI0_IRQn 0 */
@@ -241,7 +242,8 @@ void TIM2_IRQHandler(void)
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
-
+  led_state = !led_state;
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
   /* USER CODE END TIM2_IRQn 1 */
 }
 
@@ -256,7 +258,8 @@ void TIM3_IRQHandler(void)
   /* USER CODE END TIM3_IRQn 0 */
   HAL_TIM_IRQHandler(&htim3);
   /* USER CODE BEGIN TIM3_IRQn 1 */
-
+  led_state = !led_state;
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
   /* USER CODE END TIM3_IRQn 1 */
 }
 
@@ -270,7 +273,9 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-
+  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+    button_pressed(&fsm);
+  }
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 

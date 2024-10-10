@@ -6,6 +6,7 @@ extern UART_HandleTypeDef huart2;
 extern uint32_t adc_value;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
+extern int is_magnet_detected;
 
 MovingAverageFilter adcFilter;
 char msg[20];
@@ -47,16 +48,31 @@ void button_pressed(FsmController* fsm) {
 void fsm_run(FsmController* fsm) {
     switch (fsm->state) {
     case INIT:
-        HAL_ADC_Start(&hadc1);
         initFilter(&adcFilter);
         change_state(fsm, WAIT_REQUEST);
+        fsm_run(fsm);
         break;
     case WAIT_REQUEST:
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+        while(1){}
         break;
     case LISTENING:
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+        uint32_t hall_sensor_time = 0;
         while(1){
+            if(is_magnet_detected){
+                if(hall_sensor_time == 0){
+                    hall_sensor_time = HAL_GetTick();
+                }
+            }else{
+                hall_sensor_time = 0;
+            }
+
+            if(HAL_GetTick() - hall_sensor_time >= 5000){
+                change_state(fsm, WARNING);
+                return fsm_run(fsm);
+            }
+            HAL_ADC_Start(&hadc1);
             HAL_ADC_PollForConversion(&hadc1, 100);
             adc_value = HAL_ADC_GetValue(&hadc1);
             int32_t filtered_value = updateFilter(&adcFilter, adc_value);
