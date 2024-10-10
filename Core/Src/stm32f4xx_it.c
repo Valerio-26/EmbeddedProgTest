@@ -44,7 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 int led_state = 0;
-int is_magnet_detected;  
+int is_magnet_detected = 0;  
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -214,15 +214,15 @@ void EXTI0_IRQHandler(void)
   /* USER CODE BEGIN EXTI0_IRQn 0 */
 
   // Vedi code begin 0 e 1 per gestire rising falling
-
   // Leggi lo stato del sensore digitale
-  is_magnet_detected = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
+  is_magnet_detected =(int) !HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
 
   char msg[50];  // Buffer per inviare messaggi via UART
   
   // Invia il valore digitale via UART
   sprintf(msg, "Digital: %d\r\n", is_magnet_detected);
   HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  
     
   /* USER CODE END EXTI0_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
@@ -238,11 +238,15 @@ void TIM2_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM2_IRQn 0 */
   //timer 1000ms
-
+  
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
-  led_state = !led_state;
+  if(led_state == 0){
+    led_state = 1;
+  }else{
+    led_state = 0;
+  }
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
   /* USER CODE END TIM2_IRQn 1 */
 }
@@ -254,11 +258,14 @@ void TIM3_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM3_IRQn 0 */
   //timer 50ms
-
   /* USER CODE END TIM3_IRQn 0 */
   HAL_TIM_IRQHandler(&htim3);
   /* USER CODE BEGIN TIM3_IRQn 1 */
-  led_state = !led_state;
+  if(led_state == 0){
+    led_state = 1;
+  }else{
+    led_state = 0;
+  }
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
   /* USER CODE END TIM3_IRQn 1 */
 }
@@ -269,13 +276,13 @@ void TIM3_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
+  if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)){
+    button_pressed(&fsm);
+  }
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
-    button_pressed(&fsm);
-  }
+  
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 

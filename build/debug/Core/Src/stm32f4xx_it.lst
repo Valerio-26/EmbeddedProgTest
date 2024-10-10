@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
   28:Core/Src/stm32f4xx_it.c **** 
   29:Core/Src/stm32f4xx_it.c **** /* Private typedef -----------------------------------------------------------*/
   30:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN TD */
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 2
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 2
 
 
   31:Core/Src/stm32f4xx_it.c **** 
@@ -77,7 +77,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
   44:Core/Src/stm32f4xx_it.c **** /* Private variables ---------------------------------------------------------*/
   45:Core/Src/stm32f4xx_it.c **** /* USER CODE BEGIN PV */
   46:Core/Src/stm32f4xx_it.c **** int led_state = 0;
-  47:Core/Src/stm32f4xx_it.c **** int is_magnet_detected;  
+  47:Core/Src/stm32f4xx_it.c **** int is_magnet_detected = 0;  
   48:Core/Src/stm32f4xx_it.c **** /* USER CODE END PV */
   49:Core/Src/stm32f4xx_it.c **** 
   50:Core/Src/stm32f4xx_it.c **** /* Private function prototypes -----------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
   35              	.L2:
   79:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN NonMaskableInt_IRQn 0 */
   80:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 3
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 3
 
 
   81:Core/Src/stm32f4xx_it.c ****   /* USER CODE END NonMaskableInt_IRQn 0 */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
   70              		.thumb
   71              		.thumb_func
   73              	MemManage_Handler:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 4
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 4
 
 
   74              	.LFB244:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
  126:Core/Src/stm32f4xx_it.c ****   /* USER CODE END BusFault_IRQn 0 */
  127:Core/Src/stm32f4xx_it.c ****   while (1)
  105              		.loc 1 127 3 view .LVU13
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 5
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 5
 
 
  128:Core/Src/stm32f4xx_it.c ****   {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
  143              	.LFB247:
  147:Core/Src/stm32f4xx_it.c **** }
  148:Core/Src/stm32f4xx_it.c **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 6
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 6
 
 
  149:Core/Src/stm32f4xx_it.c **** /**
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
  176              		.syntax unified
  177              		.thumb
  178              		.thumb_func
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 7
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 7
 
 
  180              	PendSV_Handler:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
  198:Core/Src/stm32f4xx_it.c **** 
  199:Core/Src/stm32f4xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
  200:Core/Src/stm32f4xx_it.c **** }
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 8
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 8
 
 
  212              		.loc 1 200 1 is_stmt 0 view .LVU28
@@ -465,397 +465,438 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 1
  214:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 0 */
  215:Core/Src/stm32f4xx_it.c **** 
  216:Core/Src/stm32f4xx_it.c ****   // Vedi code begin 0 e 1 per gestire rising falling
- 217:Core/Src/stm32f4xx_it.c **** 
- 218:Core/Src/stm32f4xx_it.c ****   // Leggi lo stato del sensore digitale
- 219:Core/Src/stm32f4xx_it.c ****   is_magnet_detected = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
- 239              		.loc 1 219 3 view .LVU30
- 240              		.loc 1 219 24 is_stmt 0 view .LVU31
+ 217:Core/Src/stm32f4xx_it.c ****   // Leggi lo stato del sensore digitale
+ 218:Core/Src/stm32f4xx_it.c ****   is_magnet_detected =(int) !HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
+ 239              		.loc 1 218 3 view .LVU30
+ 240              		.loc 1 218 30 is_stmt 0 view .LVU31
  241 0004 0121     		movs	r1, #1
- 242 0006 0D48     		ldr	r0, .L18
+ 242 0006 0E48     		ldr	r0, .L18
  243 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
  244              	.LVL1:
- 245 000c 0246     		mov	r2, r0
- 246              		.loc 1 219 22 discriminator 1 view .LVU32
- 247 000e 0C4B     		ldr	r3, .L18+4
- 248 0010 1860     		str	r0, [r3]
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 9
+ 245              		.loc 1 218 23 discriminator 1 view .LVU32
+ 246 000c B0FA80F2 		clz	r2, r0
+ 247 0010 5209     		lsrs	r2, r2, #5
+ 248              		.loc 1 218 22 discriminator 1 view .LVU33
+ 249 0012 0C4B     		ldr	r3, .L18+4
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 9
 
 
- 220:Core/Src/stm32f4xx_it.c **** 
- 221:Core/Src/stm32f4xx_it.c ****   char msg[50];  // Buffer per inviare messaggi via UART
- 249              		.loc 1 221 3 is_stmt 1 view .LVU33
- 222:Core/Src/stm32f4xx_it.c ****   
- 223:Core/Src/stm32f4xx_it.c ****   // Invia il valore digitale via UART
- 224:Core/Src/stm32f4xx_it.c ****   sprintf(msg, "Digital: %d\r\n", is_magnet_detected);
- 250              		.loc 1 224 3 view .LVU34
- 251 0012 0C49     		ldr	r1, .L18+8
- 252 0014 01A8     		add	r0, sp, #4
- 253 0016 FFF7FEFF 		bl	sprintf
- 254              	.LVL2:
- 225:Core/Src/stm32f4xx_it.c ****   HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
- 255              		.loc 1 225 3 view .LVU35
- 256              		.loc 1 225 45 is_stmt 0 view .LVU36
- 257 001a 01A8     		add	r0, sp, #4
- 258 001c FFF7FEFF 		bl	strlen
- 259              	.LVL3:
- 260              		.loc 1 225 3 discriminator 1 view .LVU37
- 261 0020 4FF0FF33 		mov	r3, #-1
- 262 0024 82B2     		uxth	r2, r0
- 263 0026 01A9     		add	r1, sp, #4
- 264 0028 0748     		ldr	r0, .L18+12
- 265 002a FFF7FEFF 		bl	HAL_UART_Transmit
- 266              	.LVL4:
+ 250 0014 1A60     		str	r2, [r3]
+ 219:Core/Src/stm32f4xx_it.c **** 
+ 220:Core/Src/stm32f4xx_it.c ****   char msg[50];  // Buffer per inviare messaggi via UART
+ 251              		.loc 1 220 3 is_stmt 1 view .LVU34
+ 221:Core/Src/stm32f4xx_it.c ****   
+ 222:Core/Src/stm32f4xx_it.c ****   // Invia il valore digitale via UART
+ 223:Core/Src/stm32f4xx_it.c ****   sprintf(msg, "Digital: %d\r\n", is_magnet_detected);
+ 252              		.loc 1 223 3 view .LVU35
+ 253 0016 0C49     		ldr	r1, .L18+8
+ 254 0018 01A8     		add	r0, sp, #4
+ 255 001a FFF7FEFF 		bl	sprintf
+ 256              	.LVL2:
+ 224:Core/Src/stm32f4xx_it.c ****   HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+ 257              		.loc 1 224 3 view .LVU36
+ 258              		.loc 1 224 45 is_stmt 0 view .LVU37
+ 259 001e 01A8     		add	r0, sp, #4
+ 260 0020 FFF7FEFF 		bl	strlen
+ 261              	.LVL3:
+ 262              		.loc 1 224 3 discriminator 1 view .LVU38
+ 263 0024 4FF0FF33 		mov	r3, #-1
+ 264 0028 82B2     		uxth	r2, r0
+ 265 002a 01A9     		add	r1, sp, #4
+ 266 002c 0748     		ldr	r0, .L18+12
+ 267 002e FFF7FEFF 		bl	HAL_UART_Transmit
+ 268              	.LVL4:
+ 225:Core/Src/stm32f4xx_it.c ****   
  226:Core/Src/stm32f4xx_it.c ****     
  227:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 0 */
  228:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_0);
- 267              		.loc 1 228 3 is_stmt 1 view .LVU38
- 268 002e 0120     		movs	r0, #1
- 269 0030 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 270              	.LVL5:
+ 269              		.loc 1 228 3 is_stmt 1 view .LVU39
+ 270 0032 0120     		movs	r0, #1
+ 271 0034 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 272              	.LVL5:
  229:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI0_IRQn 1 */
  230:Core/Src/stm32f4xx_it.c **** 
  231:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI0_IRQn 1 */
  232:Core/Src/stm32f4xx_it.c **** }
- 271              		.loc 1 232 1 is_stmt 0 view .LVU39
- 272 0034 0FB0     		add	sp, sp, #60
- 273              		.cfi_def_cfa_offset 4
- 274              		@ sp needed
- 275 0036 5DF804FB 		ldr	pc, [sp], #4
- 276              	.L19:
- 277 003a 00BF     		.align	2
- 278              	.L18:
- 279 003c 00000240 		.word	1073872896
- 280 0040 00000000 		.word	is_magnet_detected
- 281 0044 00000000 		.word	.LC0
- 282 0048 00000000 		.word	huart2
- 283              		.cfi_endproc
- 284              	.LFE251:
- 286              		.section	.text.TIM2_IRQHandler,"ax",%progbits
- 287              		.align	1
- 288              		.global	TIM2_IRQHandler
- 289              		.syntax unified
- 290              		.thumb
- 291              		.thumb_func
- 293              	TIM2_IRQHandler:
- 294              	.LFB252:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 10
+ 273              		.loc 1 232 1 is_stmt 0 view .LVU40
+ 274 0038 0FB0     		add	sp, sp, #60
+ 275              		.cfi_def_cfa_offset 4
+ 276              		@ sp needed
+ 277 003a 5DF804FB 		ldr	pc, [sp], #4
+ 278              	.L19:
+ 279 003e 00BF     		.align	2
+ 280              	.L18:
+ 281 0040 00000240 		.word	1073872896
+ 282 0044 00000000 		.word	is_magnet_detected
+ 283 0048 00000000 		.word	.LC0
+ 284 004c 00000000 		.word	huart2
+ 285              		.cfi_endproc
+ 286              	.LFE251:
+ 288              		.section	.text.TIM2_IRQHandler,"ax",%progbits
+ 289              		.align	1
+ 290              		.global	TIM2_IRQHandler
+ 291              		.syntax unified
+ 292              		.thumb
+ 293              		.thumb_func
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 10
 
 
+ 295              	TIM2_IRQHandler:
+ 296              	.LFB252:
  233:Core/Src/stm32f4xx_it.c **** 
  234:Core/Src/stm32f4xx_it.c **** /**
  235:Core/Src/stm32f4xx_it.c ****   * @brief This function handles TIM2 global interrupt.
  236:Core/Src/stm32f4xx_it.c ****   */
  237:Core/Src/stm32f4xx_it.c **** void TIM2_IRQHandler(void)
  238:Core/Src/stm32f4xx_it.c **** {
- 295              		.loc 1 238 1 is_stmt 1 view -0
- 296              		.cfi_startproc
- 297              		@ args = 0, pretend = 0, frame = 0
- 298              		@ frame_needed = 0, uses_anonymous_args = 0
- 299 0000 08B5     		push	{r3, lr}
- 300              		.cfi_def_cfa_offset 8
- 301              		.cfi_offset 3, -8
- 302              		.cfi_offset 14, -4
+ 297              		.loc 1 238 1 is_stmt 1 view -0
+ 298              		.cfi_startproc
+ 299              		@ args = 0, pretend = 0, frame = 0
+ 300              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301 0000 08B5     		push	{r3, lr}
+ 302              		.cfi_def_cfa_offset 8
+ 303              		.cfi_offset 3, -8
+ 304              		.cfi_offset 14, -4
  239:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM2_IRQn 0 */
  240:Core/Src/stm32f4xx_it.c ****   //timer 1000ms
- 241:Core/Src/stm32f4xx_it.c **** 
+ 241:Core/Src/stm32f4xx_it.c ****   
  242:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM2_IRQn 0 */
  243:Core/Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim2);
- 303              		.loc 1 243 3 view .LVU41
- 304 0002 0748     		ldr	r0, .L22
- 305 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
- 306              	.LVL6:
+ 305              		.loc 1 243 3 view .LVU42
+ 306 0002 0A48     		ldr	r0, .L24
+ 307 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 308              	.LVL6:
  244:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM2_IRQn 1 */
- 245:Core/Src/stm32f4xx_it.c ****   led_state = !led_state;
- 307              		.loc 1 245 3 view .LVU42
- 308              		.loc 1 245 15 is_stmt 0 view .LVU43
- 309 0008 064B     		ldr	r3, .L22+4
- 310 000a 1A68     		ldr	r2, [r3]
- 311 000c B2FA82F2 		clz	r2, r2
- 312 0010 5209     		lsrs	r2, r2, #5
- 313              		.loc 1 245 13 view .LVU44
- 314 0012 1A60     		str	r2, [r3]
- 246:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
- 315              		.loc 1 246 3 is_stmt 1 view .LVU45
- 316 0014 2021     		movs	r1, #32
- 317 0016 0448     		ldr	r0, .L22+8
- 318 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 319              	.LVL7:
- 247:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM2_IRQn 1 */
- 248:Core/Src/stm32f4xx_it.c **** }
- 320              		.loc 1 248 1 is_stmt 0 view .LVU46
- 321 001c 08BD     		pop	{r3, pc}
- 322              	.L23:
- 323 001e 00BF     		.align	2
- 324              	.L22:
- 325 0020 00000000 		.word	htim2
- 326 0024 00000000 		.word	led_state
- 327 0028 00000240 		.word	1073872896
- 328              		.cfi_endproc
- 329              	.LFE252:
- 331              		.section	.text.TIM3_IRQHandler,"ax",%progbits
- 332              		.align	1
- 333              		.global	TIM3_IRQHandler
- 334              		.syntax unified
- 335              		.thumb
- 336              		.thumb_func
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 11
+ 245:Core/Src/stm32f4xx_it.c ****   if(led_state == 0){
+ 309              		.loc 1 245 3 view .LVU43
+ 310              		.loc 1 245 16 is_stmt 0 view .LVU44
+ 311 0008 094B     		ldr	r3, .L24+4
+ 312 000a 1B68     		ldr	r3, [r3]
+ 313              		.loc 1 245 5 view .LVU45
+ 314 000c 4BB9     		cbnz	r3, .L21
+ 246:Core/Src/stm32f4xx_it.c ****     led_state = 1;
+ 315              		.loc 1 246 5 is_stmt 1 view .LVU46
+ 316              		.loc 1 246 15 is_stmt 0 view .LVU47
+ 317 000e 084B     		ldr	r3, .L24+4
+ 318 0010 0122     		movs	r2, #1
+ 319 0012 1A60     		str	r2, [r3]
+ 320              	.L22:
+ 247:Core/Src/stm32f4xx_it.c ****   }else{
+ 248:Core/Src/stm32f4xx_it.c ****     led_state = 0;
+ 249:Core/Src/stm32f4xx_it.c ****   }
+ 250:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+ 321              		.loc 1 250 3 is_stmt 1 view .LVU48
+ 322 0014 064B     		ldr	r3, .L24+4
+ 323 0016 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 324 0018 2021     		movs	r1, #32
+ 325 001a 0648     		ldr	r0, .L24+8
+ 326 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 327              	.LVL7:
+ 251:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM2_IRQn 1 */
+ 252:Core/Src/stm32f4xx_it.c **** }
+ 328              		.loc 1 252 1 is_stmt 0 view .LVU49
+ 329 0020 08BD     		pop	{r3, pc}
+ 330              	.L21:
+ 248:Core/Src/stm32f4xx_it.c ****   }
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 11
 
 
- 338              	TIM3_IRQHandler:
- 339              	.LFB253:
- 249:Core/Src/stm32f4xx_it.c **** 
- 250:Core/Src/stm32f4xx_it.c **** /**
- 251:Core/Src/stm32f4xx_it.c ****   * @brief This function handles TIM3 global interrupt.
- 252:Core/Src/stm32f4xx_it.c ****   */
- 253:Core/Src/stm32f4xx_it.c **** void TIM3_IRQHandler(void)
- 254:Core/Src/stm32f4xx_it.c **** {
- 340              		.loc 1 254 1 is_stmt 1 view -0
- 341              		.cfi_startproc
- 342              		@ args = 0, pretend = 0, frame = 0
- 343              		@ frame_needed = 0, uses_anonymous_args = 0
- 344 0000 08B5     		push	{r3, lr}
- 345              		.cfi_def_cfa_offset 8
- 346              		.cfi_offset 3, -8
- 347              		.cfi_offset 14, -4
- 255:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM3_IRQn 0 */
- 256:Core/Src/stm32f4xx_it.c ****   //timer 50ms
- 257:Core/Src/stm32f4xx_it.c **** 
- 258:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM3_IRQn 0 */
- 259:Core/Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim3);
- 348              		.loc 1 259 3 view .LVU48
- 349 0002 0748     		ldr	r0, .L26
- 350 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
- 351              	.LVL8:
- 260:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM3_IRQn 1 */
- 261:Core/Src/stm32f4xx_it.c ****   led_state = !led_state;
- 352              		.loc 1 261 3 view .LVU49
- 353              		.loc 1 261 15 is_stmt 0 view .LVU50
- 354 0008 064B     		ldr	r3, .L26+4
- 355 000a 1A68     		ldr	r2, [r3]
- 356 000c B2FA82F2 		clz	r2, r2
- 357 0010 5209     		lsrs	r2, r2, #5
- 358              		.loc 1 261 13 view .LVU51
- 359 0012 1A60     		str	r2, [r3]
- 262:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
- 360              		.loc 1 262 3 is_stmt 1 view .LVU52
- 361 0014 2021     		movs	r1, #32
- 362 0016 0448     		ldr	r0, .L26+8
- 363 0018 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 364              	.LVL9:
- 263:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM3_IRQn 1 */
- 264:Core/Src/stm32f4xx_it.c **** }
- 365              		.loc 1 264 1 is_stmt 0 view .LVU53
- 366 001c 08BD     		pop	{r3, pc}
- 367              	.L27:
- 368 001e 00BF     		.align	2
- 369              	.L26:
- 370 0020 00000000 		.word	htim3
- 371 0024 00000000 		.word	led_state
- 372 0028 00000240 		.word	1073872896
- 373              		.cfi_endproc
- 374              	.LFE253:
- 376              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
- 377              		.align	1
- 378              		.global	EXTI15_10_IRQHandler
- 379              		.syntax unified
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 12
+ 331              		.loc 1 248 5 is_stmt 1 view .LVU50
+ 248:Core/Src/stm32f4xx_it.c ****   }
+ 332              		.loc 1 248 15 is_stmt 0 view .LVU51
+ 333 0022 034B     		ldr	r3, .L24+4
+ 334 0024 0022     		movs	r2, #0
+ 335 0026 1A60     		str	r2, [r3]
+ 336 0028 F4E7     		b	.L22
+ 337              	.L25:
+ 338 002a 00BF     		.align	2
+ 339              	.L24:
+ 340 002c 00000000 		.word	htim2
+ 341 0030 00000000 		.word	led_state
+ 342 0034 00000240 		.word	1073872896
+ 343              		.cfi_endproc
+ 344              	.LFE252:
+ 346              		.section	.text.TIM3_IRQHandler,"ax",%progbits
+ 347              		.align	1
+ 348              		.global	TIM3_IRQHandler
+ 349              		.syntax unified
+ 350              		.thumb
+ 351              		.thumb_func
+ 353              	TIM3_IRQHandler:
+ 354              	.LFB253:
+ 253:Core/Src/stm32f4xx_it.c **** 
+ 254:Core/Src/stm32f4xx_it.c **** /**
+ 255:Core/Src/stm32f4xx_it.c ****   * @brief This function handles TIM3 global interrupt.
+ 256:Core/Src/stm32f4xx_it.c ****   */
+ 257:Core/Src/stm32f4xx_it.c **** void TIM3_IRQHandler(void)
+ 258:Core/Src/stm32f4xx_it.c **** {
+ 355              		.loc 1 258 1 is_stmt 1 view -0
+ 356              		.cfi_startproc
+ 357              		@ args = 0, pretend = 0, frame = 0
+ 358              		@ frame_needed = 0, uses_anonymous_args = 0
+ 359 0000 08B5     		push	{r3, lr}
+ 360              		.cfi_def_cfa_offset 8
+ 361              		.cfi_offset 3, -8
+ 362              		.cfi_offset 14, -4
+ 259:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM3_IRQn 0 */
+ 260:Core/Src/stm32f4xx_it.c ****   //timer 50ms
+ 261:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM3_IRQn 0 */
+ 262:Core/Src/stm32f4xx_it.c ****   HAL_TIM_IRQHandler(&htim3);
+ 363              		.loc 1 262 3 view .LVU53
+ 364 0002 0A48     		ldr	r0, .L30
+ 365 0004 FFF7FEFF 		bl	HAL_TIM_IRQHandler
+ 366              	.LVL8:
+ 263:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN TIM3_IRQn 1 */
+ 264:Core/Src/stm32f4xx_it.c ****   if(led_state == 0){
+ 367              		.loc 1 264 3 view .LVU54
+ 368              		.loc 1 264 16 is_stmt 0 view .LVU55
+ 369 0008 094B     		ldr	r3, .L30+4
+ 370 000a 1B68     		ldr	r3, [r3]
+ 371              		.loc 1 264 5 view .LVU56
+ 372 000c 4BB9     		cbnz	r3, .L27
+ 265:Core/Src/stm32f4xx_it.c ****     led_state = 1;
+ 373              		.loc 1 265 5 is_stmt 1 view .LVU57
+ 374              		.loc 1 265 15 is_stmt 0 view .LVU58
+ 375 000e 084B     		ldr	r3, .L30+4
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 12
 
 
- 380              		.thumb
- 381              		.thumb_func
- 383              	EXTI15_10_IRQHandler:
- 384              	.LFB254:
- 265:Core/Src/stm32f4xx_it.c **** 
- 266:Core/Src/stm32f4xx_it.c **** /**
- 267:Core/Src/stm32f4xx_it.c ****   * @brief This function handles EXTI line[15:10] interrupts.
- 268:Core/Src/stm32f4xx_it.c ****   */
- 269:Core/Src/stm32f4xx_it.c **** void EXTI15_10_IRQHandler(void)
- 270:Core/Src/stm32f4xx_it.c **** {
- 385              		.loc 1 270 1 is_stmt 1 view -0
- 386              		.cfi_startproc
- 387              		@ args = 0, pretend = 0, frame = 0
- 388              		@ frame_needed = 0, uses_anonymous_args = 0
- 389 0000 08B5     		push	{r3, lr}
- 390              		.cfi_def_cfa_offset 8
- 391              		.cfi_offset 3, -8
- 392              		.cfi_offset 14, -4
- 271:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+ 376 0010 0122     		movs	r2, #1
+ 377 0012 1A60     		str	r2, [r3]
+ 378              	.L28:
+ 266:Core/Src/stm32f4xx_it.c ****   }else{
+ 267:Core/Src/stm32f4xx_it.c ****     led_state = 0;
+ 268:Core/Src/stm32f4xx_it.c ****   }
+ 269:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
+ 379              		.loc 1 269 3 is_stmt 1 view .LVU59
+ 380 0014 064B     		ldr	r3, .L30+4
+ 381 0016 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
+ 382 0018 2021     		movs	r1, #32
+ 383 001a 0648     		ldr	r0, .L30+8
+ 384 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 385              	.LVL9:
+ 270:Core/Src/stm32f4xx_it.c ****   /* USER CODE END TIM3_IRQn 1 */
+ 271:Core/Src/stm32f4xx_it.c **** }
+ 386              		.loc 1 271 1 is_stmt 0 view .LVU60
+ 387 0020 08BD     		pop	{r3, pc}
+ 388              	.L27:
+ 267:Core/Src/stm32f4xx_it.c ****   }
+ 389              		.loc 1 267 5 is_stmt 1 view .LVU61
+ 267:Core/Src/stm32f4xx_it.c ****   }
+ 390              		.loc 1 267 15 is_stmt 0 view .LVU62
+ 391 0022 034B     		ldr	r3, .L30+4
+ 392 0024 0022     		movs	r2, #0
+ 393 0026 1A60     		str	r2, [r3]
+ 394 0028 F4E7     		b	.L28
+ 395              	.L31:
+ 396 002a 00BF     		.align	2
+ 397              	.L30:
+ 398 002c 00000000 		.word	htim3
+ 399 0030 00000000 		.word	led_state
+ 400 0034 00000240 		.word	1073872896
+ 401              		.cfi_endproc
+ 402              	.LFE253:
+ 404              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
+ 405              		.align	1
+ 406              		.global	EXTI15_10_IRQHandler
+ 407              		.syntax unified
+ 408              		.thumb
+ 409              		.thumb_func
+ 411              	EXTI15_10_IRQHandler:
+ 412              	.LFB254:
  272:Core/Src/stm32f4xx_it.c **** 
- 273:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
- 274:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
- 393              		.loc 1 274 3 view .LVU55
- 394 0002 4FF40050 		mov	r0, #8192
- 395 0006 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 396              	.LVL10:
- 275:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
- 276:Core/Src/stm32f4xx_it.c ****   if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
- 397              		.loc 1 276 3 view .LVU56
- 398              		.loc 1 276 6 is_stmt 0 view .LVU57
- 399 000a 4FF40051 		mov	r1, #8192
- 400 000e 0448     		ldr	r0, .L32
- 401 0010 FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 402              	.LVL11:
- 403              		.loc 1 276 5 discriminator 1 view .LVU58
- 404 0014 00B9     		cbnz	r0, .L31
- 405              	.L28:
- 277:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
- 278:Core/Src/stm32f4xx_it.c ****   }
- 279:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 1 */
- 280:Core/Src/stm32f4xx_it.c **** }
- 406              		.loc 1 280 1 view .LVU59
- 407 0016 08BD     		pop	{r3, pc}
- 408              	.L31:
- 277:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
- 409              		.loc 1 277 5 is_stmt 1 view .LVU60
- 410 0018 0248     		ldr	r0, .L32+4
- 411 001a FFF7FEFF 		bl	button_pressed
- 412              	.LVL12:
- 413              		.loc 1 280 1 is_stmt 0 view .LVU61
- 414 001e FAE7     		b	.L28
- 415              	.L33:
- 416              		.align	2
- 417              	.L32:
- 418 0020 00040240 		.word	1073873920
- 419 0024 00000000 		.word	fsm
- 420              		.cfi_endproc
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 13
+ 273:Core/Src/stm32f4xx_it.c **** /**
+ 274:Core/Src/stm32f4xx_it.c ****   * @brief This function handles EXTI line[15:10] interrupts.
+ 275:Core/Src/stm32f4xx_it.c ****   */
+ 276:Core/Src/stm32f4xx_it.c **** void EXTI15_10_IRQHandler(void)
+ 277:Core/Src/stm32f4xx_it.c **** {
+ 413              		.loc 1 277 1 is_stmt 1 view -0
+ 414              		.cfi_startproc
+ 415              		@ args = 0, pretend = 0, frame = 0
+ 416              		@ frame_needed = 0, uses_anonymous_args = 0
+ 417 0000 08B5     		push	{r3, lr}
+ 418              		.cfi_def_cfa_offset 8
+ 419              		.cfi_offset 3, -8
+ 420              		.cfi_offset 14, -4
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 13
 
 
- 421              	.LFE254:
- 423              		.section	.text.DMA2_Stream0_IRQHandler,"ax",%progbits
- 424              		.align	1
- 425              		.global	DMA2_Stream0_IRQHandler
- 426              		.syntax unified
- 427              		.thumb
- 428              		.thumb_func
- 430              	DMA2_Stream0_IRQHandler:
- 431              	.LFB255:
- 281:Core/Src/stm32f4xx_it.c **** 
- 282:Core/Src/stm32f4xx_it.c **** /**
- 283:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream0 global interrupt.
- 284:Core/Src/stm32f4xx_it.c ****   */
- 285:Core/Src/stm32f4xx_it.c **** void DMA2_Stream0_IRQHandler(void)
- 286:Core/Src/stm32f4xx_it.c **** {
- 432              		.loc 1 286 1 is_stmt 1 view -0
- 433              		.cfi_startproc
- 434              		@ args = 0, pretend = 0, frame = 0
- 435              		@ frame_needed = 0, uses_anonymous_args = 0
- 436 0000 08B5     		push	{r3, lr}
- 437              		.cfi_def_cfa_offset 8
- 438              		.cfi_offset 3, -8
- 439              		.cfi_offset 14, -4
- 287:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream0_IRQn 0 */
+ 278:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+ 279:Core/Src/stm32f4xx_it.c ****   if(HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin)){
+ 421              		.loc 1 279 3 view .LVU64
+ 422              		.loc 1 279 6 is_stmt 0 view .LVU65
+ 423 0002 4FF40051 		mov	r1, #8192
+ 424 0006 0648     		ldr	r0, .L36
+ 425 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 426              	.LVL10:
+ 427              		.loc 1 279 5 discriminator 1 view .LVU66
+ 428 000c 20B9     		cbnz	r0, .L35
+ 429              	.L33:
+ 280:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
+ 281:Core/Src/stm32f4xx_it.c ****   }
+ 282:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
+ 283:Core/Src/stm32f4xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(B1_Pin);
+ 430              		.loc 1 283 3 is_stmt 1 view .LVU67
+ 431 000e 4FF40050 		mov	r0, #8192
+ 432 0012 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 433              	.LVL11:
+ 284:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+ 285:Core/Src/stm32f4xx_it.c ****   
+ 286:Core/Src/stm32f4xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 1 */
+ 287:Core/Src/stm32f4xx_it.c **** }
+ 434              		.loc 1 287 1 is_stmt 0 view .LVU68
+ 435 0016 08BD     		pop	{r3, pc}
+ 436              	.L35:
+ 280:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
+ 437              		.loc 1 280 5 is_stmt 1 view .LVU69
+ 438 0018 0248     		ldr	r0, .L36+4
+ 439 001a FFF7FEFF 		bl	button_pressed
+ 440              	.LVL12:
+ 441 001e F6E7     		b	.L33
+ 442              	.L37:
+ 443              		.align	2
+ 444              	.L36:
+ 445 0020 00080240 		.word	1073874944
+ 446 0024 00000000 		.word	fsm
+ 447              		.cfi_endproc
+ 448              	.LFE254:
+ 450              		.section	.text.DMA2_Stream0_IRQHandler,"ax",%progbits
+ 451              		.align	1
+ 452              		.global	DMA2_Stream0_IRQHandler
+ 453              		.syntax unified
+ 454              		.thumb
+ 455              		.thumb_func
+ 457              	DMA2_Stream0_IRQHandler:
+ 458              	.LFB255:
  288:Core/Src/stm32f4xx_it.c **** 
- 289:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream0_IRQn 0 */
- 290:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_adc1);
- 440              		.loc 1 290 3 view .LVU63
- 441 0002 0748     		ldr	r0, .L38
- 442 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
- 443              	.LVL13:
- 291:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
- 292:Core/Src/stm32f4xx_it.c ****   if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
- 444              		.loc 1 292 3 view .LVU64
- 445              		.loc 1 292 6 is_stmt 0 view .LVU65
- 446 0008 4FF40051 		mov	r1, #8192
- 447 000c 0548     		ldr	r0, .L38+4
- 448 000e FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 449              	.LVL14:
- 450              		.loc 1 292 5 discriminator 1 view .LVU66
- 451 0012 00B9     		cbnz	r0, .L37
- 452              	.L34:
- 293:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
- 294:Core/Src/stm32f4xx_it.c ****   }
- 295:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream0_IRQn 1 */
- 296:Core/Src/stm32f4xx_it.c **** }
- 453              		.loc 1 296 1 view .LVU67
- 454 0014 08BD     		pop	{r3, pc}
- 455              	.L37:
- 293:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
- 456              		.loc 1 293 5 is_stmt 1 view .LVU68
- 457 0016 0448     		ldr	r0, .L38+8
- 458 0018 FFF7FEFF 		bl	button_pressed
- 459              	.LVL15:
- 460              		.loc 1 296 1 is_stmt 0 view .LVU69
- 461 001c FAE7     		b	.L34
- 462              	.L39:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 14
+ 289:Core/Src/stm32f4xx_it.c **** /**
+ 290:Core/Src/stm32f4xx_it.c ****   * @brief This function handles DMA2 stream0 global interrupt.
+ 291:Core/Src/stm32f4xx_it.c ****   */
+ 292:Core/Src/stm32f4xx_it.c **** void DMA2_Stream0_IRQHandler(void)
+ 293:Core/Src/stm32f4xx_it.c **** {
+ 459              		.loc 1 293 1 view -0
+ 460              		.cfi_startproc
+ 461              		@ args = 0, pretend = 0, frame = 0
+ 462              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 14
 
 
- 463 001e 00BF     		.align	2
- 464              	.L38:
- 465 0020 00000000 		.word	hdma_adc1
- 466 0024 00040240 		.word	1073873920
- 467 0028 00000000 		.word	fsm
- 468              		.cfi_endproc
- 469              	.LFE255:
- 471              		.global	is_magnet_detected
- 472              		.section	.bss.is_magnet_detected,"aw",%nobits
- 473              		.align	2
- 476              	is_magnet_detected:
- 477 0000 00000000 		.space	4
- 478              		.global	led_state
- 479              		.section	.bss.led_state,"aw",%nobits
- 480              		.align	2
- 483              	led_state:
- 484 0000 00000000 		.space	4
- 485              		.text
- 486              	.Letext0:
- 487              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 488              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 489              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
- 490              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 491              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 492              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 493              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 494              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 495              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 496              		.file 11 "Core/Inc/fsm_controller.h"
- 497              		.file 12 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 498              		.file 13 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 499              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 15
+ 463 0000 08B5     		push	{r3, lr}
+ 464              		.cfi_def_cfa_offset 8
+ 465              		.cfi_offset 3, -8
+ 466              		.cfi_offset 14, -4
+ 294:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream0_IRQn 0 */
+ 295:Core/Src/stm32f4xx_it.c **** 
+ 296:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream0_IRQn 0 */
+ 297:Core/Src/stm32f4xx_it.c ****   HAL_DMA_IRQHandler(&hdma_adc1);
+ 467              		.loc 1 297 3 view .LVU71
+ 468 0002 0748     		ldr	r0, .L42
+ 469 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
+ 470              	.LVL13:
+ 298:Core/Src/stm32f4xx_it.c ****   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
+ 299:Core/Src/stm32f4xx_it.c ****   if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 471              		.loc 1 299 3 view .LVU72
+ 472              		.loc 1 299 6 is_stmt 0 view .LVU73
+ 473 0008 4FF40051 		mov	r1, #8192
+ 474 000c 0548     		ldr	r0, .L42+4
+ 475 000e FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 476              	.LVL14:
+ 477              		.loc 1 299 5 discriminator 1 view .LVU74
+ 478 0012 00B9     		cbnz	r0, .L41
+ 479              	.L38:
+ 300:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
+ 301:Core/Src/stm32f4xx_it.c ****   }
+ 302:Core/Src/stm32f4xx_it.c ****   /* USER CODE END DMA2_Stream0_IRQn 1 */
+ 303:Core/Src/stm32f4xx_it.c **** }
+ 480              		.loc 1 303 1 view .LVU75
+ 481 0014 08BD     		pop	{r3, pc}
+ 482              	.L41:
+ 300:Core/Src/stm32f4xx_it.c ****     button_pressed(&fsm);
+ 483              		.loc 1 300 5 is_stmt 1 view .LVU76
+ 484 0016 0448     		ldr	r0, .L42+8
+ 485 0018 FFF7FEFF 		bl	button_pressed
+ 486              	.LVL15:
+ 487              		.loc 1 303 1 is_stmt 0 view .LVU77
+ 488 001c FAE7     		b	.L38
+ 489              	.L43:
+ 490 001e 00BF     		.align	2
+ 491              	.L42:
+ 492 0020 00000000 		.word	hdma_adc1
+ 493 0024 00040240 		.word	1073873920
+ 494 0028 00000000 		.word	fsm
+ 495              		.cfi_endproc
+ 496              	.LFE255:
+ 498              		.global	is_magnet_detected
+ 499              		.section	.bss.is_magnet_detected,"aw",%nobits
+ 500              		.align	2
+ 503              	is_magnet_detected:
+ 504 0000 00000000 		.space	4
+ 505              		.global	led_state
+ 506              		.section	.bss.led_state,"aw",%nobits
+ 507              		.align	2
+ 510              	led_state:
+ 511 0000 00000000 		.space	4
+ 512              		.text
+ 513              	.Letext0:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 15
+
+
+ 514              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 515              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 516              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 517              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 518              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 519              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 520              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 521              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 522              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 523              		.file 11 "Core/Inc/fsm_controller.h"
+ 524              		.file 12 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 525              		.file 13 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 526              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_it.c
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:21     .text.NMI_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:27     .text.NMI_Handler:00000000 NMI_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:44     .text.HardFault_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:67     .text.MemManage_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:90     .text.BusFault_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:113    .text.UsageFault_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:136    .text.SVC_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:142    .text.SVC_Handler:00000000 SVC_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:155    .text.DebugMon_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:174    .text.PendSV_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:193    .text.SysTick_Handler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:218    .rodata.EXTI0_IRQHandler.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:222    .text.EXTI0_IRQHandler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:228    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:279    .text.EXTI0_IRQHandler:0000003c $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:476    .bss.is_magnet_detected:00000000 is_magnet_detected
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:287    .text.TIM2_IRQHandler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:293    .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:325    .text.TIM2_IRQHandler:00000020 $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:483    .bss.led_state:00000000 led_state
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:332    .text.TIM3_IRQHandler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:338    .text.TIM3_IRQHandler:00000000 TIM3_IRQHandler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:370    .text.TIM3_IRQHandler:00000020 $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:377    .text.EXTI15_10_IRQHandler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:383    .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:418    .text.EXTI15_10_IRQHandler:00000020 $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:424    .text.DMA2_Stream0_IRQHandler:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:430    .text.DMA2_Stream0_IRQHandler:00000000 DMA2_Stream0_IRQHandler
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:465    .text.DMA2_Stream0_IRQHandler:00000020 $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:473    .bss.is_magnet_detected:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s:480    .bss.led_state:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:21     .text.NMI_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:27     .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:44     .text.HardFault_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:50     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:67     .text.MemManage_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:73     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:90     .text.BusFault_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:96     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:113    .text.UsageFault_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:119    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:136    .text.SVC_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:142    .text.SVC_Handler:00000000 SVC_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:155    .text.DebugMon_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:161    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:174    .text.PendSV_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:180    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:193    .text.SysTick_Handler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:199    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:218    .rodata.EXTI0_IRQHandler.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:222    .text.EXTI0_IRQHandler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:228    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:281    .text.EXTI0_IRQHandler:00000040 $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:503    .bss.is_magnet_detected:00000000 is_magnet_detected
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:289    .text.TIM2_IRQHandler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:295    .text.TIM2_IRQHandler:00000000 TIM2_IRQHandler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:340    .text.TIM2_IRQHandler:0000002c $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:510    .bss.led_state:00000000 led_state
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:347    .text.TIM3_IRQHandler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:353    .text.TIM3_IRQHandler:00000000 TIM3_IRQHandler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:398    .text.TIM3_IRQHandler:0000002c $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:405    .text.EXTI15_10_IRQHandler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:411    .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:445    .text.EXTI15_10_IRQHandler:00000020 $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:451    .text.DMA2_Stream0_IRQHandler:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:457    .text.DMA2_Stream0_IRQHandler:00000000 DMA2_Stream0_IRQHandler
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:492    .text.DMA2_Stream0_IRQHandler:00000020 $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:500    .bss.is_magnet_detected:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cch1KPZS.s:507    .bss.led_state:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_IncTick
@@ -873,6 +914,6 @@ button_pressed
 fsm
 HAL_DMA_IRQHandler
 hdma_adc1
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccJKkpr7.s 			page 16
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cch1KPZS.s 			page 17
 
 
