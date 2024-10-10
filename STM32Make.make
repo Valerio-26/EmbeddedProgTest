@@ -75,6 +75,8 @@ endif
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Src/analog_filter.c \
+Core/Src/fsm_controller.c \
 Core/Src/main.c \
 Core/Src/stm32f4xx_hal_msp.c \
 Core/Src/stm32f4xx_it.c \

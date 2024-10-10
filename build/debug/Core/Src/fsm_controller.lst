@@ -1,0 +1,442 @@
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"fsm_controller.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/fsm_controller.c"
+  20              		.section	.text.fsm_init,"ax",%progbits
+  21              		.align	1
+  22              		.global	fsm_init
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	fsm_init:
+  28              	.LVL0:
+  29              	.LFB242:
+   1:Core/Src/fsm_controller.c **** #include "fsm_controller.h"
+   2:Core/Src/fsm_controller.c **** #include <stdio.h>
+   3:Core/Src/fsm_controller.c **** #include <string.h>
+   4:Core/Src/fsm_controller.c **** #include "stm32f4xx_hal.h"
+   5:Core/Src/fsm_controller.c **** #include "analog_filter.h"
+   6:Core/Src/fsm_controller.c **** 
+   7:Core/Src/fsm_controller.c **** extern ADC_HandleTypeDef hadc1;
+   8:Core/Src/fsm_controller.c **** extern UART_HandleTypeDef huart2;
+   9:Core/Src/fsm_controller.c **** extern uint32_t adc_value;
+  10:Core/Src/fsm_controller.c **** 
+  11:Core/Src/fsm_controller.c **** MovingAverageFilter adcFilter;
+  12:Core/Src/fsm_controller.c **** char msg[20];
+  13:Core/Src/fsm_controller.c **** 
+  14:Core/Src/fsm_controller.c **** void fsm_init(FsmController* fsm) {
+  30              		.loc 1 14 35 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  15:Core/Src/fsm_controller.c ****     fsm->state = INIT;
+  35              		.loc 1 15 5 view .LVU1
+  36              		.loc 1 15 16 is_stmt 0 view .LVU2
+  37 0000 0023     		movs	r3, #0
+  38 0002 0370     		strb	r3, [r0]
+  16:Core/Src/fsm_controller.c **** }
+  39              		.loc 1 16 1 view .LVU3
+  40 0004 7047     		bx	lr
+  41              		.cfi_endproc
+  42              	.LFE242:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 2
+
+
+  44              		.section	.text.change_state,"ax",%progbits
+  45              		.align	1
+  46              		.global	change_state
+  47              		.syntax unified
+  48              		.thumb
+  49              		.thumb_func
+  51              	change_state:
+  52              	.LVL1:
+  53              	.LFB243:
+  17:Core/Src/fsm_controller.c **** 
+  18:Core/Src/fsm_controller.c **** void change_state(FsmController* fsm, State new_state) {
+  54              		.loc 1 18 56 is_stmt 1 view -0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  19:Core/Src/fsm_controller.c ****     fsm->state = new_state;
+  59              		.loc 1 19 5 view .LVU5
+  60              		.loc 1 19 16 is_stmt 0 view .LVU6
+  61 0000 0170     		strb	r1, [r0]
+  20:Core/Src/fsm_controller.c **** }
+  62              		.loc 1 20 1 view .LVU7
+  63 0002 7047     		bx	lr
+  64              		.cfi_endproc
+  65              	.LFE243:
+  67              		.section	.rodata.fsm_run.str1.4,"aMS",%progbits,1
+  68              		.align	2
+  69              	.LC0:
+  70 0000 4144433A 		.ascii	"ADC: %lu\015\012\000"
+  70      20256C75 
+  70      0D0A00
+  71              		.section	.text.fsm_run,"ax",%progbits
+  72              		.align	1
+  73              		.global	fsm_run
+  74              		.syntax unified
+  75              		.thumb
+  76              		.thumb_func
+  78              	fsm_run:
+  79              	.LVL2:
+  80              	.LFB244:
+  21:Core/Src/fsm_controller.c **** 
+  22:Core/Src/fsm_controller.c **** void fsm_run(FsmController* fsm) {
+  81              		.loc 1 22 34 is_stmt 1 view -0
+  82              		.cfi_startproc
+  83              		@ args = 0, pretend = 0, frame = 0
+  84              		@ frame_needed = 0, uses_anonymous_args = 0
+  85              		.loc 1 22 34 is_stmt 0 view .LVU9
+  86 0000 70B5     		push	{r4, r5, r6, lr}
+  87              		.cfi_def_cfa_offset 16
+  88              		.cfi_offset 4, -16
+  89              		.cfi_offset 5, -12
+  90              		.cfi_offset 6, -8
+  91              		.cfi_offset 14, -4
+  92 0002 0446     		mov	r4, r0
+  23:Core/Src/fsm_controller.c ****     switch (fsm->state) {
+  93              		.loc 1 23 5 is_stmt 1 view .LVU10
+  94              		.loc 1 23 16 is_stmt 0 view .LVU11
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 3
+
+
+  95 0004 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  96              		.loc 1 23 5 view .LVU12
+  97 0006 032B     		cmp	r3, #3
+  98 0008 0DD8     		bhi	.L3
+  99 000a DFE803F0 		tbb	[pc, r3]
+ 100              	.L6:
+ 101 000e 02       		.byte	(.L9-.L6)/2
+ 102 000f 0D       		.byte	(.L8-.L6)/2
+ 103 0010 19       		.byte	(.L7-.L6)/2
+ 104 0011 43       		.byte	(.L5-.L6)/2
+ 105              		.p2align 1
+ 106              	.L9:
+  24:Core/Src/fsm_controller.c ****     case INIT:
+  25:Core/Src/fsm_controller.c ****         HAL_ADC_Start(&hadc1);
+ 107              		.loc 1 25 9 is_stmt 1 view .LVU13
+ 108 0012 3048     		ldr	r0, .L12
+ 109              	.LVL3:
+ 110              		.loc 1 25 9 is_stmt 0 view .LVU14
+ 111 0014 FFF7FEFF 		bl	HAL_ADC_Start
+ 112              	.LVL4:
+  26:Core/Src/fsm_controller.c ****         initFilter(&adcFilter);
+ 113              		.loc 1 26 9 is_stmt 1 view .LVU15
+ 114 0018 2F48     		ldr	r0, .L12+4
+ 115 001a FFF7FEFF 		bl	initFilter
+ 116              	.LVL5:
+  27:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
+ 117              		.loc 1 27 9 view .LVU16
+ 118 001e 0121     		movs	r1, #1
+ 119 0020 2046     		mov	r0, r4
+ 120 0022 FFF7FEFF 		bl	change_state
+ 121              	.LVL6:
+  28:Core/Src/fsm_controller.c ****         break;
+ 122              		.loc 1 28 9 view .LVU17
+ 123              	.L3:
+  29:Core/Src/fsm_controller.c ****     case WAIT_REQUEST:
+  30:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+  31:Core/Src/fsm_controller.c ****             return change_state(fsm, LISTENING);
+  32:Core/Src/fsm_controller.c ****         }
+  33:Core/Src/fsm_controller.c ****         break;
+  34:Core/Src/fsm_controller.c ****     case LISTENING:
+  35:Core/Src/fsm_controller.c ****         HAL_ADC_PollForConversion(&hadc1, 20);
+  36:Core/Src/fsm_controller.c ****         adc_value = HAL_ADC_GetValue(&hadc1);
+  37:Core/Src/fsm_controller.c ****         updateFilter(&adcFilter, adc_value);
+  38:Core/Src/fsm_controller.c ****         sprintf(msg, "ADC: %lu\r\n", adc_value);
+  39:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  40:Core/Src/fsm_controller.c **** 
+  41:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+  42:Core/Src/fsm_controller.c ****             return change_state(fsm, PAUSE);
+  43:Core/Src/fsm_controller.c ****         }
+  44:Core/Src/fsm_controller.c ****         break;
+  45:Core/Src/fsm_controller.c ****     case PAUSE:
+  46:Core/Src/fsm_controller.c ****         // lampeggia il led ogni 1000 ms
+  47:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+  48:Core/Src/fsm_controller.c ****         HAL_Delay(500);
+  49:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+  50:Core/Src/fsm_controller.c ****         HAL_Delay(500);
+  51:Core/Src/fsm_controller.c **** 
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 4
+
+
+  52:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+  53:Core/Src/fsm_controller.c ****             return change_state(fsm, LISTENING);
+  54:Core/Src/fsm_controller.c ****         }
+  55:Core/Src/fsm_controller.c ****         break;
+  56:Core/Src/fsm_controller.c ****     case WARNING:
+  57:Core/Src/fsm_controller.c ****         // Add logic for WARNING state
+  58:Core/Src/fsm_controller.c ****         break;
+  59:Core/Src/fsm_controller.c ****     case FSMERROR:
+  60:Core/Src/fsm_controller.c ****         // Add logic for ERROR state
+  61:Core/Src/fsm_controller.c ****         break;
+  62:Core/Src/fsm_controller.c ****     default:
+  63:Core/Src/fsm_controller.c ****         // Add logic for default case
+  64:Core/Src/fsm_controller.c ****         break;
+  65:Core/Src/fsm_controller.c ****     }
+  66:Core/Src/fsm_controller.c **** }...
+ 124              		.loc 1 66 1 is_stmt 0 view .LVU18
+ 125 0026 70BD     		pop	{r4, r5, r6, pc}
+ 126              	.LVL7:
+ 127              	.L8:
+  30:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 128              		.loc 1 30 9 is_stmt 1 view .LVU19
+  30:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 129              		.loc 1 30 12 is_stmt 0 view .LVU20
+ 130 0028 4FF40051 		mov	r1, #8192
+ 131 002c 2B48     		ldr	r0, .L12+8
+ 132              	.LVL8:
+  30:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 133              		.loc 1 30 12 view .LVU21
+ 134 002e FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 135              	.LVL9:
+  30:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 136              		.loc 1 30 11 discriminator 1 view .LVU22
+ 137 0032 0028     		cmp	r0, #0
+ 138 0034 F7D0     		beq	.L3
+  31:Core/Src/fsm_controller.c ****             return change_state(fsm, LISTENING);
+ 139              		.loc 1 31 13 is_stmt 1 view .LVU23
+  31:Core/Src/fsm_controller.c ****             return change_state(fsm, LISTENING);
+ 140              		.loc 1 31 20 is_stmt 0 view .LVU24
+ 141 0036 0221     		movs	r1, #2
+ 142 0038 2046     		mov	r0, r4
+ 143 003a FFF7FEFF 		bl	change_state
+ 144              	.LVL10:
+ 145 003e F2E7     		b	.L3
+ 146              	.LVL11:
+ 147              	.L7:
+  35:Core/Src/fsm_controller.c ****         HAL_ADC_PollForConversion(&hadc1, 20);
+ 148              		.loc 1 35 9 is_stmt 1 view .LVU25
+ 149 0040 244D     		ldr	r5, .L12
+ 150 0042 1421     		movs	r1, #20
+ 151 0044 2846     		mov	r0, r5
+ 152              	.LVL12:
+  35:Core/Src/fsm_controller.c ****         HAL_ADC_PollForConversion(&hadc1, 20);
+ 153              		.loc 1 35 9 is_stmt 0 view .LVU26
+ 154 0046 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 155              	.LVL13:
+  36:Core/Src/fsm_controller.c ****         adc_value = HAL_ADC_GetValue(&hadc1);
+ 156              		.loc 1 36 9 is_stmt 1 view .LVU27
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 5
+
+
+  36:Core/Src/fsm_controller.c ****         adc_value = HAL_ADC_GetValue(&hadc1);
+ 157              		.loc 1 36 21 is_stmt 0 view .LVU28
+ 158 004a 2846     		mov	r0, r5
+ 159 004c FFF7FEFF 		bl	HAL_ADC_GetValue
+ 160              	.LVL14:
+ 161 0050 0146     		mov	r1, r0
+  36:Core/Src/fsm_controller.c ****         adc_value = HAL_ADC_GetValue(&hadc1);
+ 162              		.loc 1 36 19 discriminator 1 view .LVU29
+ 163 0052 234E     		ldr	r6, .L12+12
+ 164 0054 3060     		str	r0, [r6]
+  37:Core/Src/fsm_controller.c ****         updateFilter(&adcFilter, adc_value);
+ 165              		.loc 1 37 9 is_stmt 1 view .LVU30
+ 166 0056 2048     		ldr	r0, .L12+4
+ 167 0058 FFF7FEFF 		bl	updateFilter
+ 168              	.LVL15:
+  38:Core/Src/fsm_controller.c ****         sprintf(msg, "ADC: %lu\r\n", adc_value);
+ 169              		.loc 1 38 9 view .LVU31
+ 170 005c 214D     		ldr	r5, .L12+16
+ 171 005e 3268     		ldr	r2, [r6]
+ 172 0060 2149     		ldr	r1, .L12+20
+ 173 0062 2846     		mov	r0, r5
+ 174 0064 FFF7FEFF 		bl	sprintf
+ 175              	.LVL16:
+  39:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+ 176              		.loc 1 39 9 view .LVU32
+  39:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+ 177              		.loc 1 39 51 is_stmt 0 view .LVU33
+ 178 0068 2846     		mov	r0, r5
+ 179 006a FFF7FEFF 		bl	strlen
+ 180              	.LVL17:
+  39:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+ 181              		.loc 1 39 9 discriminator 1 view .LVU34
+ 182 006e 4FF0FF33 		mov	r3, #-1
+ 183 0072 82B2     		uxth	r2, r0
+ 184 0074 2946     		mov	r1, r5
+ 185 0076 1D48     		ldr	r0, .L12+24
+ 186 0078 FFF7FEFF 		bl	HAL_UART_Transmit
+ 187              	.LVL18:
+  41:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 188              		.loc 1 41 9 is_stmt 1 view .LVU35
+  41:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 189              		.loc 1 41 12 is_stmt 0 view .LVU36
+ 190 007c 4FF40051 		mov	r1, #8192
+ 191 0080 1648     		ldr	r0, .L12+8
+ 192 0082 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 193              	.LVL19:
+  41:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 194              		.loc 1 41 11 discriminator 1 view .LVU37
+ 195 0086 0028     		cmp	r0, #0
+ 196 0088 CDD0     		beq	.L3
+  42:Core/Src/fsm_controller.c ****             return change_state(fsm, PAUSE);
+ 197              		.loc 1 42 13 is_stmt 1 view .LVU38
+  42:Core/Src/fsm_controller.c ****             return change_state(fsm, PAUSE);
+ 198              		.loc 1 42 20 is_stmt 0 view .LVU39
+ 199 008a 0321     		movs	r1, #3
+ 200 008c 2046     		mov	r0, r4
+ 201 008e FFF7FEFF 		bl	change_state
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 6
+
+
+ 202              	.LVL20:
+ 203 0092 C8E7     		b	.L3
+ 204              	.LVL21:
+ 205              	.L5:
+  47:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+ 206              		.loc 1 47 9 is_stmt 1 view .LVU40
+ 207 0094 164D     		ldr	r5, .L12+28
+ 208 0096 0122     		movs	r2, #1
+ 209 0098 2021     		movs	r1, #32
+ 210 009a 2846     		mov	r0, r5
+ 211              	.LVL22:
+  47:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+ 212              		.loc 1 47 9 is_stmt 0 view .LVU41
+ 213 009c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 214              	.LVL23:
+  48:Core/Src/fsm_controller.c ****         HAL_Delay(500);
+ 215              		.loc 1 48 9 is_stmt 1 view .LVU42
+ 216 00a0 4FF4FA70 		mov	r0, #500
+ 217 00a4 FFF7FEFF 		bl	HAL_Delay
+ 218              	.LVL24:
+  49:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+ 219              		.loc 1 49 9 view .LVU43
+ 220 00a8 0122     		movs	r2, #1
+ 221 00aa 2021     		movs	r1, #32
+ 222 00ac 2846     		mov	r0, r5
+ 223 00ae FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 224              	.LVL25:
+  50:Core/Src/fsm_controller.c ****         HAL_Delay(500);
+ 225              		.loc 1 50 9 view .LVU44
+ 226 00b2 4FF4FA70 		mov	r0, #500
+ 227 00b6 FFF7FEFF 		bl	HAL_Delay
+ 228              	.LVL26:
+  52:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 229              		.loc 1 52 9 view .LVU45
+  52:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 230              		.loc 1 52 12 is_stmt 0 view .LVU46
+ 231 00ba 4FF40051 		mov	r1, #8192
+ 232 00be 0748     		ldr	r0, .L12+8
+ 233 00c0 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 234              	.LVL27:
+  52:Core/Src/fsm_controller.c ****         if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+ 235              		.loc 1 52 11 discriminator 1 view .LVU47
+ 236 00c4 0028     		cmp	r0, #0
+ 237 00c6 AED0     		beq	.L3
+  53:Core/Src/fsm_controller.c ****             return change_state(fsm, LISTENING);
+ 238              		.loc 1 53 13 is_stmt 1 view .LVU48
+  53:Core/Src/fsm_controller.c ****             return change_state(fsm, LISTENING);
+ 239              		.loc 1 53 20 is_stmt 0 view .LVU49
+ 240 00c8 0221     		movs	r1, #2
+ 241 00ca 2046     		mov	r0, r4
+ 242 00cc FFF7FEFF 		bl	change_state
+ 243              	.LVL28:
+ 244 00d0 A9E7     		b	.L3
+ 245              	.L13:
+ 246 00d2 00BF     		.align	2
+ 247              	.L12:
+ 248 00d4 00000000 		.word	hadc1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 7
+
+
+ 249 00d8 00000000 		.word	adcFilter
+ 250 00dc 00040240 		.word	1073873920
+ 251 00e0 00000000 		.word	adc_value
+ 252 00e4 00000000 		.word	msg
+ 253 00e8 00000000 		.word	.LC0
+ 254 00ec 00000000 		.word	huart2
+ 255 00f0 00000240 		.word	1073872896
+ 256              		.cfi_endproc
+ 257              	.LFE244:
+ 259              		.global	msg
+ 260              		.section	.bss.msg,"aw",%nobits
+ 261              		.align	2
+ 264              	msg:
+ 265 0000 00000000 		.space	20
+ 265      00000000 
+ 265      00000000 
+ 265      00000000 
+ 265      00000000 
+ 266              		.global	adcFilter
+ 267              		.section	.bss.adcFilter,"aw",%nobits
+ 268              		.align	2
+ 271              	adcFilter:
+ 272 0000 00000000 		.space	608
+ 272      00000000 
+ 272      00000000 
+ 272      00000000 
+ 272      00000000 
+ 273              		.text
+ 274              	.Letext0:
+ 275              		.file 2 "Core/Inc/fsm_controller.h"
+ 276              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 277              		.file 4 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 278              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 279              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 280              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 281              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 282              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 283              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 284              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ 285              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 286              		.file 13 "Core/Inc/analog_filter.h"
+ 287              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 288              		.file 15 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 289              		.file 16 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 fsm_controller.c
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:21     .text.fsm_init:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:27     .text.fsm_init:00000000 fsm_init
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:45     .text.change_state:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:51     .text.change_state:00000000 change_state
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:68     .rodata.fsm_run.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:72     .text.fsm_run:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:78     .text.fsm_run:00000000 fsm_run
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:101    .text.fsm_run:0000000e $d
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:105    .text.fsm_run:00000012 $t
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:248    .text.fsm_run:000000d4 $d
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:271    .bss.adcFilter:00000000 adcFilter
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:264    .bss.msg:00000000 msg
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:261    .bss.msg:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccfAO5Vn.s:268    .bss.adcFilter:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_ADC_Start
+initFilter
+HAL_GPIO_ReadPin
+HAL_ADC_PollForConversion
+HAL_ADC_GetValue
+updateFilter
+sprintf
+strlen
+HAL_UART_Transmit
+HAL_GPIO_WritePin
+HAL_Delay
+hadc1
+adc_value
+huart2

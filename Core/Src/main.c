@@ -21,8 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <stdio.h>
-#include <string.h>
+#include "fsm_controller.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,11 +46,10 @@ ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
 UART_HandleTypeDef huart2;
 
-int is_magnet_detected = 0; //boolean
 
 /* USER CODE BEGIN PV */
 uint32_t adc_value = 0;
-char msg[20];
+FsmController fsm;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -89,7 +87,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  fsm_init(&fsm);
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -116,13 +114,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    HAL_ADC_Start(&hadc1);
-    HAL_ADC_PollForConversion(&hadc1, 20);
-    adc_value = HAL_ADC_GetValue(&hadc1);
-    sprintf(msg, "ADC: %lu\r\n", adc_value);
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    
-    HAL_Delay(50);
+    fsm_run(&fsm);
+
   }
   /* USER CODE END 3 */
 }
@@ -319,6 +312,7 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
+
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
