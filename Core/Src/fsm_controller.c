@@ -1,8 +1,4 @@
 #include "fsm_controller.h"
-#include <stdio.h>
-#include <string.h>
-#include "stm32f4xx_hal.h"
-#include "analog_filter.h"
 
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
@@ -19,6 +15,26 @@ void change_state(FsmController* fsm, State new_state) {
     fsm->state = new_state;
 }
 
+void button_pressed(FsmController* fsm) {
+    switch (fsm->state) {
+    case WAIT_REQUEST:
+        change_state(fsm, LISTENING);
+        break;
+    case LISTENING:
+        change_state(fsm, PAUSE);
+        break;
+    case PAUSE:
+        change_state(fsm, LISTENING);
+        break;
+    case WARNING:
+        change_state(fsm, LISTENING);
+        break;
+    default:
+        change_state(fsm, FSMERROR);
+        break;
+    }
+}
+
 void fsm_run(FsmController* fsm) {
     switch (fsm->state) {
     case INIT:
@@ -27,9 +43,7 @@ void fsm_run(FsmController* fsm) {
         change_state(fsm, WAIT_REQUEST);
         break;
     case WAIT_REQUEST:
-        if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
-            return change_state(fsm, LISTENING);
-        }
+        
         break;
     case LISTENING:
         HAL_ADC_PollForConversion(&hadc1, 20);
@@ -37,10 +51,6 @@ void fsm_run(FsmController* fsm) {
         updateFilter(&adcFilter, adc_value);
         sprintf(msg, "ADC: %lu\r\n", adc_value);
         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-
-        if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
-            return change_state(fsm, PAUSE);
-        }
         break;
     case PAUSE:
         // lampeggia il led ogni 1000 ms
@@ -60,7 +70,7 @@ void fsm_run(FsmController* fsm) {
         // Add logic for ERROR state
         break;
     default:
-        // Add logic for default case
+        change_state(fsm, FSMERROR);
         break;
     }
 }

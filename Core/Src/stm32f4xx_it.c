@@ -46,6 +46,7 @@
 extern UART_HandleTypeDef huart2;  
 extern ADC_HandleTypeDef hadc1;  
 extern int is_magnet_detected;  
+extern FsmController fsm;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -208,6 +209,9 @@ void SysTick_Handler(void)
 void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
+
+  // Vedi code begin 0 e 1 per gestire rising falling
+
   // Leggi lo stato del sensore digitale
   int digital_value = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
   // Accendi o spegni il LED in base allo stato del sensore digitale
@@ -232,6 +236,20 @@ void EXTI0_IRQHandler(void)
 }
 
 /**
+  * @brief This function handles EXTI line[15:10] interrupts.
+  */
+void EXTI15_10_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+
+  /* USER CODE END EXTI15_10_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(B1_Pin);
+  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+
+  /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
   * @brief This function handles DMA2 stream0 global interrupt.
   */
 void DMA2_Stream0_IRQHandler(void)
@@ -241,7 +259,9 @@ void DMA2_Stream0_IRQHandler(void)
   /* USER CODE END DMA2_Stream0_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_adc1);
   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
-
+  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
+    button_pressed(&fsm);
+  }
   /* USER CODE END DMA2_Stream0_IRQn 1 */
 }
 
