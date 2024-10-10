@@ -54,6 +54,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 void send_to_serial(char *msg);
+void check_hall_sensor_state();
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
@@ -81,4 +82,5 @@ void send_to_serial(char *msg);
 }
 #endif
 
-#endif /* __MAIN_H */
+#endif 
+/* __MAIN_H */

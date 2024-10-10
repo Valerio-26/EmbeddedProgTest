@@ -1,8 +1,11 @@
 #include "fsm_controller.h"
+#include "main.h" // Include the header file that defines LD2_GPIO_Port and LD2_Pin
 
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
 extern uint32_t adc_value;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
 
 MovingAverageFilter adcFilter;
 char msg[20];
@@ -19,18 +22,24 @@ void button_pressed(FsmController* fsm) {
     switch (fsm->state) {
     case WAIT_REQUEST:
         change_state(fsm, LISTENING);
+        fsm_run(fsm);
         break;
     case LISTENING:
         change_state(fsm, PAUSE);
+        fsm_run(fsm);
         break;
     case PAUSE:
         change_state(fsm, LISTENING);
+        HAL_TIM_Base_Stop_IT(&htim2);
+        fsm_run(fsm);
         break;
     case WARNING:
         change_state(fsm, LISTENING);
+        fsm_run(fsm);
         break;
     default:
         change_state(fsm, FSMERROR);
+        NVIC_SystemReset(); //assicurarsi che il timer 3 venga spento
         break;
     }
 }
@@ -43,31 +52,34 @@ void fsm_run(FsmController* fsm) {
         change_state(fsm, WAIT_REQUEST);
         break;
     case WAIT_REQUEST:
-        
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
         break;
     case LISTENING:
-        HAL_ADC_PollForConversion(&hadc1, 20);
-        adc_value = HAL_ADC_GetValue(&hadc1);
-        updateFilter(&adcFilter, adc_value);
-        sprintf(msg, "ADC: %lu\r\n", adc_value);
-        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+        while(1){
+            HAL_ADC_PollForConversion(&hadc1, 100);
+            adc_value = HAL_ADC_GetValue(&hadc1);
+            int32_t filtered_value = updateFilter(&adcFilter, adc_value);
+            sprintf(msg, "Analog: %ld\r\n", filtered_value);
+            HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        }
         break;
     case PAUSE:
         // lampeggia il led ogni 1000 ms
-        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-        HAL_Delay(500);
-        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-        HAL_Delay(500);
-
-        if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
-            return change_state(fsm, LISTENING);
-        }
+        HAL_TIM_Base_Start_IT(&htim2);
         break;
     case WARNING:
         // Add logic for WARNING state
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+        while(1){
+            HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
+        }
         break;
     case FSMERROR:
-        // Add logic for ERROR state
+        HAL_TIM_Base_Start_IT(&htim3);
+        while(1){
+            HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
+        }
         break;
     default:
         change_state(fsm, FSMERROR);
