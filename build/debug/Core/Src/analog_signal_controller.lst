@@ -1,0 +1,144 @@
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"analog_signal_controller.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/analog_signal_controller.c"
+  20              		.section	.text.get_analog_signal,"ax",%progbits
+  21              		.align	1
+  22              		.global	get_analog_signal
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	get_analog_signal:
+  28              	.LVL0:
+  29              	.LFB0:
+   1:Core/Src/analog_signal_controller.c **** #include "analog_signal_controller.h"
+   2:Core/Src/analog_signal_controller.c **** 
+   3:Core/Src/analog_signal_controller.c **** int32_t get_analog_signal(int32_t new_value){
+  30              		.loc 1 3 45 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		.loc 1 3 45 is_stmt 0 view .LVU1
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0446     		mov	r4, r0
+   4:Core/Src/analog_signal_controller.c ****     switch (signal_type) {
+  40              		.loc 1 4 5 is_stmt 1 view .LVU2
+  41 0004 0D4B     		ldr	r3, .L7
+  42 0006 1B68     		ldr	r3, [r3]
+  43 0008 022B     		cmp	r3, #2
+  44 000a 05D0     		beq	.L2
+  45 000c 032B     		cmp	r3, #3
+  46 000e 06D0     		beq	.L3
+  47 0010 012B     		cmp	r3, #1
+  48 0012 03D1     		bne	.L1
+   5:Core/Src/analog_signal_controller.c ****         case RAW:
+   6:Core/Src/analog_signal_controller.c ****             return new_value;
+   7:Core/Src/analog_signal_controller.c ****         case FILTERED:
+   8:Core/Src/analog_signal_controller.c ****             return 0;
+  49              		.loc 1 8 20 is_stmt 0 view .LVU3
+  50 0014 0020     		movs	r0, #0
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s 			page 2
+
+
+  51              	.LVL1:
+  52              		.loc 1 8 20 view .LVU4
+  53 0016 01E0     		b	.L1
+  54              	.LVL2:
+  55              	.L2:
+   9:Core/Src/analog_signal_controller.c ****         case AVERAGE_FILTERED:
+  10:Core/Src/analog_signal_controller.c ****             return moving_average_filter(new_value);
+  56              		.loc 1 10 13 is_stmt 1 view .LVU5
+  57              		.loc 1 10 20 is_stmt 0 view .LVU6
+  58 0018 FFF7FEFF 		bl	moving_average_filter
+  59              	.LVL3:
+  60              	.L1:
+  11:Core/Src/analog_signal_controller.c ****         case RANDOM_NOISE:
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  13:Core/Src/analog_signal_controller.c ****         default:
+  14:Core/Src/analog_signal_controller.c ****             return new_value;
+  15:Core/Src/analog_signal_controller.c ****     }
+  16:Core/Src/analog_signal_controller.c **** }...
+  61              		.loc 1 16 1 view .LVU7
+  62 001c 10BD     		pop	{r4, pc}
+  63              	.LVL4:
+  64              	.L3:
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  65              		.loc 1 12 13 is_stmt 1 view .LVU8
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  66              		.loc 1 12 33 is_stmt 0 view .LVU9
+  67 001e FFF7FEFF 		bl	rand
+  68              	.LVL5:
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  69              		.loc 1 12 40 discriminator 1 view .LVU10
+  70 0022 074A     		ldr	r2, .L7+4
+  71 0024 82FB0032 		smull	r3, r2, r2, r0
+  72 0028 C317     		asrs	r3, r0, #31
+  73 002a C3EB6213 		rsb	r3, r3, r2, asr #5
+  74 002e 6422     		movs	r2, #100
+  75 0030 02FB1303 		mls	r3, r2, r3, r0
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  76              		.loc 1 12 30 discriminator 1 view .LVU11
+  77 0034 1819     		adds	r0, r3, r4
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  78              		.loc 1 12 47 discriminator 1 view .LVU12
+  79 0036 3238     		subs	r0, r0, #50
+  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
+  80              		.loc 1 12 47 view .LVU13
+  81 0038 F0E7     		b	.L1
+  82              	.L8:
+  83 003a 00BF     		.align	2
+  84              	.L7:
+  85 003c 00000000 		.word	signal_type
+  86 0040 1F85EB51 		.word	1374389535
+  87              		.cfi_endproc
+  88              	.LFE0:
+  90              		.global	signal_type
+  91              		.section	.data.signal_type,"aw"
+  92              		.align	2
+  95              	signal_type:
+  96 0000 01000000 		.word	1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s 			page 3
+
+
+  97              		.text
+  98              	.Letext0:
+  99              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 100              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 101              		.file 4 "Core/Inc/analog_signal_controller.h"
+ 102              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 103              		.file 6 "Core/Inc/average_filter.h"
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 analog_signal_controller.c
+C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s:21     .text.get_analog_signal:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s:27     .text.get_analog_signal:00000000 get_analog_signal
+C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s:85     .text.get_analog_signal:0000003c $d
+C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s:95     .data.signal_type:00000000 signal_type
+C:\Users\valer\AppData\Local\Temp\ccaAvKPk.s:92     .data.signal_type:00000000 $d
+
+UNDEFINED SYMBOLS
+moving_average_filter
+rand

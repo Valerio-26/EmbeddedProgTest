@@ -76,6 +76,8 @@ endif
 # C sources
 C_SOURCES =  \
 Core/Src/analog_filter.c \
+Core/Src/analog_signal_controller.c \
+Core/Src/average_filter.c \
 Core/Src/fsm_controller.c \
 Core/Src/main.c \
 Core/Src/stm32f4xx_hal_msp.c \
@@ -105,6 +107,7 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c
 
 
 CPP_SOURCES = \
+Core/Src/cli_controller.cpp
 
 
 # ASM sources

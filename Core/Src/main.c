@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
+#include <stdlib.h>
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -93,6 +94,7 @@ int main(void)
 
   /* USER CODE BEGIN Init */
   fsm_init(&fsm);
+  srand(HAL_GetTick());
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -244,7 +246,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 703;
+  htim2.Init.Prescaler = 1343;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 62499;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

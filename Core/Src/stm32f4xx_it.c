@@ -61,11 +61,10 @@ int is_magnet_detected = 0;
 extern DMA_HandleTypeDef hdma_adc1;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
-extern UART_HandleTypeDef huart2;  
+extern UART_HandleTypeDef huart2;
+/* USER CODE BEGIN EV */
 extern ADC_HandleTypeDef hadc1;  
 extern FsmController fsm;
-/* USER CODE BEGIN EV */
-
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -268,6 +267,20 @@ void TIM3_IRQHandler(void)
   }
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, led_state);
   /* USER CODE END TIM3_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USART2 global interrupt.
+  */
+void USART2_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART2_IRQn 0 */
+
+  /* USER CODE END USART2_IRQn 0 */
+  HAL_UART_IRQHandler(&huart2);
+  /* USER CODE BEGIN USART2_IRQn 1 */
+
+  /* USER CODE END USART2_IRQn 1 */
 }
 
 /**

@@ -82,5 +82,4 @@ void check_hall_sensor_state();
 }
 #endif
 
-#endif 
-/* __MAIN_H */
+#endif /* __MAIN_H */
