@@ -45,8 +45,9 @@ uint32_t adc_buffer[ADC_BUFFER_SIZE];
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
-
 UART_HandleTypeDef huart2;
+
+int is_magnet_detected = 0; //boolean
 
 /* USER CODE BEGIN PV */
 uint32_t adc_value = 0;
@@ -120,7 +121,8 @@ int main(void)
     adc_value = HAL_ADC_GetValue(&hadc1);
     sprintf(msg, "ADC: %lu\r\n", adc_value);
     HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    HAL_Delay(500);
+    
+    HAL_Delay(50);
   }
   /* USER CODE END 3 */
 }
@@ -301,7 +303,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : PA0 */
   GPIO_InitStruct.Pin = GPIO_PIN_0;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 

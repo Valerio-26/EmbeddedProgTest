@@ -42,9 +42,9 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-//uint32_t adc_value = 0;  // Variabile per salvare il valore analogico
-extern UART_HandleTypeDef huart2;  // Assicurati che l'handle UART sia dichiarato
-extern ADC_HandleTypeDef hadc1;    // Assicurati che l'handle ADC sia dichiarato
+extern UART_HandleTypeDef huart2;  
+extern ADC_HandleTypeDef hadc1;  
+extern int is_magnet_detected;  
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -211,10 +211,11 @@ void EXTI0_IRQHandler(void)
   int digital_value = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
   // Accendi o spegni il LED in base allo stato del sensore digitale
   if (digital_value == GPIO_PIN_SET) {
-      HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);  // Accendi il LED
-  } else {
-      HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);  // Spegni il LED
-  }
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+   // is_magnet_detected = 1;  // Accendi il LED
+  }else {
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);  // Spegni il LED
+  } // Test
 
   char msg[50];  // Buffer per inviare messaggi via UART
 
