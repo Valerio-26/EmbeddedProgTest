@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s 			page 1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccuEArBF.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -31,113 +31,135 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s 			page 1
   29              	.LFB0:
    1:Core/Src/analog_signal_controller.c **** #include "analog_signal_controller.h"
    2:Core/Src/analog_signal_controller.c **** 
-   3:Core/Src/analog_signal_controller.c **** int32_t get_analog_signal(int32_t new_value){
-  30              		.loc 1 3 45 view -0
+   3:Core/Src/analog_signal_controller.c **** SignalType signal_type = AVERAGE_FILTERED;
+   4:Core/Src/analog_signal_controller.c **** int random_noise = 0;
+   5:Core/Src/analog_signal_controller.c **** 
+   6:Core/Src/analog_signal_controller.c **** int32_t get_analog_signal(int32_t new_value){
+  30              		.loc 1 6 45 view -0
   31              		.cfi_startproc
   32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 3 45 is_stmt 0 view .LVU1
+  34              		.loc 1 6 45 is_stmt 0 view .LVU1
   35 0000 10B5     		push	{r4, lr}
   36              		.cfi_def_cfa_offset 8
   37              		.cfi_offset 4, -8
   38              		.cfi_offset 14, -4
   39 0002 0446     		mov	r4, r0
-   4:Core/Src/analog_signal_controller.c ****     switch (signal_type) {
-  40              		.loc 1 4 5 is_stmt 1 view .LVU2
-  41 0004 0D4B     		ldr	r3, .L7
-  42 0006 1B68     		ldr	r3, [r3]
-  43 0008 022B     		cmp	r3, #2
-  44 000a 05D0     		beq	.L2
-  45 000c 032B     		cmp	r3, #3
-  46 000e 06D0     		beq	.L3
-  47 0010 012B     		cmp	r3, #1
-  48 0012 03D1     		bne	.L1
-   5:Core/Src/analog_signal_controller.c ****         case RAW:
-   6:Core/Src/analog_signal_controller.c ****             return new_value;
-   7:Core/Src/analog_signal_controller.c ****         case FILTERED:
-   8:Core/Src/analog_signal_controller.c ****             return 0;
-  49              		.loc 1 8 20 is_stmt 0 view .LVU3
-  50 0014 0020     		movs	r0, #0
-ARM GAS  C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s 			page 2
+   7:Core/Src/analog_signal_controller.c ****     if(random_noise){
+  40              		.loc 1 7 5 is_stmt 1 view .LVU2
+  41              		.loc 1 7 8 is_stmt 0 view .LVU3
+  42 0004 0F4B     		ldr	r3, .L8
+  43 0006 1B68     		ldr	r3, [r3]
+  44              		.loc 1 7 7 view .LVU4
+  45 0008 4BB9     		cbnz	r3, .L7
+  46              	.LVL1:
+  47              	.L2:
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+   9:Core/Src/analog_signal_controller.c ****     }
+  10:Core/Src/analog_signal_controller.c ****     switch (signal_type) {
+  48              		.loc 1 10 5 is_stmt 1 view .LVU5
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccuEArBF.s 			page 2
 
 
-  51              	.LVL1:
-  52              		.loc 1 8 20 view .LVU4
-  53 0016 01E0     		b	.L1
-  54              	.LVL2:
-  55              	.L2:
-   9:Core/Src/analog_signal_controller.c ****         case AVERAGE_FILTERED:
-  10:Core/Src/analog_signal_controller.c ****             return moving_average_filter(new_value);
-  56              		.loc 1 10 13 is_stmt 1 view .LVU5
-  57              		.loc 1 10 20 is_stmt 0 view .LVU6
-  58 0018 FFF7FEFF 		bl	moving_average_filter
-  59              	.LVL3:
-  60              	.L1:
-  11:Core/Src/analog_signal_controller.c ****         case RANDOM_NOISE:
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  13:Core/Src/analog_signal_controller.c ****         default:
-  14:Core/Src/analog_signal_controller.c ****             return new_value;
-  15:Core/Src/analog_signal_controller.c ****     }
-  16:Core/Src/analog_signal_controller.c **** }...
-  61              		.loc 1 16 1 view .LVU7
-  62 001c 10BD     		pop	{r4, pc}
-  63              	.LVL4:
-  64              	.L3:
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  65              		.loc 1 12 13 is_stmt 1 view .LVU8
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  66              		.loc 1 12 33 is_stmt 0 view .LVU9
-  67 001e FFF7FEFF 		bl	rand
-  68              	.LVL5:
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  69              		.loc 1 12 40 discriminator 1 view .LVU10
-  70 0022 074A     		ldr	r2, .L7+4
-  71 0024 82FB0032 		smull	r3, r2, r2, r0
-  72 0028 C317     		asrs	r3, r0, #31
-  73 002a C3EB6213 		rsb	r3, r3, r2, asr #5
-  74 002e 6422     		movs	r2, #100
-  75 0030 02FB1303 		mls	r3, r2, r3, r0
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  76              		.loc 1 12 30 discriminator 1 view .LVU11
-  77 0034 1819     		adds	r0, r3, r4
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  78              		.loc 1 12 47 discriminator 1 view .LVU12
-  79 0036 3238     		subs	r0, r0, #50
-  12:Core/Src/analog_signal_controller.c ****             return new_value + (rand() % 100) - 50;
-  80              		.loc 1 12 47 view .LVU13
-  81 0038 F0E7     		b	.L1
-  82              	.L8:
-  83 003a 00BF     		.align	2
-  84              	.L7:
-  85 003c 00000000 		.word	signal_type
-  86 0040 1F85EB51 		.word	1374389535
-  87              		.cfi_endproc
-  88              	.LFE0:
-  90              		.global	signal_type
-  91              		.section	.data.signal_type,"aw"
-  92              		.align	2
-  95              	signal_type:
-  96 0000 01000000 		.word	1
-ARM GAS  C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s 			page 3
+  49 000a 0F4B     		ldr	r3, .L8+4
+  50 000c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  51 000e 012B     		cmp	r3, #1
+  52 0010 13D0     		beq	.L4
+  53              		.loc 1 10 5 is_stmt 0 view .LVU6
+  54 0012 022B     		cmp	r3, #2
+  55 0014 13D1     		bne	.L5
+  11:Core/Src/analog_signal_controller.c ****         case RAW:
+  12:Core/Src/analog_signal_controller.c ****             return new_value;
+  13:Core/Src/analog_signal_controller.c ****         case FILTERED:
+  14:Core/Src/analog_signal_controller.c ****             return 0;
+  15:Core/Src/analog_signal_controller.c ****         case AVERAGE_FILTERED:
+  16:Core/Src/analog_signal_controller.c ****             return moving_average_filter(new_value);
+  56              		.loc 1 16 13 is_stmt 1 view .LVU7
+  57              		.loc 1 16 20 is_stmt 0 view .LVU8
+  58 0016 2046     		mov	r0, r4
+  59 0018 FFF7FEFF 		bl	moving_average_filter
+  60              	.LVL2:
+  61              	.L1:
+  17:Core/Src/analog_signal_controller.c ****         default:
+  18:Core/Src/analog_signal_controller.c ****             return new_value;
+  19:Core/Src/analog_signal_controller.c ****     }
+  20:Core/Src/analog_signal_controller.c **** }...
+  62              		.loc 1 20 1 view .LVU9
+  63 001c 10BD     		pop	{r4, pc}
+  64              	.LVL3:
+  65              	.L7:
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+  66              		.loc 1 8 9 is_stmt 1 view .LVU10
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+  67              		.loc 1 8 23 is_stmt 0 view .LVU11
+  68 001e FFF7FEFF 		bl	rand
+  69              	.LVL4:
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+  70              		.loc 1 8 30 discriminator 1 view .LVU12
+  71 0022 0A4A     		ldr	r2, .L8+8
+  72 0024 82FB0032 		smull	r3, r2, r2, r0
+  73 0028 C317     		asrs	r3, r0, #31
+  74 002a C3EB6213 		rsb	r3, r3, r2, asr #5
+  75 002e 6422     		movs	r2, #100
+  76 0030 02FB1303 		mls	r3, r2, r3, r0
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+  77              		.loc 1 8 37 discriminator 1 view .LVU13
+  78 0034 323B     		subs	r3, r3, #50
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+  79              		.loc 1 8 19 discriminator 1 view .LVU14
+  80 0036 1C44     		add	r4, r4, r3
+  81              	.LVL5:
+   8:Core/Src/analog_signal_controller.c ****         new_value += (rand() % 100) - 50;
+  82              		.loc 1 8 19 discriminator 1 view .LVU15
+  83 0038 E7E7     		b	.L2
+  84              	.L4:
+  14:Core/Src/analog_signal_controller.c ****             return 0;
+  85              		.loc 1 14 20 view .LVU16
+  86 003a 0020     		movs	r0, #0
+  87 003c EEE7     		b	.L1
+  88              	.L5:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccuEArBF.s 			page 3
 
 
-  97              		.text
-  98              	.Letext0:
-  99              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 100              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 101              		.file 4 "Core/Inc/analog_signal_controller.h"
- 102              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 103              		.file 6 "Core/Inc/average_filter.h"
-ARM GAS  C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s 			page 4
+  10:Core/Src/analog_signal_controller.c ****     switch (signal_type) {
+  89              		.loc 1 10 5 view .LVU17
+  90 003e 2046     		mov	r0, r4
+  91 0040 ECE7     		b	.L1
+  92              	.L9:
+  93 0042 00BF     		.align	2
+  94              	.L8:
+  95 0044 00000000 		.word	random_noise
+  96 0048 00000000 		.word	signal_type
+  97 004c 1F85EB51 		.word	1374389535
+  98              		.cfi_endproc
+  99              	.LFE0:
+ 101              		.global	random_noise
+ 102              		.section	.bss.random_noise,"aw",%nobits
+ 103              		.align	2
+ 106              	random_noise:
+ 107 0000 00000000 		.space	4
+ 108              		.global	signal_type
+ 109              		.section	.data.signal_type,"aw"
+ 112              	signal_type:
+ 113 0000 02       		.byte	2
+ 114              		.text
+ 115              	.Letext0:
+ 116              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 117              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 118              		.file 4 "Core/Inc/analog_signal_controller.h"
+ 119              		.file 5 "Core/Inc/average_filter.h"
+ 120              		.file 6 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccuEArBF.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 analog_signal_controller.c
-C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s:21     .text.get_analog_signal:00000000 $t
-C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s:27     .text.get_analog_signal:00000000 get_analog_signal
-C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s:85     .text.get_analog_signal:0000003c $d
-C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s:95     .data.signal_type:00000000 signal_type
-C:\Users\valer\AppData\Local\Temp\cc9HCUsk.s:92     .data.signal_type:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccuEArBF.s:21     .text.get_analog_signal:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccuEArBF.s:27     .text.get_analog_signal:00000000 get_analog_signal
+C:\Users\valer\AppData\Local\Temp\ccuEArBF.s:95     .text.get_analog_signal:00000044 $d
+C:\Users\valer\AppData\Local\Temp\ccuEArBF.s:106    .bss.random_noise:00000000 random_noise
+C:\Users\valer\AppData\Local\Temp\ccuEArBF.s:112    .data.signal_type:00000000 signal_type
+C:\Users\valer\AppData\Local\Temp\ccuEArBF.s:103    .bss.random_noise:00000000 $d
 
 UNDEFINED SYMBOLS
 moving_average_filter

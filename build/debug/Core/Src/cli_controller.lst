@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -29,19 +29,22 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 1
   27              	CLI_Init:
   28              	.LFB242:
    1:Core/Src/cli_controller.c **** #include "cli_controller.h"
-   2:Core/Src/cli_controller.c **** #include <stdio.h>
-   3:Core/Src/cli_controller.c **** #include <string.h>
-   4:Core/Src/cli_controller.c **** #include "main.h"
-   5:Core/Src/cli_controller.c **** 
-   6:Core/Src/cli_controller.c **** char cli_buffer[CLI_BUFFER_SIZE];
-   7:Core/Src/cli_controller.c **** uint8_t cli_index = 0;
-   8:Core/Src/cli_controller.c **** volatile char receivedChar;
-   9:Core/Src/cli_controller.c **** extern UART_HandleTypeDef huart2;
-  10:Core/Src/cli_controller.c **** 
-  11:Core/Src/cli_controller.c **** // Funzione per inizializzare la CLI
-  12:Core/Src/cli_controller.c **** void CLI_Init(void)
-  13:Core/Src/cli_controller.c **** {
-  29              		.loc 1 13 1 view -0
+   2:Core/Src/cli_controller.c **** #include "analog_signal_controller.h"
+   3:Core/Src/cli_controller.c **** #include <stdio.h>
+   4:Core/Src/cli_controller.c **** #include <string.h>
+   5:Core/Src/cli_controller.c **** #include "main.h"
+   6:Core/Src/cli_controller.c **** 
+   7:Core/Src/cli_controller.c **** char cli_buffer[CLI_BUFFER_SIZE];
+   8:Core/Src/cli_controller.c **** uint8_t cli_index = 0;
+   9:Core/Src/cli_controller.c **** volatile char receivedChar;
+  10:Core/Src/cli_controller.c **** extern UART_HandleTypeDef huart2;
+  11:Core/Src/cli_controller.c **** 
+  12:Core/Src/cli_controller.c **** int is_cli_active = 0;
+  13:Core/Src/cli_controller.c **** 
+  14:Core/Src/cli_controller.c **** // Funzione per inizializzare la CLI
+  15:Core/Src/cli_controller.c **** void CLI_Init(void)
+  16:Core/Src/cli_controller.c **** {
+  29              		.loc 1 16 1 view -0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
   32              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -49,32 +52,34 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
-  14:Core/Src/cli_controller.c ****     memset(cli_buffer, 0, CLI_BUFFER_SIZE);
-  37              		.loc 1 14 5 view .LVU1
+  17:Core/Src/cli_controller.c ****     memset(cli_buffer, 0, CLI_BUFFER_SIZE);
+  37              		.loc 1 17 5 view .LVU1
   38 0002 6422     		movs	r2, #100
   39 0004 0021     		movs	r1, #0
   40 0006 0748     		ldr	r0, .L3
   41 0008 FFF7FEFF 		bl	memset
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 2
+
+
   42              	.LVL0:
-  15:Core/Src/cli_controller.c ****     HAL_UART_Receive_IT(&huart2, (uint8_t*)&receivedChar, 1);
-  43              		.loc 1 15 5 view .LVU2
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 2
-
-
+  18:Core/Src/cli_controller.c **** 
+  19:Core/Src/cli_controller.c ****     //enable uart interrupt
+  20:Core/Src/cli_controller.c ****     HAL_UART_Receive_IT(&huart2, (uint8_t*)&receivedChar, 1);
+  43              		.loc 1 20 5 view .LVU2
   44 000c 064C     		ldr	r4, .L3+4
   45 000e 0122     		movs	r2, #1
   46 0010 0649     		ldr	r1, .L3+8
   47 0012 2046     		mov	r0, r4
   48 0014 FFF7FEFF 		bl	HAL_UART_Receive_IT
   49              	.LVL1:
-  16:Core/Src/cli_controller.c ****   __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
-  50              		.loc 1 16 3 view .LVU3
+  21:Core/Src/cli_controller.c ****   __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
+  50              		.loc 1 21 3 view .LVU3
   51 0018 2268     		ldr	r2, [r4]
   52 001a D368     		ldr	r3, [r2, #12]
   53 001c 43F02003 		orr	r3, r3, #32
   54 0020 D360     		str	r3, [r2, #12]
-  17:Core/Src/cli_controller.c **** }
-  55              		.loc 1 17 1 is_stmt 0 view .LVU4
+  22:Core/Src/cli_controller.c **** }
+  55              		.loc 1 22 1 is_stmt 0 view .LVU4
   56 0022 10BD     		pop	{r4, pc}
   57              	.L4:
   58              		.align	2
@@ -100,35 +105,37 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 1
   75              		.thumb_func
   77              	CLI_Command_Raw:
   78              	.LFB244:
-  18:Core/Src/cli_controller.c **** 
-  19:Core/Src/cli_controller.c **** // Funzione per processare i comandi
-  20:Core/Src/cli_controller.c **** void CLI_ProcessCommand(char *command)
-  21:Core/Src/cli_controller.c **** {
-  22:Core/Src/cli_controller.c ****     if (strcmp(command, "raw") == 0)
-  23:Core/Src/cli_controller.c ****     {
-  24:Core/Src/cli_controller.c ****         CLI_Command_Raw();
-  25:Core/Src/cli_controller.c ****     }
-  26:Core/Src/cli_controller.c ****     else if (strcmp(command, "moving average") == 0)
-  27:Core/Src/cli_controller.c ****     {
-  28:Core/Src/cli_controller.c ****         CLI_Command_Filter();
-  29:Core/Src/cli_controller.c ****     }
-  30:Core/Src/cli_controller.c ****     else if (strcmp(command, "random noise") == 0)
-  31:Core/Src/cli_controller.c ****     {
-  32:Core/Src/cli_controller.c ****         CLI_Command_Noise();
-  33:Core/Src/cli_controller.c ****     }
-  34:Core/Src/cli_controller.c ****     else
-  35:Core/Src/cli_controller.c ****     {
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 3
+  23:Core/Src/cli_controller.c **** 
+  24:Core/Src/cli_controller.c **** // Funzione per processare i comandi
+  25:Core/Src/cli_controller.c **** void CLI_ProcessCommand(char *command)
+  26:Core/Src/cli_controller.c **** {
+  27:Core/Src/cli_controller.c ****     if(is_cli_active){
+  28:Core/Src/cli_controller.c ****         if (strcmp(command, "raw") == 0)
+  29:Core/Src/cli_controller.c ****             {
+  30:Core/Src/cli_controller.c ****                 CLI_Command_Raw();
+  31:Core/Src/cli_controller.c ****             }
+  32:Core/Src/cli_controller.c ****             else if (strcmp(command, "moving average") == 0)
+  33:Core/Src/cli_controller.c ****             {
+  34:Core/Src/cli_controller.c ****                 CLI_Command_Filter();
+  35:Core/Src/cli_controller.c ****             }
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 3
 
 
-  36:Core/Src/cli_controller.c ****         printf("Unknown command: %s\n", command);
-  37:Core/Src/cli_controller.c ****     }
-  38:Core/Src/cli_controller.c **** }
-  39:Core/Src/cli_controller.c **** 
-  40:Core/Src/cli_controller.c **** // Funzione per il comando "raw" (disabilita i filtri)
-  41:Core/Src/cli_controller.c **** void CLI_Command_Raw(void)
-  42:Core/Src/cli_controller.c **** {
-  79              		.loc 1 42 1 is_stmt 1 view -0
+  36:Core/Src/cli_controller.c ****             else if (strcmp(command, "random noise") == 0)
+  37:Core/Src/cli_controller.c ****             {
+  38:Core/Src/cli_controller.c ****                 CLI_Command_Noise();
+  39:Core/Src/cli_controller.c ****             }
+  40:Core/Src/cli_controller.c ****             else
+  41:Core/Src/cli_controller.c ****             {
+  42:Core/Src/cli_controller.c ****                 HAL_UART_Transmit(&huart2, (uint8_t*)"Command not found!\r\n", strlen("Command not 
+  43:Core/Src/cli_controller.c ****             }
+  44:Core/Src/cli_controller.c ****     }
+  45:Core/Src/cli_controller.c **** }
+  46:Core/Src/cli_controller.c **** 
+  47:Core/Src/cli_controller.c **** // Funzione per il comando "raw" (disabilita i filtri)
+  48:Core/Src/cli_controller.c **** void CLI_Command_Raw(void)
+  49:Core/Src/cli_controller.c **** {
+  79              		.loc 1 49 1 is_stmt 1 view -0
   80              		.cfi_startproc
   81              		@ args = 0, pretend = 0, frame = 0
   82              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -136,314 +143,367 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 1
   84              		.cfi_def_cfa_offset 8
   85              		.cfi_offset 3, -8
   86              		.cfi_offset 14, -4
-  43:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando raw ricevuto\r\n"), strlen("comando raw ricevuto
-  87              		.loc 1 43 5 view .LVU6
+  50:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando raw ricevuto\r\n"), strlen("comando raw ricevuto
+  87              		.loc 1 50 5 view .LVU6
   88 0002 4FF0FF33 		mov	r3, #-1
   89 0006 1622     		movs	r2, #22
-  90 0008 0249     		ldr	r1, .L7
-  91 000a 0348     		ldr	r0, .L7+4
+  90 0008 0349     		ldr	r1, .L7
+  91 000a 0448     		ldr	r0, .L7+4
   92 000c FFF7FEFF 		bl	HAL_UART_Transmit
   93              	.LVL2:
-  44:Core/Src/cli_controller.c ****     // Disabilita eventuali filtri applicati ai dati
-  45:Core/Src/cli_controller.c ****     // Codice per disabilitare i filtri
-  46:Core/Src/cli_controller.c **** }
-  94              		.loc 1 46 1 is_stmt 0 view .LVU7
-  95 0010 08BD     		pop	{r3, pc}
-  96              	.L8:
-  97 0012 00BF     		.align	2
-  98              	.L7:
-  99 0014 00000000 		.word	.LC0
- 100 0018 00000000 		.word	huart2
- 101              		.cfi_endproc
- 102              	.LFE244:
- 104              		.section	.rodata.CLI_Command_Filter.str1.4,"aMS",%progbits,1
- 105              		.align	2
- 106              	.LC1:
- 107 0000 636F6D61 		.ascii	"comando moving average ricevuto\015\012\000"
- 107      6E646F20 
- 107      6D6F7669 
- 107      6E672061 
- 107      76657261 
- 108              		.section	.text.CLI_Command_Filter,"ax",%progbits
- 109              		.align	1
- 110              		.global	CLI_Command_Filter
- 111              		.syntax unified
- 112              		.thumb
- 113              		.thumb_func
- 115              	CLI_Command_Filter:
- 116              	.LFB245:
-  47:Core/Src/cli_controller.c **** 
-  48:Core/Src/cli_controller.c **** // Funzione per il comando "filter" (abilita un filtro)
-  49:Core/Src/cli_controller.c **** void CLI_Command_Filter(void)
-  50:Core/Src/cli_controller.c **** {
- 117              		.loc 1 50 1 is_stmt 1 view -0
- 118              		.cfi_startproc
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 4
+  51:Core/Src/cli_controller.c ****     signal_type = RAW;
+  94              		.loc 1 51 5 view .LVU7
+  95              		.loc 1 51 17 is_stmt 0 view .LVU8
+  96 0010 034B     		ldr	r3, .L7+8
+  97 0012 0022     		movs	r2, #0
+  98 0014 1A70     		strb	r2, [r3]
+  52:Core/Src/cli_controller.c ****     // Codice per disabilitare i filtri
+  53:Core/Src/cli_controller.c **** }
+  99              		.loc 1 53 1 view .LVU9
+ 100 0016 08BD     		pop	{r3, pc}
+ 101              	.L8:
+ 102              		.align	2
+ 103              	.L7:
+ 104 0018 00000000 		.word	.LC0
+ 105 001c 00000000 		.word	huart2
+ 106 0020 00000000 		.word	signal_type
+ 107              		.cfi_endproc
+ 108              	.LFE244:
+ 110              		.section	.rodata.CLI_Command_Filter.str1.4,"aMS",%progbits,1
+ 111              		.align	2
+ 112              	.LC1:
+ 113 0000 636F6D61 		.ascii	"comando moving average ricevuto\015\012\000"
+ 113      6E646F20 
+ 113      6D6F7669 
+ 113      6E672061 
+ 113      76657261 
+ 114              		.section	.text.CLI_Command_Filter,"ax",%progbits
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 4
 
 
- 119              		@ args = 0, pretend = 0, frame = 0
- 120              		@ frame_needed = 0, uses_anonymous_args = 0
- 121 0000 08B5     		push	{r3, lr}
- 122              		.cfi_def_cfa_offset 8
- 123              		.cfi_offset 3, -8
- 124              		.cfi_offset 14, -4
-  51:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando moving average ricevuto\r\n"), strlen("comando c
- 125              		.loc 1 51 5 view .LVU9
- 126 0002 4FF0FF33 		mov	r3, #-1
- 127 0006 2122     		movs	r2, #33
- 128 0008 0249     		ldr	r1, .L11
- 129 000a 0348     		ldr	r0, .L11+4
- 130 000c FFF7FEFF 		bl	HAL_UART_Transmit
- 131              	.LVL3:
-  52:Core/Src/cli_controller.c ****     // Abilita un filtro ai dati del sensore
-  53:Core/Src/cli_controller.c ****     // Codice per abilitare il filtro
-  54:Core/Src/cli_controller.c **** }
- 132              		.loc 1 54 1 is_stmt 0 view .LVU10
- 133 0010 08BD     		pop	{r3, pc}
- 134              	.L12:
- 135 0012 00BF     		.align	2
- 136              	.L11:
- 137 0014 00000000 		.word	.LC1
- 138 0018 00000000 		.word	huart2
- 139              		.cfi_endproc
- 140              	.LFE245:
- 142              		.section	.rodata.CLI_Command_Noise.str1.4,"aMS",%progbits,1
- 143              		.align	2
- 144              	.LC2:
- 145 0000 636F6D61 		.ascii	"comando random noise ricevuto\015\012\000"
- 145      6E646F20 
- 145      72616E64 
- 145      6F6D206E 
- 145      6F697365 
- 146              		.section	.text.CLI_Command_Noise,"ax",%progbits
- 147              		.align	1
- 148              		.global	CLI_Command_Noise
- 149              		.syntax unified
- 150              		.thumb
- 151              		.thumb_func
- 153              	CLI_Command_Noise:
- 154              	.LFB246:
-  55:Core/Src/cli_controller.c **** 
-  56:Core/Src/cli_controller.c **** // Funzione per il comando "noise" (genera rumore randomico)
-  57:Core/Src/cli_controller.c **** void CLI_Command_Noise(void)
-  58:Core/Src/cli_controller.c **** {
- 155              		.loc 1 58 1 is_stmt 1 view -0
- 156              		.cfi_startproc
- 157              		@ args = 0, pretend = 0, frame = 0
- 158              		@ frame_needed = 0, uses_anonymous_args = 0
- 159 0000 08B5     		push	{r3, lr}
- 160              		.cfi_def_cfa_offset 8
- 161              		.cfi_offset 3, -8
- 162              		.cfi_offset 14, -4
-  59:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando random noise ricevuto\r\n"), strlen("comando ran
- 163              		.loc 1 59 5 view .LVU12
- 164 0002 4FF0FF33 		mov	r3, #-1
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 5
-
-
- 165 0006 1F22     		movs	r2, #31
- 166 0008 0249     		ldr	r1, .L15
- 167 000a 0348     		ldr	r0, .L15+4
- 168 000c FFF7FEFF 		bl	HAL_UART_Transmit
- 169              	.LVL4:
-  60:Core/Src/cli_controller.c ****     // Codice per generare rumore randomico
+ 115              		.align	1
+ 116              		.global	CLI_Command_Filter
+ 117              		.syntax unified
+ 118              		.thumb
+ 119              		.thumb_func
+ 121              	CLI_Command_Filter:
+ 122              	.LFB245:
+  54:Core/Src/cli_controller.c **** 
+  55:Core/Src/cli_controller.c **** // Funzione per il comando "filter" (abilita un filtro)
+  56:Core/Src/cli_controller.c **** void CLI_Command_Filter(void)
+  57:Core/Src/cli_controller.c **** {
+ 123              		.loc 1 57 1 is_stmt 1 view -0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127 0000 08B5     		push	{r3, lr}
+ 128              		.cfi_def_cfa_offset 8
+ 129              		.cfi_offset 3, -8
+ 130              		.cfi_offset 14, -4
+  58:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando moving average ricevuto\r\n"), strlen("comando c
+ 131              		.loc 1 58 5 view .LVU11
+ 132 0002 4FF0FF33 		mov	r3, #-1
+ 133 0006 2122     		movs	r2, #33
+ 134 0008 0349     		ldr	r1, .L11
+ 135 000a 0448     		ldr	r0, .L11+4
+ 136 000c FFF7FEFF 		bl	HAL_UART_Transmit
+ 137              	.LVL3:
+  59:Core/Src/cli_controller.c ****     signal_type = AVERAGE_FILTERED;
+ 138              		.loc 1 59 5 view .LVU12
+ 139              		.loc 1 59 17 is_stmt 0 view .LVU13
+ 140 0010 034B     		ldr	r3, .L11+8
+ 141 0012 0222     		movs	r2, #2
+ 142 0014 1A70     		strb	r2, [r3]
+  60:Core/Src/cli_controller.c ****     // Codice per abilitare il filtro
   61:Core/Src/cli_controller.c **** }
- 170              		.loc 1 61 1 is_stmt 0 view .LVU13
- 171 0010 08BD     		pop	{r3, pc}
- 172              	.L16:
- 173 0012 00BF     		.align	2
- 174              	.L15:
- 175 0014 00000000 		.word	.LC2
- 176 0018 00000000 		.word	huart2
- 177              		.cfi_endproc
- 178              	.LFE246:
- 180              		.section	.rodata.CLI_ProcessCommand.str1.4,"aMS",%progbits,1
- 181              		.align	2
- 182              	.LC3:
- 183 0000 72617700 		.ascii	"raw\000"
- 184              		.align	2
- 185              	.LC4:
- 186 0004 6D6F7669 		.ascii	"moving average\000"
- 186      6E672061 
- 186      76657261 
- 186      676500
- 187 0013 00       		.align	2
- 188              	.LC5:
- 189 0014 72616E64 		.ascii	"random noise\000"
- 189      6F6D206E 
- 189      6F697365 
- 189      00
- 190 0021 000000   		.align	2
- 191              	.LC6:
- 192 0024 556E6B6E 		.ascii	"Unknown command: %s\012\000"
- 192      6F776E20 
- 192      636F6D6D 
- 192      616E643A 
- 192      2025730A 
- 193              		.section	.text.CLI_ProcessCommand,"ax",%progbits
- 194              		.align	1
- 195              		.global	CLI_ProcessCommand
- 196              		.syntax unified
- 197              		.thumb
- 198              		.thumb_func
- 200              	CLI_ProcessCommand:
- 201              	.LVL5:
- 202              	.LFB243:
-  21:Core/Src/cli_controller.c ****     if (strcmp(command, "raw") == 0)
- 203              		.loc 1 21 1 is_stmt 1 view -0
- 204              		.cfi_startproc
- 205              		@ args = 0, pretend = 0, frame = 0
- 206              		@ frame_needed = 0, uses_anonymous_args = 0
-  21:Core/Src/cli_controller.c ****     if (strcmp(command, "raw") == 0)
- 207              		.loc 1 21 1 is_stmt 0 view .LVU15
- 208 0000 10B5     		push	{r4, lr}
- 209              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 6
+ 143              		.loc 1 61 1 view .LVU14
+ 144 0016 08BD     		pop	{r3, pc}
+ 145              	.L12:
+ 146              		.align	2
+ 147              	.L11:
+ 148 0018 00000000 		.word	.LC1
+ 149 001c 00000000 		.word	huart2
+ 150 0020 00000000 		.word	signal_type
+ 151              		.cfi_endproc
+ 152              	.LFE245:
+ 154              		.section	.rodata.CLI_Command_Noise.str1.4,"aMS",%progbits,1
+ 155              		.align	2
+ 156              	.LC2:
+ 157 0000 636F6D61 		.ascii	"comando random noise ricevuto\015\012\000"
+ 157      6E646F20 
+ 157      72616E64 
+ 157      6F6D206E 
+ 157      6F697365 
+ 158              		.section	.text.CLI_Command_Noise,"ax",%progbits
+ 159              		.align	1
+ 160              		.global	CLI_Command_Noise
+ 161              		.syntax unified
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 5
 
 
- 210              		.cfi_offset 4, -8
- 211              		.cfi_offset 14, -4
- 212 0002 0446     		mov	r4, r0
-  22:Core/Src/cli_controller.c ****     {
- 213              		.loc 1 22 5 is_stmt 1 view .LVU16
-  22:Core/Src/cli_controller.c ****     {
- 214              		.loc 1 22 9 is_stmt 0 view .LVU17
- 215 0004 0D49     		ldr	r1, .L25
- 216 0006 FFF7FEFF 		bl	strcmp
- 217              	.LVL6:
-  22:Core/Src/cli_controller.c ****     {
- 218              		.loc 1 22 8 discriminator 1 view .LVU18
- 219 000a 60B1     		cbz	r0, .L23
-  26:Core/Src/cli_controller.c ****     {
- 220              		.loc 1 26 10 is_stmt 1 view .LVU19
-  26:Core/Src/cli_controller.c ****     {
- 221              		.loc 1 26 14 is_stmt 0 view .LVU20
- 222 000c 0C49     		ldr	r1, .L25+4
- 223 000e 2046     		mov	r0, r4
- 224 0010 FFF7FEFF 		bl	strcmp
- 225              	.LVL7:
-  26:Core/Src/cli_controller.c ****     {
- 226              		.loc 1 26 13 discriminator 1 view .LVU21
- 227 0014 50B1     		cbz	r0, .L24
-  30:Core/Src/cli_controller.c ****     {
- 228              		.loc 1 30 10 is_stmt 1 view .LVU22
-  30:Core/Src/cli_controller.c ****     {
- 229              		.loc 1 30 14 is_stmt 0 view .LVU23
- 230 0016 0B49     		ldr	r1, .L25+8
- 231 0018 2046     		mov	r0, r4
- 232 001a FFF7FEFF 		bl	strcmp
- 233              	.LVL8:
-  30:Core/Src/cli_controller.c ****     {
- 234              		.loc 1 30 13 discriminator 1 view .LVU24
- 235 001e 40B9     		cbnz	r0, .L21
-  32:Core/Src/cli_controller.c ****     }
- 236              		.loc 1 32 9 is_stmt 1 view .LVU25
- 237 0020 FFF7FEFF 		bl	CLI_Command_Noise
- 238              	.LVL9:
- 239 0024 01E0     		b	.L17
- 240              	.L23:
-  24:Core/Src/cli_controller.c ****     }
- 241              		.loc 1 24 9 view .LVU26
- 242 0026 FFF7FEFF 		bl	CLI_Command_Raw
- 243              	.LVL10:
- 244              	.L17:
-  38:Core/Src/cli_controller.c **** 
- 245              		.loc 1 38 1 is_stmt 0 view .LVU27
- 246 002a 10BD     		pop	{r4, pc}
- 247              	.LVL11:
- 248              	.L24:
-  28:Core/Src/cli_controller.c ****     }
- 249              		.loc 1 28 9 is_stmt 1 view .LVU28
- 250 002c FFF7FEFF 		bl	CLI_Command_Filter
- 251              	.LVL12:
- 252 0030 FBE7     		b	.L17
- 253              	.L21:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 7
+ 162              		.thumb
+ 163              		.thumb_func
+ 165              	CLI_Command_Noise:
+ 166              	.LFB246:
+  62:Core/Src/cli_controller.c **** 
+  63:Core/Src/cli_controller.c **** // Funzione per il comando "noise" (genera rumore randomico)
+  64:Core/Src/cli_controller.c **** void CLI_Command_Noise(void)
+  65:Core/Src/cli_controller.c **** {
+ 167              		.loc 1 65 1 is_stmt 1 view -0
+ 168              		.cfi_startproc
+ 169              		@ args = 0, pretend = 0, frame = 0
+ 170              		@ frame_needed = 0, uses_anonymous_args = 0
+ 171 0000 08B5     		push	{r3, lr}
+ 172              		.cfi_def_cfa_offset 8
+ 173              		.cfi_offset 3, -8
+ 174              		.cfi_offset 14, -4
+  66:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando random noise ricevuto\r\n"), strlen("comando ran
+ 175              		.loc 1 66 5 view .LVU16
+ 176 0002 4FF0FF33 		mov	r3, #-1
+ 177 0006 1F22     		movs	r2, #31
+ 178 0008 0549     		ldr	r1, .L15
+ 179 000a 0648     		ldr	r0, .L15+4
+ 180 000c FFF7FEFF 		bl	HAL_UART_Transmit
+ 181              	.LVL4:
+  67:Core/Src/cli_controller.c ****     random_noise = !random_noise;
+ 182              		.loc 1 67 5 view .LVU17
+ 183              		.loc 1 67 20 is_stmt 0 view .LVU18
+ 184 0010 054A     		ldr	r2, .L15+8
+ 185 0012 1368     		ldr	r3, [r2]
+ 186 0014 B3FA83F3 		clz	r3, r3
+ 187 0018 5B09     		lsrs	r3, r3, #5
+ 188              		.loc 1 67 18 view .LVU19
+ 189 001a 1360     		str	r3, [r2]
+  68:Core/Src/cli_controller.c **** }
+ 190              		.loc 1 68 1 view .LVU20
+ 191 001c 08BD     		pop	{r3, pc}
+ 192              	.L16:
+ 193 001e 00BF     		.align	2
+ 194              	.L15:
+ 195 0020 00000000 		.word	.LC2
+ 196 0024 00000000 		.word	huart2
+ 197 0028 00000000 		.word	random_noise
+ 198              		.cfi_endproc
+ 199              	.LFE246:
+ 201              		.section	.rodata.CLI_ProcessCommand.str1.4,"aMS",%progbits,1
+ 202              		.align	2
+ 203              	.LC3:
+ 204 0000 72617700 		.ascii	"raw\000"
+ 205              		.align	2
+ 206              	.LC4:
+ 207 0004 6D6F7669 		.ascii	"moving average\000"
+ 207      6E672061 
+ 207      76657261 
+ 207      676500
+ 208 0013 00       		.align	2
+ 209              	.LC5:
+ 210 0014 72616E64 		.ascii	"random noise\000"
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 6
 
 
-  36:Core/Src/cli_controller.c ****     }
- 254              		.loc 1 36 9 view .LVU29
- 255 0032 2146     		mov	r1, r4
- 256 0034 0448     		ldr	r0, .L25+12
- 257 0036 FFF7FEFF 		bl	printf
- 258              	.LVL13:
-  38:Core/Src/cli_controller.c **** 
- 259              		.loc 1 38 1 is_stmt 0 view .LVU30
- 260 003a F6E7     		b	.L17
- 261              	.L26:
- 262              		.align	2
- 263              	.L25:
- 264 003c 00000000 		.word	.LC3
- 265 0040 04000000 		.word	.LC4
- 266 0044 14000000 		.word	.LC5
- 267 0048 24000000 		.word	.LC6
- 268              		.cfi_endproc
- 269              	.LFE243:
- 271              		.global	receivedChar
- 272              		.section	.bss.receivedChar,"aw",%nobits
- 275              	receivedChar:
- 276 0000 00       		.space	1
- 277              		.global	cli_index
- 278              		.section	.bss.cli_index,"aw",%nobits
- 281              	cli_index:
- 282 0000 00       		.space	1
- 283              		.global	cli_buffer
- 284              		.section	.bss.cli_buffer,"aw",%nobits
- 285              		.align	2
- 288              	cli_buffer:
- 289 0000 00000000 		.space	100
- 289      00000000 
- 289      00000000 
- 289      00000000 
- 289      00000000 
- 290              		.text
- 291              	.Letext0:
- 292              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 293              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 294              		.file 4 "Core/Inc/cli_controller.h"
- 295              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 296              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
- 297              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 298              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 299              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 300              		.file 10 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 301              		.file 11 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 302              		.file 12 "<built-in>"
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s 			page 8
+ 210      6F6D206E 
+ 210      6F697365 
+ 210      00
+ 211 0021 000000   		.align	2
+ 212              	.LC6:
+ 213 0024 436F6D6D 		.ascii	"Command not found!\015\012\000"
+ 213      616E6420 
+ 213      6E6F7420 
+ 213      666F756E 
+ 213      64210D0A 
+ 214              		.section	.text.CLI_ProcessCommand,"ax",%progbits
+ 215              		.align	1
+ 216              		.global	CLI_ProcessCommand
+ 217              		.syntax unified
+ 218              		.thumb
+ 219              		.thumb_func
+ 221              	CLI_ProcessCommand:
+ 222              	.LVL5:
+ 223              	.LFB243:
+  26:Core/Src/cli_controller.c ****     if(is_cli_active){
+ 224              		.loc 1 26 1 is_stmt 1 view -0
+ 225              		.cfi_startproc
+ 226              		@ args = 0, pretend = 0, frame = 0
+ 227              		@ frame_needed = 0, uses_anonymous_args = 0
+  27:Core/Src/cli_controller.c ****         if (strcmp(command, "raw") == 0)
+ 228              		.loc 1 27 5 view .LVU22
+  27:Core/Src/cli_controller.c ****         if (strcmp(command, "raw") == 0)
+ 229              		.loc 1 27 8 is_stmt 0 view .LVU23
+ 230 0000 124B     		ldr	r3, .L28
+ 231 0002 1B68     		ldr	r3, [r3]
+  27:Core/Src/cli_controller.c ****         if (strcmp(command, "raw") == 0)
+ 232              		.loc 1 27 7 view .LVU24
+ 233 0004 03B3     		cbz	r3, .L23
+  26:Core/Src/cli_controller.c ****     if(is_cli_active){
+ 234              		.loc 1 26 1 view .LVU25
+ 235 0006 10B5     		push	{r4, lr}
+ 236              		.cfi_def_cfa_offset 8
+ 237              		.cfi_offset 4, -8
+ 238              		.cfi_offset 14, -4
+ 239 0008 0446     		mov	r4, r0
+  28:Core/Src/cli_controller.c ****             {
+ 240              		.loc 1 28 9 is_stmt 1 view .LVU26
+  28:Core/Src/cli_controller.c ****             {
+ 241              		.loc 1 28 13 is_stmt 0 view .LVU27
+ 242 000a 1149     		ldr	r1, .L28+4
+ 243 000c FFF7FEFF 		bl	strcmp
+ 244              	.LVL6:
+  28:Core/Src/cli_controller.c ****             {
+ 245              		.loc 1 28 12 discriminator 1 view .LVU28
+ 246 0010 60B1     		cbz	r0, .L26
+  32:Core/Src/cli_controller.c ****             {
+ 247              		.loc 1 32 18 is_stmt 1 view .LVU29
+  32:Core/Src/cli_controller.c ****             {
+ 248              		.loc 1 32 22 is_stmt 0 view .LVU30
+ 249 0012 1049     		ldr	r1, .L28+8
+ 250 0014 2046     		mov	r0, r4
+ 251 0016 FFF7FEFF 		bl	strcmp
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 7
+
+
+ 252              	.LVL7:
+  32:Core/Src/cli_controller.c ****             {
+ 253              		.loc 1 32 21 discriminator 1 view .LVU31
+ 254 001a 50B1     		cbz	r0, .L27
+  36:Core/Src/cli_controller.c ****             {
+ 255              		.loc 1 36 18 is_stmt 1 view .LVU32
+  36:Core/Src/cli_controller.c ****             {
+ 256              		.loc 1 36 22 is_stmt 0 view .LVU33
+ 257 001c 0E49     		ldr	r1, .L28+12
+ 258 001e 2046     		mov	r0, r4
+ 259 0020 FFF7FEFF 		bl	strcmp
+ 260              	.LVL8:
+  36:Core/Src/cli_controller.c ****             {
+ 261              		.loc 1 36 21 discriminator 1 view .LVU34
+ 262 0024 40B9     		cbnz	r0, .L21
+  38:Core/Src/cli_controller.c ****             }
+ 263              		.loc 1 38 17 is_stmt 1 view .LVU35
+ 264 0026 FFF7FEFF 		bl	CLI_Command_Noise
+ 265              	.LVL9:
+ 266 002a 01E0     		b	.L17
+ 267              	.L26:
+  30:Core/Src/cli_controller.c ****             }
+ 268              		.loc 1 30 17 view .LVU36
+ 269 002c FFF7FEFF 		bl	CLI_Command_Raw
+ 270              	.LVL10:
+ 271              	.L17:
+  45:Core/Src/cli_controller.c **** 
+ 272              		.loc 1 45 1 is_stmt 0 view .LVU37
+ 273 0030 10BD     		pop	{r4, pc}
+ 274              	.LVL11:
+ 275              	.L27:
+  34:Core/Src/cli_controller.c ****             }
+ 276              		.loc 1 34 17 is_stmt 1 view .LVU38
+ 277 0032 FFF7FEFF 		bl	CLI_Command_Filter
+ 278              	.LVL12:
+ 279 0036 FBE7     		b	.L17
+ 280              	.L21:
+  42:Core/Src/cli_controller.c ****             }
+ 281              		.loc 1 42 17 view .LVU39
+ 282 0038 4FF0FF33 		mov	r3, #-1
+ 283 003c 1422     		movs	r2, #20
+ 284 003e 0749     		ldr	r1, .L28+16
+ 285 0040 0748     		ldr	r0, .L28+20
+ 286 0042 FFF7FEFF 		bl	HAL_UART_Transmit
+ 287              	.LVL13:
+  45:Core/Src/cli_controller.c **** 
+ 288              		.loc 1 45 1 is_stmt 0 view .LVU40
+ 289 0046 F3E7     		b	.L17
+ 290              	.LVL14:
+ 291              	.L23:
+ 292              		.cfi_def_cfa_offset 0
+ 293              		.cfi_restore 4
+ 294              		.cfi_restore 14
+  45:Core/Src/cli_controller.c **** 
+ 295              		.loc 1 45 1 view .LVU41
+ 296 0048 7047     		bx	lr
+ 297              	.L29:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 8
+
+
+ 298 004a 00BF     		.align	2
+ 299              	.L28:
+ 300 004c 00000000 		.word	is_cli_active
+ 301 0050 00000000 		.word	.LC3
+ 302 0054 04000000 		.word	.LC4
+ 303 0058 14000000 		.word	.LC5
+ 304 005c 24000000 		.word	.LC6
+ 305 0060 00000000 		.word	huart2
+ 306              		.cfi_endproc
+ 307              	.LFE243:
+ 309              		.global	is_cli_active
+ 310              		.section	.bss.is_cli_active,"aw",%nobits
+ 311              		.align	2
+ 314              	is_cli_active:
+ 315 0000 00000000 		.space	4
+ 316              		.global	receivedChar
+ 317              		.section	.bss.receivedChar,"aw",%nobits
+ 320              	receivedChar:
+ 321 0000 00       		.space	1
+ 322              		.global	cli_index
+ 323              		.section	.bss.cli_index,"aw",%nobits
+ 326              	cli_index:
+ 327 0000 00       		.space	1
+ 328              		.global	cli_buffer
+ 329              		.section	.bss.cli_buffer,"aw",%nobits
+ 330              		.align	2
+ 333              	cli_buffer:
+ 334 0000 00000000 		.space	100
+ 334      00000000 
+ 334      00000000 
+ 334      00000000 
+ 334      00000000 
+ 335              		.text
+ 336              	.Letext0:
+ 337              		.file 2 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 338              		.file 3 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 339              		.file 4 "Core/Inc/cli_controller.h"
+ 340              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 341              		.file 6 "Core/Inc/analog_signal_controller.h"
+ 342              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 343              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 344              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 345              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 346              		.file 11 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 347              		.file 12 "<built-in>"
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 cli_controller.c
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:21     .text.CLI_Init:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:27     .text.CLI_Init:00000000 CLI_Init
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:60     .text.CLI_Init:00000024 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:288    .bss.cli_buffer:00000000 cli_buffer
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:275    .bss.receivedChar:00000000 receivedChar
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:67     .rodata.CLI_Command_Raw.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:71     .text.CLI_Command_Raw:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:77     .text.CLI_Command_Raw:00000000 CLI_Command_Raw
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:99     .text.CLI_Command_Raw:00000014 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:105    .rodata.CLI_Command_Filter.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:109    .text.CLI_Command_Filter:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:115    .text.CLI_Command_Filter:00000000 CLI_Command_Filter
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:137    .text.CLI_Command_Filter:00000014 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:143    .rodata.CLI_Command_Noise.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:147    .text.CLI_Command_Noise:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:153    .text.CLI_Command_Noise:00000000 CLI_Command_Noise
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:175    .text.CLI_Command_Noise:00000014 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:181    .rodata.CLI_ProcessCommand.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:194    .text.CLI_ProcessCommand:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:200    .text.CLI_ProcessCommand:00000000 CLI_ProcessCommand
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:264    .text.CLI_ProcessCommand:0000003c $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:276    .bss.receivedChar:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:281    .bss.cli_index:00000000 cli_index
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:282    .bss.cli_index:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccrpxCKl.s:285    .bss.cli_buffer:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:21     .text.CLI_Init:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:27     .text.CLI_Init:00000000 CLI_Init
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:60     .text.CLI_Init:00000024 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:333    .bss.cli_buffer:00000000 cli_buffer
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:320    .bss.receivedChar:00000000 receivedChar
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:67     .rodata.CLI_Command_Raw.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:71     .text.CLI_Command_Raw:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:77     .text.CLI_Command_Raw:00000000 CLI_Command_Raw
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:104    .text.CLI_Command_Raw:00000018 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:111    .rodata.CLI_Command_Filter.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:115    .text.CLI_Command_Filter:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:121    .text.CLI_Command_Filter:00000000 CLI_Command_Filter
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:148    .text.CLI_Command_Filter:00000018 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:155    .rodata.CLI_Command_Noise.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:159    .text.CLI_Command_Noise:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:165    .text.CLI_Command_Noise:00000000 CLI_Command_Noise
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:195    .text.CLI_Command_Noise:00000020 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:202    .rodata.CLI_ProcessCommand.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:215    .text.CLI_ProcessCommand:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:221    .text.CLI_ProcessCommand:00000000 CLI_ProcessCommand
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:300    .text.CLI_ProcessCommand:0000004c $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:314    .bss.is_cli_active:00000000 is_cli_active
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:311    .bss.is_cli_active:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:321    .bss.receivedChar:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:326    .bss.cli_index:00000000 cli_index
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:327    .bss.cli_index:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cckRZNdJ.s:330    .bss.cli_buffer:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
 HAL_UART_Receive_IT
 huart2
 HAL_UART_Transmit
+signal_type
+random_noise
 strcmp
-printf

@@ -23,7 +23,6 @@
 /* USER CODE BEGIN Includes */
 #include "cli_controller.h"
 /* USER CODE END Includes */
-#include <stdlib.h>
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -52,7 +51,6 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-uint32_t adc_value = 0;
 FsmController fsm;
 /* USER CODE END PV */
 
@@ -70,9 +68,6 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void send_to_serial(char *msg) {
-  HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-}
 
 /* USER CODE END 0 */
 
@@ -94,7 +89,6 @@ int main(void)
 
   /* USER CODE BEGIN Init */
   fsm_init(&fsm);
-  srand(HAL_GetTick());
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -113,7 +107,6 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   //cli initialization
-  CLI_Init();
   
   /* USER CODE END 2 */
 

@@ -1,15 +1,19 @@
 #include "fsm_controller.h"
+#include "analog_signal_controller.h"
+#include "cli_controller.h"
+#include <stdlib.h>
 #include "main.h" // Include the header file that defines LD2_GPIO_Port and LD2_Pin
 
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
-extern uint32_t adc_value;
 extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
 extern int is_magnet_detected;
+extern int is_cli_active;
 
 MovingAverageFilter adcFilter;
 uint32_t hall_sensor_time = 0;
+uint32_t adc_value = 0;
 char msg[20];
 
 void fsm_init(FsmController* fsm) {
@@ -23,23 +27,29 @@ void change_state(FsmController* fsm, State new_state) {
 void button_pressed(FsmController* fsm) {
     switch (fsm->state) {
     case WAIT_REQUEST:
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+        is_cli_active = 0;
         change_state(fsm, LISTENING);
         break;
     case LISTENING:
         change_state(fsm, PAUSE);
         HAL_TIM_Base_Start_IT(&htim2);
+        is_cli_active = 1;
         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
         break;
     case PAUSE:
         change_state(fsm, LISTENING);
         HAL_TIM_Base_Stop_IT(&htim2);
+        is_cli_active = 0;
         break;
     case WARNING:
-        change_state(fsm, LISTENING);
+        is_cli_active = 1;
+        HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MAX_DELAY);
+        change_state(fsm, WAIT_REQUEST);
         break;
     default:
         change_state(fsm, FSMERROR);
-        NVIC_SystemReset(); //assicurarsi che il timer 3 venga spento
+        NVIC_SystemReset();
         break;
     }
 }
@@ -48,15 +58,17 @@ void fsm_run(FsmController* fsm) {
     switch (fsm->state) {
     case INIT:
         initFilter(&adcFilter);
+        srand(HAL_GetTick());
+        CLI_Init();
+        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+        is_cli_active = 1;
+        HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MAX_DELAY);
         change_state(fsm, WAIT_REQUEST);
         break;
     case WAIT_REQUEST:
-        //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-        HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MAX_DELAY);
-        HAL_Delay(1000);
+        
         break;
     case LISTENING:
-        HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
         if(is_magnet_detected){
                 if(hall_sensor_time == 0){
                     hall_sensor_time = HAL_GetTick();
@@ -71,9 +83,8 @@ void fsm_run(FsmController* fsm) {
         }
         HAL_ADC_Start(&hadc1);
         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
-        adc_value = HAL_ADC_GetValue(&hadc1);
-        //int32_t filtered_value = updateFilter(&adcFilter, adc_value);
-        sprintf(msg, "Analog: %lu %ld\r\n", adc_value, hall_sensor_time);
+        adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
+        sprintf(msg, "Analog: %lu\r\n", adc_value);
         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
         HAL_Delay(100);
 
@@ -82,11 +93,13 @@ void fsm_run(FsmController* fsm) {
         break;
     case WARNING:
         // Add logic for WARNING state
+        is_cli_active = 0;
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
         HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
         HAL_Delay(100);
         break;
     case FSMERROR:
+        is_cli_active = 0;
         HAL_TIM_Base_Start_IT(&htim3);
         HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
         HAL_Delay(100);

@@ -1,6 +1,12 @@
 #include "analog_signal_controller.h"
 
+SignalType signal_type = AVERAGE_FILTERED;
+int random_noise = 0;
+
 int32_t get_analog_signal(int32_t new_value){
+    if(random_noise){
+        new_value += (rand() % 100) - 50;
+    }
     switch (signal_type) {
         case RAW:
             return new_value;
@@ -8,8 +14,6 @@ int32_t get_analog_signal(int32_t new_value){
             return 0;
         case AVERAGE_FILTERED:
             return moving_average_filter(new_value);
-        case RANDOM_NOISE:
-            return new_value + (rand() % 100) - 50;
         default:
             return new_value;
     }
