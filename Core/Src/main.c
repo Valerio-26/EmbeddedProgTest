@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "cli_controller.h"
 /* USER CODE END Includes */
 #include <stdlib.h>
 
@@ -112,6 +112,8 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  //cli initialization
+  CLI_Init();
   
   /* USER CODE END 2 */
 

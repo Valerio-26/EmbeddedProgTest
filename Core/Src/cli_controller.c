@@ -1,16 +1,21 @@
 #include "cli_controller.h"
 #include <stdio.h>
 #include <string.h>
+#include "main.h"
 
-// Buffer per memorizzare il comando ricevuto
-#define CLI_BUFFER_SIZE 100
 char cli_buffer[CLI_BUFFER_SIZE];
+uint8_t cli_index = 0;
+volatile char receivedChar;
+extern UART_HandleTypeDef huart2;
 
 // Funzione per inizializzare la CLI
 void CLI_Init(void)
 {
-    memset(cli_buffer, 0, CLI_BUFFER_SIZE); // Inizializza il buffer
-    printf("CLI Ready. Type 'raw', 'filter' or 'noise'.\n");
+    memset(cli_buffer, 0, CLI_BUFFER_SIZE);
+
+    //enable uart interrupt
+    HAL_UART_Receive_IT(&huart2, (uint8_t*)&receivedChar, 1);
+  __HAL_UART_ENABLE_IT(&huart2, UART_IT_RXNE);
 }
 
 // Funzione per processare i comandi
@@ -37,7 +42,7 @@ void CLI_ProcessCommand(char *command)
 // Funzione per il comando "raw" (disabilita i filtri)
 void CLI_Command_Raw(void)
 {
-    printf("Raw mode activated. Filters disabled.\n");
+    HAL_UART_Transmit(&huart2, (uint8_t*)("comando raw ricevuto\r\n"), strlen("comando raw ricevuto\r\n"), HAL_MAX_DELAY);
     // Disabilita eventuali filtri applicati ai dati
     // Codice per disabilitare i filtri
 }
@@ -45,7 +50,7 @@ void CLI_Command_Raw(void)
 // Funzione per il comando "filter" (abilita un filtro)
 void CLI_Command_Filter(void)
 {
-    printf("Filter mode activated. Applying filters.\n");
+    HAL_UART_Transmit(&huart2, (uint8_t*)("comando moving average ricevuto\r\n"), strlen("comando comand average ricevuto\r\n"), HAL_MAX_DELAY);
     // Abilita un filtro ai dati del sensore
     // Codice per abilitare il filtro
 }
@@ -53,7 +58,7 @@ void CLI_Command_Filter(void)
 // Funzione per il comando "noise" (genera rumore randomico)
 void CLI_Command_Noise(void)
 {
-    printf("Noise mode activated. Generating random noise.\n");
+    HAL_UART_Transmit(&huart2, (uint8_t*)("comando random noise ricevuto\r\n"), strlen("comando random noise ricevuto\r\n"), HAL_MAX_DELAY);
     // Codice per generare rumore randomico
 }
 

@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <string.h>
+#include "cli_controller.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,6 +66,7 @@ extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
 extern ADC_HandleTypeDef hadc1;  
 extern FsmController fsm;
+
 /* USER CODE END EV */
 
 /******************************************************************************/
@@ -275,11 +277,25 @@ void TIM3_IRQHandler(void)
 void USART2_IRQHandler(void)
 {
   /* USER CODE BEGIN USART2_IRQn 0 */
-
+  if (__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE) != RESET)
+  {
+    receivedChar = (uint8_t)(huart2.Instance->DR & 0xFF);
+    
+    if (receivedChar == '\n' || receivedChar == '\r')
+    {
+      cli_buffer[cli_index] = '\0';  // Null-terminate the string
+      CLI_ProcessCommand(cli_buffer);
+      cli_index = 0;
+    }
+    else if (cli_index < CLI_BUFFER_SIZE - 1)
+    {
+      cli_buffer[cli_index++] = receivedChar;
+    }
+  }
   /* USER CODE END USART2_IRQn 0 */
   HAL_UART_IRQHandler(&huart2);
   /* USER CODE BEGIN USART2_IRQn 1 */
-
+  
   /* USER CODE END USART2_IRQn 1 */
 }
 
@@ -309,9 +325,7 @@ void DMA2_Stream0_IRQHandler(void)
   /* USER CODE END DMA2_Stream0_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_adc1);
   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
-  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_13)){
-    button_pressed(&fsm);
-  }
+  
   /* USER CODE END DMA2_Stream0_IRQn 1 */
 }
 
