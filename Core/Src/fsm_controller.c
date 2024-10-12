@@ -12,7 +12,6 @@ extern int is_magnet_detected;
 extern int is_cli_active;
 extern int is_sensor_active;
 
-MovingAverageFilter adcFilter;
 uint32_t hall_sensor_time = 0;
 uint32_t adc_value = 0;
 char msg[20];
@@ -61,7 +60,6 @@ void button_pressed(FsmController* fsm) {
 void fsm_run(FsmController* fsm) {
     switch (fsm->state) {
     case INIT:
-        initFilter(&adcFilter);
         srand(HAL_GetTick());
         CLI_Init();
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);

@@ -75,7 +75,6 @@ endif
 ######################################
 # C sources
 C_SOURCES =  \
-Core/Src/analog_filter.c \
 Core/Src/analog_signal_controller.c \
 Core/Src/average_filter.c \
 Core/Src/cli_controller.c \

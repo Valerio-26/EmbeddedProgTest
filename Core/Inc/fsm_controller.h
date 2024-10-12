@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "stm32f4xx_hal.h"
-#include "analog_filter.h"
 
 typedef enum {
     INIT,

@@ -4,7 +4,7 @@
 #include "average_filter.h"
 #include <stdlib.h>
 
-typedef enum {RAW, FILTERED, AVERAGE_FILTERED} SignalType;
+typedef enum {RAW, AVERAGE_FILTERED} SignalType;
 
 extern SignalType signal_type;
 extern int random_noise;

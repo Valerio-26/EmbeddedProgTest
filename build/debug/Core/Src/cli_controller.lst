@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
   39 0004 0021     		movs	r1, #0
   40 0006 0748     		ldr	r0, .L3
   41 0008 FFF7FEFF 		bl	memset
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 2
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 2
 
 
   42              	.LVL0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
   33:Core/Src/cli_controller.c ****             {
   34:Core/Src/cli_controller.c ****                 CLI_Command_Filter();
   35:Core/Src/cli_controller.c ****             }
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 3
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 3
 
 
   36:Core/Src/cli_controller.c ****             else if (strcmp(command, "random noise") == 0)
@@ -157,9 +157,8 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
   96 0010 034B     		ldr	r3, .L7+8
   97 0012 0022     		movs	r2, #0
   98 0014 1A70     		strb	r2, [r3]
-  52:Core/Src/cli_controller.c ****     // Codice per disabilitare i filtri
-  53:Core/Src/cli_controller.c **** }
-  99              		.loc 1 53 1 view .LVU9
+  52:Core/Src/cli_controller.c **** }
+  99              		.loc 1 52 1 view .LVU9
  100 0016 08BD     		pop	{r3, pc}
  101              	.L8:
  102              		.align	2
@@ -178,21 +177,21 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  113      6E672061 
  113      76657261 
  114              		.section	.text.CLI_Command_Filter,"ax",%progbits
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 4
-
-
  115              		.align	1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 4
+
+
  116              		.global	CLI_Command_Filter
  117              		.syntax unified
  118              		.thumb
  119              		.thumb_func
  121              	CLI_Command_Filter:
  122              	.LFB245:
-  54:Core/Src/cli_controller.c **** 
-  55:Core/Src/cli_controller.c **** // Funzione per il comando "filter" (abilita un filtro)
-  56:Core/Src/cli_controller.c **** void CLI_Command_Filter(void)
-  57:Core/Src/cli_controller.c **** {
- 123              		.loc 1 57 1 is_stmt 1 view -0
+  53:Core/Src/cli_controller.c **** 
+  54:Core/Src/cli_controller.c **** // Funzione per il comando "filter" (abilita un filtro)
+  55:Core/Src/cli_controller.c **** void CLI_Command_Filter(void)
+  56:Core/Src/cli_controller.c **** {
+ 123              		.loc 1 56 1 is_stmt 1 view -0
  124              		.cfi_startproc
  125              		@ args = 0, pretend = 0, frame = 0
  126              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -200,23 +199,22 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  128              		.cfi_def_cfa_offset 8
  129              		.cfi_offset 3, -8
  130              		.cfi_offset 14, -4
-  58:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando moving average ricevuto\r\n"), strlen("comando c
- 131              		.loc 1 58 5 view .LVU11
+  57:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando moving average ricevuto\r\n"), strlen("comando c
+ 131              		.loc 1 57 5 view .LVU11
  132 0002 4FF0FF33 		mov	r3, #-1
  133 0006 2122     		movs	r2, #33
  134 0008 0349     		ldr	r1, .L11
  135 000a 0448     		ldr	r0, .L11+4
  136 000c FFF7FEFF 		bl	HAL_UART_Transmit
  137              	.LVL3:
-  59:Core/Src/cli_controller.c ****     signal_type = AVERAGE_FILTERED;
- 138              		.loc 1 59 5 view .LVU12
- 139              		.loc 1 59 17 is_stmt 0 view .LVU13
+  58:Core/Src/cli_controller.c ****     signal_type = AVERAGE_FILTERED;
+ 138              		.loc 1 58 5 view .LVU12
+ 139              		.loc 1 58 17 is_stmt 0 view .LVU13
  140 0010 034B     		ldr	r3, .L11+8
- 141 0012 0222     		movs	r2, #2
+ 141 0012 0122     		movs	r2, #1
  142 0014 1A70     		strb	r2, [r3]
-  60:Core/Src/cli_controller.c ****     // Codice per abilitare il filtro
-  61:Core/Src/cli_controller.c **** }
- 143              		.loc 1 61 1 view .LVU14
+  59:Core/Src/cli_controller.c **** }
+ 143              		.loc 1 59 1 view .LVU14
  144 0016 08BD     		pop	{r3, pc}
  145              	.L12:
  146              		.align	2
@@ -238,18 +236,18 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  159              		.align	1
  160              		.global	CLI_Command_Noise
  161              		.syntax unified
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 5
-
-
  162              		.thumb
  163              		.thumb_func
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 5
+
+
  165              	CLI_Command_Noise:
  166              	.LFB246:
-  62:Core/Src/cli_controller.c **** 
-  63:Core/Src/cli_controller.c **** // Funzione per il comando "noise" (genera rumore randomico)
-  64:Core/Src/cli_controller.c **** void CLI_Command_Noise(void)
-  65:Core/Src/cli_controller.c **** {
- 167              		.loc 1 65 1 is_stmt 1 view -0
+  60:Core/Src/cli_controller.c **** 
+  61:Core/Src/cli_controller.c **** // Funzione per il comando "noise" (genera rumore randomico)
+  62:Core/Src/cli_controller.c **** void CLI_Command_Noise(void)
+  63:Core/Src/cli_controller.c **** {
+ 167              		.loc 1 63 1 is_stmt 1 view -0
  168              		.cfi_startproc
  169              		@ args = 0, pretend = 0, frame = 0
  170              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -257,25 +255,25 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  172              		.cfi_def_cfa_offset 8
  173              		.cfi_offset 3, -8
  174              		.cfi_offset 14, -4
-  66:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando random noise ricevuto\r\n"), strlen("comando ran
- 175              		.loc 1 66 5 view .LVU16
+  64:Core/Src/cli_controller.c ****     HAL_UART_Transmit(&huart2, (uint8_t*)("comando random noise ricevuto\r\n"), strlen("comando ran
+ 175              		.loc 1 64 5 view .LVU16
  176 0002 4FF0FF33 		mov	r3, #-1
  177 0006 1F22     		movs	r2, #31
  178 0008 0549     		ldr	r1, .L15
  179 000a 0648     		ldr	r0, .L15+4
  180 000c FFF7FEFF 		bl	HAL_UART_Transmit
  181              	.LVL4:
-  67:Core/Src/cli_controller.c ****     random_noise = !random_noise;
- 182              		.loc 1 67 5 view .LVU17
- 183              		.loc 1 67 20 is_stmt 0 view .LVU18
+  65:Core/Src/cli_controller.c ****     random_noise = !random_noise;
+ 182              		.loc 1 65 5 view .LVU17
+ 183              		.loc 1 65 20 is_stmt 0 view .LVU18
  184 0010 054A     		ldr	r2, .L15+8
  185 0012 1368     		ldr	r3, [r2]
  186 0014 B3FA83F3 		clz	r3, r3
  187 0018 5B09     		lsrs	r3, r3, #5
- 188              		.loc 1 67 18 view .LVU19
+ 188              		.loc 1 65 18 view .LVU19
  189 001a 1360     		str	r3, [r2]
-  68:Core/Src/cli_controller.c **** }
- 190              		.loc 1 68 1 view .LVU20
+  66:Core/Src/cli_controller.c **** }
+ 190              		.loc 1 66 1 view .LVU20
  191 001c 08BD     		pop	{r3, pc}
  192              	.L16:
  193 001e 00BF     		.align	2
@@ -298,11 +296,11 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  208 0013 00       		.align	2
  209              	.LC5:
  210 0014 72616E64 		.ascii	"random noise\000"
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 6
-
-
  210      6F6D206E 
  210      6F697365 
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 6
+
+
  210      00
  211 0021 000000   		.align	2
  212              	.LC6:
@@ -358,11 +356,11 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  249 0012 1049     		ldr	r1, .L28+8
  250 0014 2046     		mov	r0, r4
  251 0016 FFF7FEFF 		bl	strcmp
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 7
-
-
  252              	.LVL7:
   32:Core/Src/cli_controller.c ****             {
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 7
+
+
  253              		.loc 1 32 21 discriminator 1 view .LVU31
  254 001a 50B1     		cbz	r0, .L27
   36:Core/Src/cli_controller.c ****             {
@@ -418,11 +416,11 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  295              		.loc 1 45 1 view .LVU41
  296 0048 7047     		bx	lr
  297              	.L29:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 8
-
-
  298 004a 00BF     		.align	2
  299              	.L28:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 8
+
+
  300 004c 00000000 		.word	is_cli_active
  301 0050 00000000 		.word	.LC3
  302 0054 04000000 		.word	.LC4
@@ -466,38 +464,38 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 1
  345              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
  346              		.file 11 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
  347              		.file 12 "<built-in>"
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccvGAquf.s 			page 9
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccIJUphg.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 cli_controller.c
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:21     .text.CLI_Init:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:27     .text.CLI_Init:00000000 CLI_Init
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:60     .text.CLI_Init:00000024 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:333    .bss.cli_buffer:00000000 cli_buffer
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:320    .bss.receivedChar:00000000 receivedChar
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:67     .rodata.CLI_Command_Raw.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:71     .text.CLI_Command_Raw:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:77     .text.CLI_Command_Raw:00000000 CLI_Command_Raw
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:104    .text.CLI_Command_Raw:00000018 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:111    .rodata.CLI_Command_Filter.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:115    .text.CLI_Command_Filter:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:121    .text.CLI_Command_Filter:00000000 CLI_Command_Filter
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:148    .text.CLI_Command_Filter:00000018 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:155    .rodata.CLI_Command_Noise.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:159    .text.CLI_Command_Noise:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:165    .text.CLI_Command_Noise:00000000 CLI_Command_Noise
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:195    .text.CLI_Command_Noise:00000020 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:202    .rodata.CLI_ProcessCommand.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:215    .text.CLI_ProcessCommand:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:221    .text.CLI_ProcessCommand:00000000 CLI_ProcessCommand
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:300    .text.CLI_ProcessCommand:0000004c $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:314    .bss.is_cli_active:00000000 is_cli_active
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:311    .bss.is_cli_active:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:321    .bss.receivedChar:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:326    .bss.cli_index:00000000 cli_index
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:327    .bss.cli_index:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccvGAquf.s:330    .bss.cli_buffer:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:21     .text.CLI_Init:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:27     .text.CLI_Init:00000000 CLI_Init
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:60     .text.CLI_Init:00000024 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:333    .bss.cli_buffer:00000000 cli_buffer
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:320    .bss.receivedChar:00000000 receivedChar
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:67     .rodata.CLI_Command_Raw.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:71     .text.CLI_Command_Raw:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:77     .text.CLI_Command_Raw:00000000 CLI_Command_Raw
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:104    .text.CLI_Command_Raw:00000018 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:111    .rodata.CLI_Command_Filter.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:115    .text.CLI_Command_Filter:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:121    .text.CLI_Command_Filter:00000000 CLI_Command_Filter
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:148    .text.CLI_Command_Filter:00000018 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:155    .rodata.CLI_Command_Noise.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:159    .text.CLI_Command_Noise:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:165    .text.CLI_Command_Noise:00000000 CLI_Command_Noise
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:195    .text.CLI_Command_Noise:00000020 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:202    .rodata.CLI_ProcessCommand.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:215    .text.CLI_ProcessCommand:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:221    .text.CLI_ProcessCommand:00000000 CLI_ProcessCommand
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:300    .text.CLI_ProcessCommand:0000004c $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:314    .bss.is_cli_active:00000000 is_cli_active
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:311    .bss.is_cli_active:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:321    .bss.receivedChar:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:326    .bss.cli_index:00000000 cli_index
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:327    .bss.cli_index:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccIJUphg.s:330    .bss.cli_buffer:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

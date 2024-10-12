@@ -49,7 +49,6 @@ void CLI_Command_Raw(void)
 {
     HAL_UART_Transmit(&huart2, (uint8_t*)("comando raw ricevuto\r\n"), strlen("comando raw ricevuto\r\n"), HAL_MAX_DELAY);
     signal_type = RAW;
-    // Codice per disabilitare i filtri
 }
 
 // Funzione per il comando "filter" (abilita un filtro)
@@ -57,7 +56,6 @@ void CLI_Command_Filter(void)
 {
     HAL_UART_Transmit(&huart2, (uint8_t*)("comando moving average ricevuto\r\n"), strlen("comando comand average ricevuto\r\n"), HAL_MAX_DELAY);
     signal_type = AVERAGE_FILTERED;
-    // Codice per abilitare il filtro
 }
 
 // Funzione per il comando "noise" (genera rumore randomico)

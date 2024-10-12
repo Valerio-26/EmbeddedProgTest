@@ -30,7 +30,7 @@ build/debug/Core/Src/cli_controller.o: Core/Src/cli_controller.c \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- Core/Inc/fsm_controller.h Core/Inc/analog_filter.h
+ Core/Inc/fsm_controller.h
 Core/Inc/cli_controller.h:
 Core/Inc/analog_signal_controller.h:
 Core/Inc/average_filter.h:
@@ -67,4 +67,3 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 Core/Inc/fsm_controller.h:
-Core/Inc/analog_filter.h:
