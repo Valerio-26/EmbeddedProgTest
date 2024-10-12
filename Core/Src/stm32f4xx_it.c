@@ -45,7 +45,8 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 int led_state = 0;
-int is_magnet_detected = 0;  
+int is_magnet_detected = 0;
+int is_sensor_active = 0;  
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -214,14 +215,14 @@ void EXTI0_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI0_IRQn 0 */
 
-  // Vedi code begin 0 e 1 per gestire rising falling
-  // Leggi lo stato del sensore digitale
+  if(!is_sensor_active) return;
+
   is_magnet_detected =(int) !HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0); 
 
   char msg[50];  // Buffer per inviare messaggi via UART
   
   // Invia il valore digitale via UART
-  sprintf(msg, "Digital: %d\r\n", is_magnet_detected);
+  sprintf(msg, "Digital:%d\r\n", is_magnet_detected);
   HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   
     

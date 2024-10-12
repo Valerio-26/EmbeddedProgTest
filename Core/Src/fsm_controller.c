@@ -10,6 +10,7 @@ extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim3;
 extern int is_magnet_detected;
 extern int is_cli_active;
+extern int is_sensor_active;
 
 MovingAverageFilter adcFilter;
 uint32_t hall_sensor_time = 0;
@@ -29,18 +30,21 @@ void button_pressed(FsmController* fsm) {
     case WAIT_REQUEST:
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
         is_cli_active = 0;
+        is_sensor_active = 1;
         change_state(fsm, LISTENING);
         break;
     case LISTENING:
         change_state(fsm, PAUSE);
         HAL_TIM_Base_Start_IT(&htim2);
         is_cli_active = 1;
+        is_sensor_active = 0;
         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
         break;
     case PAUSE:
         change_state(fsm, LISTENING);
         HAL_TIM_Base_Stop_IT(&htim2);
         is_cli_active = 0;
+        is_sensor_active = 1;
         break;
     case WARNING:
         is_cli_active = 1;
@@ -84,7 +88,7 @@ void fsm_run(FsmController* fsm) {
         HAL_ADC_Start(&hadc1);
         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
         adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
-        sprintf(msg, "Analog: %lu\r\n", adc_value);
+        sprintf(msg, "Analog:%lu\r\n", adc_value);
         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
         HAL_Delay(100);
 
@@ -94,12 +98,14 @@ void fsm_run(FsmController* fsm) {
     case WARNING:
         // Add logic for WARNING state
         is_cli_active = 0;
+        is_sensor_active = 0;
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
         HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
         HAL_Delay(100);
         break;
     case FSMERROR:
         is_cli_active = 0;
+        is_sensor_active = 0;
         HAL_TIM_Base_Start_IT(&htim3);
         HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
         HAL_Delay(100);
