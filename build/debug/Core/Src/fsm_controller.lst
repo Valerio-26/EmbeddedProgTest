@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
   28:Drivers/CMSIS/Include/core_cm4.h ****   #pragma clang system_header   /* treat file as system include file */
   29:Drivers/CMSIS/Include/core_cm4.h **** #endif
   30:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 2
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 2
 
 
   31:Drivers/CMSIS/Include/core_cm4.h **** #ifndef __CORE_CM4_H_GENERIC
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
   85:Drivers/CMSIS/Include/core_cm4.h ****     #define __FPU_USED         0U
   86:Drivers/CMSIS/Include/core_cm4.h ****   #endif
   87:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 3
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 3
 
 
   88:Drivers/CMSIS/Include/core_cm4.h **** #elif defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  142:Drivers/CMSIS/Include/core_cm4.h ****       #define __FPU_USED       0U
  143:Drivers/CMSIS/Include/core_cm4.h ****     #endif
  144:Drivers/CMSIS/Include/core_cm4.h ****   #else
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 4
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 4
 
 
  145:Drivers/CMSIS/Include/core_cm4.h ****     #define __FPU_USED         0U
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  199:Drivers/CMSIS/Include/core_cm4.h ****     #warning "__VTOR_PRESENT not defined in device header file; using default!"
  200:Drivers/CMSIS/Include/core_cm4.h ****   #endif
  201:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 5
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 5
 
 
  202:Drivers/CMSIS/Include/core_cm4.h ****   #ifndef __NVIC_PRIO_BITS
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  256:Drivers/CMSIS/Include/core_cm4.h ****   \defgroup   CMSIS_CORE  Status and Control Registers
  257:Drivers/CMSIS/Include/core_cm4.h ****   \brief      Core Register type definitions.
  258:Drivers/CMSIS/Include/core_cm4.h ****   @{
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 6
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 6
 
 
  259:Drivers/CMSIS/Include/core_cm4.h ****  */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  313:Drivers/CMSIS/Include/core_cm4.h **** /* IPSR Register Definitions */
  314:Drivers/CMSIS/Include/core_cm4.h **** #define IPSR_ISR_Pos                        0U                                            /*!< IPSR
  315:Drivers/CMSIS/Include/core_cm4.h **** #define IPSR_ISR_Msk                       (0x1FFUL /*<< IPSR_ISR_Pos*/)                  /*!< IPSR
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 7
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 7
 
 
  316:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  370:Drivers/CMSIS/Include/core_cm4.h **** #define xPSR_ISR_Msk                       (0x1FFUL /*<< xPSR_ISR_Pos*/)                  /*!< xPSR
  371:Drivers/CMSIS/Include/core_cm4.h **** 
  372:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 8
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 8
 
 
  373:Drivers/CMSIS/Include/core_cm4.h **** /**
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  427:Drivers/CMSIS/Include/core_cm4.h **** 
  428:Drivers/CMSIS/Include/core_cm4.h **** /* Software Triggered Interrupt Register Definitions */
  429:Drivers/CMSIS/Include/core_cm4.h **** #define NVIC_STIR_INTID_Pos                 0U                                         /*!< STIR: I
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 9
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 9
 
 
  430:Drivers/CMSIS/Include/core_cm4.h **** #define NVIC_STIR_INTID_Msk                (0x1FFUL /*<< NVIC_STIR_INTID_Pos*/)        /*!< STIR: I
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  484:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CPUID_REVISION_Msk             (0xFUL /*<< SCB_CPUID_REVISION_Pos*/)          /*!< SCB 
  485:Drivers/CMSIS/Include/core_cm4.h **** 
  486:Drivers/CMSIS/Include/core_cm4.h **** /* SCB Interrupt Control State Register Definitions */
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 10
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 10
 
 
  487:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_ICSR_NMIPENDSET_Pos            31U                                            /*!< SCB 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  541:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_AIRCR_VECTRESET_Msk            (1UL /*<< SCB_AIRCR_VECTRESET_Pos*/)           /*!< SCB 
  542:Drivers/CMSIS/Include/core_cm4.h **** 
  543:Drivers/CMSIS/Include/core_cm4.h **** /* SCB System Control Register Definitions */
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 11
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 11
 
 
  544:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SCR_SEVONPEND_Pos               4U                                            /*!< SCB 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  598:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_PENDSVACT_Msk            (1UL << SCB_SHCSR_PENDSVACT_Pos)               /*!< SCB 
  599:Drivers/CMSIS/Include/core_cm4.h **** 
  600:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_MONITORACT_Pos            8U                                            /*!< SCB 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 12
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 12
 
 
  601:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_SHCSR_MONITORACT_Msk           (1UL << SCB_SHCSR_MONITORACT_Pos)              /*!< SCB 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  655:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_UNSTKERR_Msk             (1UL << SCB_CFSR_UNSTKERR_Pos)                  /*!< SCB 
  656:Drivers/CMSIS/Include/core_cm4.h **** 
  657:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_IMPRECISERR_Pos          (SCB_CFSR_BUSFAULTSR_Pos + 2U)                  /*!< SCB 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 13
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 13
 
 
  658:Drivers/CMSIS/Include/core_cm4.h **** #define SCB_CFSR_IMPRECISERR_Msk          (1UL << SCB_CFSR_IMPRECISERR_Pos)               /*!< SCB 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  712:Drivers/CMSIS/Include/core_cm4.h **** 
  713:Drivers/CMSIS/Include/core_cm4.h **** 
  714:Drivers/CMSIS/Include/core_cm4.h **** /**
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 14
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 14
 
 
  715:Drivers/CMSIS/Include/core_cm4.h ****   \ingroup  CMSIS_core_register
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  769:Drivers/CMSIS/Include/core_cm4.h ****   __IM  uint32_t CALIB;                  /*!< Offset: 0x00C (R/ )  SysTick Calibration Register */
  770:Drivers/CMSIS/Include/core_cm4.h **** } SysTick_Type;
  771:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 15
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 15
 
 
  772:Drivers/CMSIS/Include/core_cm4.h **** /* SysTick Control / Status Register Definitions */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  826:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED1[15U];
  827:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t TPR;                    /*!< Offset: 0xE40 (R/W)  ITM Trace Privilege Register */
  828:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED2[15U];
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 16
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 16
 
 
  829:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t TCR;                    /*!< Offset: 0xE80 (R/W)  ITM Trace Control Register */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  883:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_ByteAcc_Msk                (1UL << ITM_LSR_ByteAcc_Pos)                   /*!< ITM 
  884:Drivers/CMSIS/Include/core_cm4.h **** 
  885:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_Access_Pos                  1U                                            /*!< ITM 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 17
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 17
 
 
  886:Drivers/CMSIS/Include/core_cm4.h **** #define ITM_LSR_Access_Msk                 (1UL << ITM_LSR_Access_Pos)                    /*!< ITM 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  940:Drivers/CMSIS/Include/core_cm4.h **** 
  941:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOCYCCNT_Pos              25U                                         /*!< DWT CTR
  942:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_CTRL_NOCYCCNT_Msk              (0x1UL << DWT_CTRL_NOCYCCNT_Pos)            /*!< DWT CTR
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 18
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 18
 
 
  943:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  997:Drivers/CMSIS/Include/core_cm4.h **** 
  998:Drivers/CMSIS/Include/core_cm4.h **** /* DWT LSU Count Register Definitions */
  999:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_LSUCNT_LSUCNT_Pos               0U                                         /*!< DWT LSU
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 19
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 19
 
 
 1000:Drivers/CMSIS/Include/core_cm4.h **** #define DWT_LSUCNT_LSUCNT_Msk              (0xFFUL /*<< DWT_LSUCNT_LSUCNT_Pos*/)       /*!< DWT LSU
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1054:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t CSPSR;                  /*!< Offset: 0x004 (R/W)  Current Parallel Port Size Regis
 1055:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED0[2U];
 1056:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t ACPR;                   /*!< Offset: 0x010 (R/W)  Asynchronous Clock Prescaler Reg
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 20
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 20
 
 
 1057:Drivers/CMSIS/Include/core_cm4.h ****         uint32_t RESERVED1[55U];
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1111:Drivers/CMSIS/Include/core_cm4.h **** /* TPI Integration ETM Data Register Definitions (FIFO0) */
 1112:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO0_ITM_ATVALID_Pos          29U                                         /*!< TPI FIF
 1113:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_FIFO0_ITM_ATVALID_Msk          (0x1UL << TPI_FIFO0_ITM_ATVALID_Pos)        /*!< TPI FIF
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 21
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 21
 
 
 1114:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1168:Drivers/CMSIS/Include/core_cm4.h **** 
 1169:Drivers/CMSIS/Include/core_cm4.h **** /* TPI Integration Mode Control Register Definitions */
 1170:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_ITCTRL_Mode_Pos                 0U                                         /*!< TPI ITC
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 22
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 22
 
 
 1171:Drivers/CMSIS/Include/core_cm4.h **** #define TPI_ITCTRL_Mode_Msk                (0x3UL /*<< TPI_ITCTRL_Mode_Pos*/)          /*!< TPI ITC
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1225:Drivers/CMSIS/Include/core_cm4.h ****   __IOM uint32_t RASR_A3;                /*!< Offset: 0x028 (R/W)  MPU Alias 3 Region Attribute and
 1226:Drivers/CMSIS/Include/core_cm4.h **** } MPU_Type;
 1227:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 23
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 23
 
 
 1228:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_TYPE_RALIASES                  4U
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1282:Drivers/CMSIS/Include/core_cm4.h **** 
 1283:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_B_Pos                     16U                                            /*!< MPU 
 1284:Drivers/CMSIS/Include/core_cm4.h **** #define MPU_RASR_B_Msk                     (1UL << MPU_RASR_B_Pos)                        /*!< MPU 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 24
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 24
 
 
 1285:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1339:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_THREAD_Pos                3U                                            /*!< FPCC
 1340:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_THREAD_Msk               (1UL << FPU_FPCCR_THREAD_Pos)                  /*!< FPCC
 1341:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 25
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 25
 
 
 1342:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_FPCCR_USER_Pos                  1U                                            /*!< FPCC
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1396:Drivers/CMSIS/Include/core_cm4.h **** 
 1397:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_D_NaN_mode_Pos            4U                                            /*!< MVFR
 1398:Drivers/CMSIS/Include/core_cm4.h **** #define FPU_MVFR1_D_NaN_mode_Msk           (0xFUL << FPU_MVFR1_D_NaN_mode_Pos)            /*!< MVFR
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 26
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 26
 
 
 1399:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1453:Drivers/CMSIS/Include/core_cm4.h **** 
 1454:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_MASKINTS_Pos      3U                                            /*!< Core
 1455:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DHCSR_C_MASKINTS_Msk     (1UL << CoreDebug_DHCSR_C_MASKINTS_Pos)        /*!< Core
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 27
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 27
 
 
 1456:Drivers/CMSIS/Include/core_cm4.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1510:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DEMCR_VC_CORERESET_Pos    0U                                            /*!< Core
 1511:Drivers/CMSIS/Include/core_cm4.h **** #define CoreDebug_DEMCR_VC_CORERESET_Msk   (1UL /*<< CoreDebug_DEMCR_VC_CORERESET_Pos*/)  /*!< Core
 1512:Drivers/CMSIS/Include/core_cm4.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 28
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 28
 
 
 1513:Drivers/CMSIS/Include/core_cm4.h **** /*@} end of group CMSIS_CoreDebug */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1567:Drivers/CMSIS/Include/core_cm4.h **** 
 1568:Drivers/CMSIS/Include/core_cm4.h **** #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1U)
 1569:Drivers/CMSIS/Include/core_cm4.h ****   #define MPU_BASE          (SCS_BASE +  0x0D90UL)                    /*!< Memory Protection Unit *
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 29
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 29
 
 
 1570:Drivers/CMSIS/Include/core_cm4.h ****   #define MPU               ((MPU_Type       *)     MPU_BASE      )   /*!< Memory Protection Unit *
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1624:Drivers/CMSIS/Include/core_cm4.h ****     #define CMSIS_VECTAB_VIRTUAL_HEADER_FILE "cmsis_vectab_virtual.h"
 1625:Drivers/CMSIS/Include/core_cm4.h ****   #endif
 1626:Drivers/CMSIS/Include/core_cm4.h ****   #include CMSIS_VECTAB_VIRTUAL_HEADER_FILE
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 30
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 30
 
 
 1627:Drivers/CMSIS/Include/core_cm4.h **** #else
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1681:Drivers/CMSIS/Include/core_cm4.h ****   \param [in]      IRQn  Device specific interrupt number.
 1682:Drivers/CMSIS/Include/core_cm4.h ****   \note    IRQn must not be negative.
 1683:Drivers/CMSIS/Include/core_cm4.h ****  */
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 31
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 31
 
 
 1684:Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1738:Drivers/CMSIS/Include/core_cm4.h ****   \return             1  Interrupt status is pending.
 1739:Drivers/CMSIS/Include/core_cm4.h ****   \note    IRQn must not be negative.
 1740:Drivers/CMSIS/Include/core_cm4.h ****  */
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 32
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 32
 
 
 1741:Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1795:Drivers/CMSIS/Include/core_cm4.h ****   {
 1796:Drivers/CMSIS/Include/core_cm4.h ****     return((uint32_t)(((NVIC->IABR[(((uint32_t)IRQn) >> 5UL)] & (1UL << (((uint32_t)IRQn) & 0x1FUL)
 1797:Drivers/CMSIS/Include/core_cm4.h ****   }
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 33
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 33
 
 
 1798:Drivers/CMSIS/Include/core_cm4.h ****   else
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1852:Drivers/CMSIS/Include/core_cm4.h ****   \details Encodes the priority for an interrupt with the given priority group,
 1853:Drivers/CMSIS/Include/core_cm4.h ****            preemptive priority value, and subpriority value.
 1854:Drivers/CMSIS/Include/core_cm4.h ****            In case of a conflict between priority grouping and available
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 34
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 34
 
 
 1855:Drivers/CMSIS/Include/core_cm4.h ****            priority bits (__NVIC_PRIO_BITS), the smallest possible priority group is set.
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
 1909:Drivers/CMSIS/Include/core_cm4.h ****   \param [in]   vector    Address of interrupt handler function
 1910:Drivers/CMSIS/Include/core_cm4.h ****  */
 1911:Drivers/CMSIS/Include/core_cm4.h **** __STATIC_INLINE void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 35
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 35
 
 
 1912:Drivers/CMSIS/Include/core_cm4.h **** {
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
   16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
   17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 36
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 36
 
 
   19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
   73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
   75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 37
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 37
 
 
   76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
  131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
  132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 38
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 38
 
 
  133:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  187:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_SEAL              __StackSeal
  188:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
  189:Drivers/CMSIS/Include/cmsis_gcc.h **** 
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 39
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 39
 
 
  190:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __TZ_STACK_SEAL_SIZE
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  244:Drivers/CMSIS/Include/cmsis_gcc.h **** 
  245:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
  246:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Send Event
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 40
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 40
 
 
  247:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Send Event is a hint instruction. It causes an event to be signaled to the CPU.
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
   61              		.loc 2 1945 3 is_stmt 1 view .LVU9
   62              	.LBB8:
   63              	.LBI8:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 41
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 41
 
 
  269:Drivers/CMSIS/Include/cmsis_gcc.h **** {
@@ -2451,34 +2451,41 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
    4:Core/Src/fsm_controller.c **** #include <stdlib.h>
    5:Core/Src/fsm_controller.c **** #include "main.h" // Include the header file that defines LD2_GPIO_Port and LD2_Pin
    6:Core/Src/fsm_controller.c **** 
-   7:Core/Src/fsm_controller.c **** extern ADC_HandleTypeDef hadc1;
-   8:Core/Src/fsm_controller.c **** extern UART_HandleTypeDef huart2;
-   9:Core/Src/fsm_controller.c **** extern TIM_HandleTypeDef htim2;
-  10:Core/Src/fsm_controller.c **** extern TIM_HandleTypeDef htim3;
-  11:Core/Src/fsm_controller.c **** extern int is_magnet_detected;
-  12:Core/Src/fsm_controller.c **** extern int is_cli_active;
-  13:Core/Src/fsm_controller.c **** extern int is_sensor_active;
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 42
+   7:Core/Src/fsm_controller.c **** #define ADC_RESOLUTION 12;
+   8:Core/Src/fsm_controller.c **** #define ADC_MAX_VALUE ((1 << ADC_RESOLUTION) - 1) // 4095 for 12-bit ADC
+   9:Core/Src/fsm_controller.c **** #define VREF 5 // volts
+  10:Core/Src/fsm_controller.c **** #define BUFFER_SIZE 1
+  11:Core/Src/fsm_controller.c **** 
+  12:Core/Src/fsm_controller.c **** extern ADC_HandleTypeDef hadc1;
+  13:Core/Src/fsm_controller.c **** extern UART_HandleTypeDef huart2;
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 42
 
 
-  14:Core/Src/fsm_controller.c **** 
-  15:Core/Src/fsm_controller.c **** uint32_t hall_sensor_time = 0;
-  16:Core/Src/fsm_controller.c **** uint32_t adc_value = 0;
-  17:Core/Src/fsm_controller.c **** char msg[20];
-  18:Core/Src/fsm_controller.c **** 
-  19:Core/Src/fsm_controller.c **** void fsm_init(FsmController* fsm) {
- 104              		.loc 1 19 35 view -0
+  14:Core/Src/fsm_controller.c **** extern TIM_HandleTypeDef htim2;
+  15:Core/Src/fsm_controller.c **** extern TIM_HandleTypeDef htim3;
+  16:Core/Src/fsm_controller.c **** extern int is_magnet_detected;
+  17:Core/Src/fsm_controller.c **** extern int is_cli_active;
+  18:Core/Src/fsm_controller.c **** extern int is_sensor_active;
+  19:Core/Src/fsm_controller.c **** 
+  20:Core/Src/fsm_controller.c **** uint32_t hall_sensor_time = 0;
+  21:Core/Src/fsm_controller.c **** uint32_t adc_value = 0;
+  22:Core/Src/fsm_controller.c **** uint16_t adc_buffer[BUFFER_SIZE];
+  23:Core/Src/fsm_controller.c **** volatile uint8_t conversion_complete = 0;
+  24:Core/Src/fsm_controller.c **** char msg[20];
+  25:Core/Src/fsm_controller.c **** 
+  26:Core/Src/fsm_controller.c **** void fsm_init(FsmController* fsm) {
+ 104              		.loc 1 26 35 view -0
  105              		.cfi_startproc
  106              		@ args = 0, pretend = 0, frame = 0
  107              		@ frame_needed = 0, uses_anonymous_args = 0
  108              		@ link register save eliminated.
-  20:Core/Src/fsm_controller.c ****     fsm->state = INIT;
- 109              		.loc 1 20 5 view .LVU16
- 110              		.loc 1 20 16 is_stmt 0 view .LVU17
+  27:Core/Src/fsm_controller.c ****     fsm->state = INIT;
+ 109              		.loc 1 27 5 view .LVU16
+ 110              		.loc 1 27 16 is_stmt 0 view .LVU17
  111 0000 0023     		movs	r3, #0
  112 0002 0370     		strb	r3, [r0]
-  21:Core/Src/fsm_controller.c **** }
- 113              		.loc 1 21 1 view .LVU18
+  28:Core/Src/fsm_controller.c **** }
+ 113              		.loc 1 28 1 view .LVU18
  114 0004 7047     		bx	lr
  115              		.cfi_endproc
  116              	.LFE242:
@@ -2491,763 +2498,939 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 1
  125              	change_state:
  126              	.LVL1:
  127              	.LFB243:
-  22:Core/Src/fsm_controller.c **** 
-  23:Core/Src/fsm_controller.c **** void change_state(FsmController* fsm, State new_state) {
- 128              		.loc 1 23 56 is_stmt 1 view -0
+  29:Core/Src/fsm_controller.c **** 
+  30:Core/Src/fsm_controller.c **** void change_state(FsmController* fsm, State new_state) {
+ 128              		.loc 1 30 56 is_stmt 1 view -0
  129              		.cfi_startproc
  130              		@ args = 0, pretend = 0, frame = 0
  131              		@ frame_needed = 0, uses_anonymous_args = 0
  132              		@ link register save eliminated.
-  24:Core/Src/fsm_controller.c ****     fsm->state = new_state;
- 133              		.loc 1 24 5 view .LVU20
- 134              		.loc 1 24 16 is_stmt 0 view .LVU21
+  31:Core/Src/fsm_controller.c ****     fsm->state = new_state;
+ 133              		.loc 1 31 5 view .LVU20
+ 134              		.loc 1 31 16 is_stmt 0 view .LVU21
  135 0000 0170     		strb	r1, [r0]
-  25:Core/Src/fsm_controller.c **** }
- 136              		.loc 1 25 1 view .LVU22
+  32:Core/Src/fsm_controller.c **** }
+ 136              		.loc 1 32 1 view .LVU22
  137 0002 7047     		bx	lr
  138              		.cfi_endproc
  139              	.LFE243:
- 141              		.section	.rodata.button_pressed.str1.4,"aMS",%progbits,1
- 142              		.align	2
- 143              	.LC0:
- 144 0000 50415553 		.ascii	"PAUSE\015\012\000"
- 144      450D0A00 
- 145              		.align	2
- 146              	.LC1:
- 147 0008 57414954 		.ascii	"WAIT_REQUEST\015\012\000"
- 147      5F524551 
- 147      55455354 
- 147      0D0A00
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 43
+ 141              		.section	.text.HAL_ADC_ConvCpltCallback,"ax",%progbits
+ 142              		.align	1
+ 143              		.global	HAL_ADC_ConvCpltCallback
+ 144              		.syntax unified
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 43
 
 
- 148              		.section	.text.button_pressed,"ax",%progbits
- 149              		.align	1
- 150              		.global	button_pressed
- 151              		.syntax unified
- 152              		.thumb
- 153              		.thumb_func
- 155              	button_pressed:
- 156              	.LVL2:
- 157              	.LFB244:
-  26:Core/Src/fsm_controller.c **** 
-  27:Core/Src/fsm_controller.c **** void button_pressed(FsmController* fsm) {
- 158              		.loc 1 27 41 is_stmt 1 view -0
- 159              		.cfi_startproc
- 160              		@ args = 0, pretend = 0, frame = 0
- 161              		@ frame_needed = 0, uses_anonymous_args = 0
- 162              		.loc 1 27 41 is_stmt 0 view .LVU24
- 163 0000 38B5     		push	{r3, r4, r5, lr}
- 164              		.cfi_def_cfa_offset 16
- 165              		.cfi_offset 3, -16
- 166              		.cfi_offset 4, -12
- 167              		.cfi_offset 5, -8
- 168              		.cfi_offset 14, -4
- 169 0002 0446     		mov	r4, r0
-  28:Core/Src/fsm_controller.c ****     switch (fsm->state) {
- 170              		.loc 1 28 5 is_stmt 1 view .LVU25
- 171              		.loc 1 28 16 is_stmt 0 view .LVU26
- 172 0004 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
- 173              		.loc 1 28 5 view .LVU27
- 174 0006 013B     		subs	r3, r3, #1
- 175 0008 032B     		cmp	r3, #3
- 176 000a 43D8     		bhi	.L8
- 177 000c DFE803F0 		tbb	[pc, r3]
- 178              	.L10:
- 179 0010 02       		.byte	(.L13-.L10)/2
- 180 0011 12       		.byte	(.L12-.L10)/2
- 181 0012 26       		.byte	(.L11-.L10)/2
- 182 0013 33       		.byte	(.L9-.L10)/2
- 183              		.p2align 1
- 184              	.L13:
-  29:Core/Src/fsm_controller.c ****     case WAIT_REQUEST:
-  30:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
- 185              		.loc 1 30 9 is_stmt 1 view .LVU28
- 186 0014 0122     		movs	r2, #1
- 187 0016 2021     		movs	r1, #32
- 188 0018 2148     		ldr	r0, .L16
- 189              	.LVL3:
- 190              		.loc 1 30 9 is_stmt 0 view .LVU29
- 191 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
- 192              	.LVL4:
-  31:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 193              		.loc 1 31 9 is_stmt 1 view .LVU30
- 194              		.loc 1 31 23 is_stmt 0 view .LVU31
- 195 001e 214B     		ldr	r3, .L16+4
- 196 0020 0022     		movs	r2, #0
- 197 0022 1A60     		str	r2, [r3]
-  32:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
- 198              		.loc 1 32 9 is_stmt 1 view .LVU32
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 44
+ 145              		.thumb
+ 146              		.thumb_func
+ 148              	HAL_ADC_ConvCpltCallback:
+ 149              	.LVL2:
+ 150              	.LFB244:
+  33:Core/Src/fsm_controller.c **** 
+  34:Core/Src/fsm_controller.c **** void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
+ 151              		.loc 1 34 55 is_stmt 1 view -0
+ 152              		.cfi_startproc
+ 153              		@ args = 0, pretend = 0, frame = 0
+ 154              		@ frame_needed = 0, uses_anonymous_args = 0
+ 155              		.loc 1 34 55 is_stmt 0 view .LVU24
+ 156 0000 08B5     		push	{r3, lr}
+ 157              		.cfi_def_cfa_offset 8
+ 158              		.cfi_offset 3, -8
+ 159              		.cfi_offset 14, -4
+  35:Core/Src/fsm_controller.c ****     if(hadc->Instance == ADC1){
+ 160              		.loc 1 35 5 is_stmt 1 view .LVU25
+ 161              		.loc 1 35 12 is_stmt 0 view .LVU26
+ 162 0002 0268     		ldr	r2, [r0]
+ 163              		.loc 1 35 7 view .LVU27
+ 164 0004 064B     		ldr	r3, .L11
+ 165 0006 9A42     		cmp	r2, r3
+ 166 0008 05D0     		beq	.L10
+ 167              	.L8:
+  36:Core/Src/fsm_controller.c ****        conversion_complete = 1;
+  37:Core/Src/fsm_controller.c ****     }
+  38:Core/Src/fsm_controller.c ****     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
+ 168              		.loc 1 38 5 is_stmt 1 view .LVU28
+ 169 000a 0122     		movs	r2, #1
+ 170 000c 0549     		ldr	r1, .L11+4
+ 171 000e 0648     		ldr	r0, .L11+8
+ 172              	.LVL3:
+ 173              		.loc 1 38 5 is_stmt 0 view .LVU29
+ 174 0010 FFF7FEFF 		bl	HAL_ADC_Start_DMA
+ 175              	.LVL4:
+  39:Core/Src/fsm_controller.c **** }
+ 176              		.loc 1 39 1 view .LVU30
+ 177 0014 08BD     		pop	{r3, pc}
+ 178              	.LVL5:
+ 179              	.L10:
+  36:Core/Src/fsm_controller.c ****        conversion_complete = 1;
+ 180              		.loc 1 36 8 is_stmt 1 view .LVU31
+  36:Core/Src/fsm_controller.c ****        conversion_complete = 1;
+ 181              		.loc 1 36 28 is_stmt 0 view .LVU32
+ 182 0016 054B     		ldr	r3, .L11+12
+ 183 0018 0122     		movs	r2, #1
+ 184 001a 1A70     		strb	r2, [r3]
+ 185 001c F5E7     		b	.L8
+ 186              	.L12:
+ 187 001e 00BF     		.align	2
+ 188              	.L11:
+ 189 0020 00200140 		.word	1073815552
+ 190 0024 00000000 		.word	adc_buffer
+ 191 0028 00000000 		.word	hadc1
+ 192 002c 00000000 		.word	conversion_complete
+ 193              		.cfi_endproc
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 44
 
 
- 199              		.loc 1 32 26 is_stmt 0 view .LVU33
- 200 0024 204B     		ldr	r3, .L16+8
- 201 0026 0122     		movs	r2, #1
- 202 0028 1A60     		str	r2, [r3]
-  33:Core/Src/fsm_controller.c ****         change_state(fsm, LISTENING);
- 203              		.loc 1 33 9 is_stmt 1 view .LVU34
- 204 002a 0221     		movs	r1, #2
- 205 002c 2046     		mov	r0, r4
- 206 002e FFF7FEFF 		bl	change_state
- 207              	.LVL5:
-  34:Core/Src/fsm_controller.c ****         break;
- 208              		.loc 1 34 9 view .LVU35
- 209              	.L7:
-  35:Core/Src/fsm_controller.c ****     case LISTENING:
-  36:Core/Src/fsm_controller.c ****         change_state(fsm, PAUSE);
-  37:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim2);
-  38:Core/Src/fsm_controller.c ****         is_cli_active = 1;
-  39:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
-  40:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
-  41:Core/Src/fsm_controller.c ****         break;
-  42:Core/Src/fsm_controller.c ****     case PAUSE:
-  43:Core/Src/fsm_controller.c ****         change_state(fsm, LISTENING);
-  44:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Stop_IT(&htim2);
-  45:Core/Src/fsm_controller.c ****         is_cli_active = 0;
-  46:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
-  47:Core/Src/fsm_controller.c ****         break;
-  48:Core/Src/fsm_controller.c ****     case WARNING:
-  49:Core/Src/fsm_controller.c ****         is_cli_active = 1;
-  50:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
-  51:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
-  52:Core/Src/fsm_controller.c ****         break;
-  53:Core/Src/fsm_controller.c ****     default:
-  54:Core/Src/fsm_controller.c ****         change_state(fsm, FSMERROR);
-  55:Core/Src/fsm_controller.c ****         NVIC_SystemReset();
-  56:Core/Src/fsm_controller.c ****         break;
-  57:Core/Src/fsm_controller.c ****     }
-  58:Core/Src/fsm_controller.c **** }
- 210              		.loc 1 58 1 is_stmt 0 view .LVU36
- 211 0032 38BD     		pop	{r3, r4, r5, pc}
- 212              	.LVL6:
- 213              	.L12:
-  36:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim2);
- 214              		.loc 1 36 9 is_stmt 1 view .LVU37
- 215 0034 0321     		movs	r1, #3
- 216 0036 FFF7FEFF 		bl	change_state
- 217              	.LVL7:
-  37:Core/Src/fsm_controller.c ****         is_cli_active = 1;
- 218              		.loc 1 37 9 view .LVU38
- 219 003a 1C48     		ldr	r0, .L16+12
- 220 003c FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
- 221              	.LVL8:
-  38:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 222              		.loc 1 38 9 view .LVU39
-  38:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 223              		.loc 1 38 23 is_stmt 0 view .LVU40
- 224 0040 184B     		ldr	r3, .L16+4
- 225 0042 0122     		movs	r2, #1
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 45
+ 194              	.LFE244:
+ 196              		.section	.rodata.ProcessADCData.str1.4,"aMS",%progbits,1
+ 197              		.align	2
+ 198              	.LC0:
+ 199 0000 416E616C 		.ascii	"Analog: %d\015\012\000"
+ 199      6F673A20 
+ 199      25640D0A 
+ 199      00
+ 200              		.section	.text.ProcessADCData,"ax",%progbits
+ 201              		.align	1
+ 202              		.global	ProcessADCData
+ 203              		.syntax unified
+ 204              		.thumb
+ 205              		.thumb_func
+ 207              	ProcessADCData:
+ 208              	.LFB245:
+  40:Core/Src/fsm_controller.c **** 
+  41:Core/Src/fsm_controller.c **** void ProcessADCData(){
+ 209              		.loc 1 41 22 is_stmt 1 view -0
+ 210              		.cfi_startproc
+ 211              		@ args = 0, pretend = 0, frame = 0
+ 212              		@ frame_needed = 0, uses_anonymous_args = 0
+ 213 0000 38B5     		push	{r3, r4, r5, lr}
+ 214              		.cfi_def_cfa_offset 16
+ 215              		.cfi_offset 3, -16
+ 216              		.cfi_offset 4, -12
+ 217              		.cfi_offset 5, -8
+ 218              		.cfi_offset 14, -4
+  42:Core/Src/fsm_controller.c ****     for(int i = 0; i < BUFFER_SIZE; ++i){
+ 219              		.loc 1 42 5 view .LVU34
+ 220              	.LBB10:
+ 221              		.loc 1 42 9 view .LVU35
+ 222              	.LVL6:
+ 223              		.loc 1 42 13 is_stmt 0 view .LVU36
+ 224 0002 0024     		movs	r4, #0
+ 225              	.LVL7:
+ 226              	.L14:
+ 227              		.loc 1 42 22 is_stmt 1 discriminator 1 view .LVU37
+ 228 0004 002C     		cmp	r4, #0
+ 229 0006 03DD     		ble	.L15
+ 230              	.LBE10:
+  43:Core/Src/fsm_controller.c ****         uint16_t rawValue = adc_buffer[0];
+  44:Core/Src/fsm_controller.c ****         sprintf(msg, "Analog: %d\r\n", rawValue);
+  45:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  46:Core/Src/fsm_controller.c ****     }
+  47:Core/Src/fsm_controller.c ****     conversion_complete = 0;
+ 231              		.loc 1 47 5 view .LVU38
+ 232              		.loc 1 47 25 is_stmt 0 view .LVU39
+ 233 0008 0B4B     		ldr	r3, .L17
+ 234 000a 0022     		movs	r2, #0
+ 235 000c 1A70     		strb	r2, [r3]
+  48:Core/Src/fsm_controller.c **** }
+ 236              		.loc 1 48 1 view .LVU40
+ 237 000e 38BD     		pop	{r3, r4, r5, pc}
+ 238              	.LVL8:
+ 239              	.L15:
+ 240              	.LBB12:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 45
 
 
- 226 0044 1A60     		str	r2, [r3]
-  39:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
- 227              		.loc 1 39 9 is_stmt 1 view .LVU41
-  39:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
- 228              		.loc 1 39 26 is_stmt 0 view .LVU42
- 229 0046 184B     		ldr	r3, .L16+8
- 230 0048 0022     		movs	r2, #0
- 231 004a 1A60     		str	r2, [r3]
-  40:Core/Src/fsm_controller.c ****         break;
- 232              		.loc 1 40 9 is_stmt 1 view .LVU43
- 233 004c 4FF0FF33 		mov	r3, #-1
- 234 0050 0722     		movs	r2, #7
- 235 0052 1749     		ldr	r1, .L16+16
- 236 0054 1748     		ldr	r0, .L16+20
- 237 0056 FFF7FEFF 		bl	HAL_UART_Transmit
- 238              	.LVL9:
-  41:Core/Src/fsm_controller.c ****     case PAUSE:
- 239              		.loc 1 41 9 view .LVU44
- 240 005a EAE7     		b	.L7
- 241              	.LVL10:
- 242              	.L11:
-  43:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Stop_IT(&htim2);
- 243              		.loc 1 43 9 view .LVU45
- 244 005c 0221     		movs	r1, #2
- 245 005e FFF7FEFF 		bl	change_state
- 246              	.LVL11:
-  44:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 247              		.loc 1 44 9 view .LVU46
- 248 0062 1248     		ldr	r0, .L16+12
- 249 0064 FFF7FEFF 		bl	HAL_TIM_Base_Stop_IT
- 250              	.LVL12:
-  45:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
- 251              		.loc 1 45 9 view .LVU47
-  45:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
- 252              		.loc 1 45 23 is_stmt 0 view .LVU48
- 253 0068 0E4B     		ldr	r3, .L16+4
- 254 006a 0022     		movs	r2, #0
- 255 006c 1A60     		str	r2, [r3]
-  46:Core/Src/fsm_controller.c ****         break;
- 256              		.loc 1 46 9 is_stmt 1 view .LVU49
-  46:Core/Src/fsm_controller.c ****         break;
- 257              		.loc 1 46 26 is_stmt 0 view .LVU50
- 258 006e 0E4B     		ldr	r3, .L16+8
- 259 0070 0122     		movs	r2, #1
- 260 0072 1A60     		str	r2, [r3]
-  47:Core/Src/fsm_controller.c ****     case WARNING:
- 261              		.loc 1 47 9 is_stmt 1 view .LVU51
- 262 0074 DDE7     		b	.L7
- 263              	.LVL13:
- 264              	.L9:
-  49:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
- 265              		.loc 1 49 9 view .LVU52
-  49:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
- 266              		.loc 1 49 23 is_stmt 0 view .LVU53
- 267 0076 0125     		movs	r5, #1
- 268 0078 0A4B     		ldr	r3, .L16+4
- 269 007a 1D60     		str	r5, [r3]
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 46
+ 241              	.LBB11:
+  43:Core/Src/fsm_controller.c ****         uint16_t rawValue = adc_buffer[0];
+ 242              		.loc 1 43 9 is_stmt 1 view .LVU41
+  44:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+ 243              		.loc 1 44 9 view .LVU42
+ 244 0010 0A4D     		ldr	r5, .L17+4
+ 245 0012 0B4B     		ldr	r3, .L17+8
+  44:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+ 246              		.loc 1 44 9 is_stmt 0 view .LVU43
+ 247 0014 1A88     		ldrh	r2, [r3]
+ 248 0016 0B49     		ldr	r1, .L17+12
+ 249 0018 2846     		mov	r0, r5
+ 250 001a FFF7FEFF 		bl	sprintf
+ 251              	.LVL9:
+  45:Core/Src/fsm_controller.c ****     }
+ 252              		.loc 1 45 9 is_stmt 1 view .LVU44
+  45:Core/Src/fsm_controller.c ****     }
+ 253              		.loc 1 45 51 is_stmt 0 view .LVU45
+ 254 001e 2846     		mov	r0, r5
+ 255 0020 FFF7FEFF 		bl	strlen
+ 256              	.LVL10:
+  45:Core/Src/fsm_controller.c ****     }
+ 257              		.loc 1 45 9 discriminator 1 view .LVU46
+ 258 0024 4FF0FF33 		mov	r3, #-1
+ 259 0028 82B2     		uxth	r2, r0
+ 260 002a 2946     		mov	r1, r5
+ 261 002c 0648     		ldr	r0, .L17+16
+ 262 002e FFF7FEFF 		bl	HAL_UART_Transmit
+ 263              	.LVL11:
+ 264              	.LBE11:
+  42:Core/Src/fsm_controller.c ****         uint16_t rawValue = adc_buffer[0];
+ 265              		.loc 1 42 37 is_stmt 1 discriminator 3 view .LVU47
+ 266 0032 0134     		adds	r4, r4, #1
+ 267              	.LVL12:
+  42:Core/Src/fsm_controller.c ****         uint16_t rawValue = adc_buffer[0];
+ 268              		.loc 1 42 37 is_stmt 0 discriminator 3 view .LVU48
+ 269 0034 E6E7     		b	.L14
+ 270              	.L18:
+ 271 0036 00BF     		.align	2
+ 272              	.L17:
+ 273 0038 00000000 		.word	conversion_complete
+ 274 003c 00000000 		.word	msg
+ 275 0040 00000000 		.word	adc_buffer
+ 276 0044 00000000 		.word	.LC0
+ 277 0048 00000000 		.word	huart2
+ 278              	.LBE12:
+ 279              		.cfi_endproc
+ 280              	.LFE245:
+ 282              		.section	.rodata.button_pressed.str1.4,"aMS",%progbits,1
+ 283              		.align	2
+ 284              	.LC1:
+ 285 0000 50415553 		.ascii	"PAUSE\015\012\000"
+ 285      450D0A00 
+ 286              		.align	2
+ 287              	.LC2:
+ 288 0008 57414954 		.ascii	"WAIT_REQUEST\015\012\000"
+ 288      5F524551 
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 46
 
 
-  50:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
- 270              		.loc 1 50 9 is_stmt 1 view .LVU54
- 271 007c 4FF0FF33 		mov	r3, #-1
- 272 0080 0E22     		movs	r2, #14
- 273 0082 0D49     		ldr	r1, .L16+24
- 274 0084 0B48     		ldr	r0, .L16+20
- 275              	.LVL14:
-  50:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
- 276              		.loc 1 50 9 is_stmt 0 view .LVU55
- 277 0086 FFF7FEFF 		bl	HAL_UART_Transmit
- 278              	.LVL15:
-  51:Core/Src/fsm_controller.c ****         break;
- 279              		.loc 1 51 9 is_stmt 1 view .LVU56
- 280 008a 2946     		mov	r1, r5
- 281 008c 2046     		mov	r0, r4
- 282 008e FFF7FEFF 		bl	change_state
- 283              	.LVL16:
-  52:Core/Src/fsm_controller.c ****     default:
- 284              		.loc 1 52 9 view .LVU57
- 285 0092 CEE7     		b	.L7
- 286              	.LVL17:
- 287              	.L8:
-  54:Core/Src/fsm_controller.c ****         NVIC_SystemReset();
- 288              		.loc 1 54 9 view .LVU58
- 289 0094 0521     		movs	r1, #5
- 290 0096 FFF7FEFF 		bl	change_state
- 291              	.LVL18:
-  55:Core/Src/fsm_controller.c ****         break;
- 292              		.loc 1 55 9 view .LVU59
- 293 009a FFF7FEFF 		bl	__NVIC_SystemReset
- 294              	.LVL19:
- 295              	.L17:
- 296 009e 00BF     		.align	2
- 297              	.L16:
- 298 00a0 00000240 		.word	1073872896
- 299 00a4 00000000 		.word	is_cli_active
- 300 00a8 00000000 		.word	is_sensor_active
- 301 00ac 00000000 		.word	htim2
- 302 00b0 00000000 		.word	.LC0
- 303 00b4 00000000 		.word	huart2
- 304 00b8 08000000 		.word	.LC1
- 305              		.cfi_endproc
- 306              	.LFE244:
- 308              		.section	.rodata.fsm_run.str1.4,"aMS",%progbits,1
- 309              		.align	2
- 310              	.LC2:
- 311 0000 416E616C 		.ascii	"Analog:%lu\015\012\000"
- 311      6F673A25 
- 311      6C750D0A 
- 311      00
- 312 000d 000000   		.align	2
- 313              	.LC3:
- 314 0010 5741524E 		.ascii	"WARNING\015\012\000"
- 314      494E470D 
- 314      0A00
- 315 001a 0000     		.align	2
- 316              	.LC4:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 47
+ 288      55455354 
+ 288      0D0A00
+ 289              		.section	.text.button_pressed,"ax",%progbits
+ 290              		.align	1
+ 291              		.global	button_pressed
+ 292              		.syntax unified
+ 293              		.thumb
+ 294              		.thumb_func
+ 296              	button_pressed:
+ 297              	.LVL13:
+ 298              	.LFB246:
+  49:Core/Src/fsm_controller.c **** 
+  50:Core/Src/fsm_controller.c **** void button_pressed(FsmController* fsm) {
+ 299              		.loc 1 50 41 is_stmt 1 view -0
+ 300              		.cfi_startproc
+ 301              		@ args = 0, pretend = 0, frame = 0
+ 302              		@ frame_needed = 0, uses_anonymous_args = 0
+ 303              		.loc 1 50 41 is_stmt 0 view .LVU50
+ 304 0000 38B5     		push	{r3, r4, r5, lr}
+ 305              		.cfi_def_cfa_offset 16
+ 306              		.cfi_offset 3, -16
+ 307              		.cfi_offset 4, -12
+ 308              		.cfi_offset 5, -8
+ 309              		.cfi_offset 14, -4
+ 310 0002 0446     		mov	r4, r0
+  51:Core/Src/fsm_controller.c ****     switch (fsm->state) {
+ 311              		.loc 1 51 5 is_stmt 1 view .LVU51
+ 312              		.loc 1 51 16 is_stmt 0 view .LVU52
+ 313 0004 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 314              		.loc 1 51 5 view .LVU53
+ 315 0006 013B     		subs	r3, r3, #1
+ 316 0008 032B     		cmp	r3, #3
+ 317 000a 4ED8     		bhi	.L20
+ 318 000c DFE803F0 		tbb	[pc, r3]
+ 319              	.L22:
+ 320 0010 02       		.byte	(.L25-.L22)/2
+ 321 0011 16       		.byte	(.L24-.L22)/2
+ 322 0012 2D       		.byte	(.L23-.L22)/2
+ 323 0013 3E       		.byte	(.L21-.L22)/2
+ 324              		.p2align 1
+ 325              	.L25:
+  52:Core/Src/fsm_controller.c ****     case WAIT_REQUEST:
+  53:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+ 326              		.loc 1 53 9 is_stmt 1 view .LVU54
+ 327 0014 0122     		movs	r2, #1
+ 328 0016 2021     		movs	r1, #32
+ 329 0018 2648     		ldr	r0, .L28
+ 330              	.LVL14:
+ 331              		.loc 1 53 9 is_stmt 0 view .LVU55
+ 332 001a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 333              	.LVL15:
+  54:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 334              		.loc 1 54 9 is_stmt 1 view .LVU56
+ 335              		.loc 1 54 23 is_stmt 0 view .LVU57
+ 336 001e 264B     		ldr	r3, .L28+4
+ 337 0020 0022     		movs	r2, #0
+ 338 0022 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 47
 
 
- 317 001c 4552524F 		.ascii	"ERROR\015\012\000"
- 317      520D0A00 
- 318              		.section	.text.fsm_run,"ax",%progbits
- 319              		.align	1
- 320              		.global	fsm_run
- 321              		.syntax unified
- 322              		.thumb
- 323              		.thumb_func
- 325              	fsm_run:
- 326              	.LVL20:
- 327              	.LFB245:
-  59:Core/Src/fsm_controller.c **** 
-  60:Core/Src/fsm_controller.c **** void fsm_run(FsmController* fsm) {
- 328              		.loc 1 60 34 view -0
- 329              		.cfi_startproc
- 330              		@ args = 0, pretend = 0, frame = 0
- 331              		@ frame_needed = 0, uses_anonymous_args = 0
- 332              		.loc 1 60 34 is_stmt 0 view .LVU61
- 333 0000 38B5     		push	{r3, r4, r5, lr}
- 334              		.cfi_def_cfa_offset 16
- 335              		.cfi_offset 3, -16
- 336              		.cfi_offset 4, -12
- 337              		.cfi_offset 5, -8
- 338              		.cfi_offset 14, -4
- 339 0002 0446     		mov	r4, r0
-  61:Core/Src/fsm_controller.c ****     switch (fsm->state) {
- 340              		.loc 1 61 5 is_stmt 1 view .LVU62
- 341              		.loc 1 61 16 is_stmt 0 view .LVU63
- 342 0004 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
- 343              		.loc 1 61 5 view .LVU64
- 344 0006 052B     		cmp	r3, #5
- 345 0008 00F28980 		bhi	.L19
- 346 000c DFE803F0 		tbb	[pc, r3]
- 347              	.L21:
- 348 0010 03       		.byte	(.L25-.L21)/2
- 349 0011 1C       		.byte	(.L18-.L21)/2
- 350 0012 1D       		.byte	(.L24-.L21)/2
- 351 0013 1C       		.byte	(.L18-.L21)/2
- 352 0014 60       		.byte	(.L22-.L21)/2
- 353 0015 74       		.byte	(.L20-.L21)/2
- 354              		.p2align 1
- 355              	.L25:
-  62:Core/Src/fsm_controller.c ****     case INIT:
-  63:Core/Src/fsm_controller.c ****         srand(HAL_GetTick());
- 356              		.loc 1 63 9 is_stmt 1 view .LVU65
- 357              		.loc 1 63 15 is_stmt 0 view .LVU66
- 358 0016 FFF7FEFF 		bl	HAL_GetTick
- 359              	.LVL21:
- 360              		.loc 1 63 9 discriminator 1 view .LVU67
- 361 001a FFF7FEFF 		bl	srand
- 362              	.LVL22:
-  64:Core/Src/fsm_controller.c ****         CLI_Init();
- 363              		.loc 1 64 9 is_stmt 1 view .LVU68
- 364 001e FFF7FEFF 		bl	CLI_Init
- 365              	.LVL23:
-  65:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
- 366              		.loc 1 65 9 view .LVU69
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 48
+  55:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
+ 339              		.loc 1 55 9 is_stmt 1 view .LVU58
+ 340              		.loc 1 55 26 is_stmt 0 view .LVU59
+ 341 0024 0122     		movs	r2, #1
+ 342 0026 254B     		ldr	r3, .L28+8
+ 343 0028 1A60     		str	r2, [r3]
+  56:Core/Src/fsm_controller.c ****         HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
+ 344              		.loc 1 56 9 is_stmt 1 view .LVU60
+ 345 002a 2549     		ldr	r1, .L28+12
+ 346 002c 2548     		ldr	r0, .L28+16
+ 347 002e FFF7FEFF 		bl	HAL_ADC_Start_DMA
+ 348              	.LVL16:
+  57:Core/Src/fsm_controller.c ****         change_state(fsm, LISTENING);
+ 349              		.loc 1 57 9 view .LVU61
+ 350 0032 0221     		movs	r1, #2
+ 351 0034 2046     		mov	r0, r4
+ 352 0036 FFF7FEFF 		bl	change_state
+ 353              	.LVL17:
+  58:Core/Src/fsm_controller.c ****         break;
+ 354              		.loc 1 58 9 view .LVU62
+ 355              	.L19:
+  59:Core/Src/fsm_controller.c ****     case LISTENING:
+  60:Core/Src/fsm_controller.c ****         change_state(fsm, PAUSE);
+  61:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim2);
+  62:Core/Src/fsm_controller.c ****         is_cli_active = 1;
+  63:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+  64:Core/Src/fsm_controller.c ****         HAL_ADC_Stop_DMA(&hadc1);
+  65:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
+  66:Core/Src/fsm_controller.c ****         break;
+  67:Core/Src/fsm_controller.c ****     case PAUSE:
+  68:Core/Src/fsm_controller.c ****         change_state(fsm, LISTENING);
+  69:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Stop_IT(&htim2);
+  70:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+  71:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
+  72:Core/Src/fsm_controller.c ****         HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
+  73:Core/Src/fsm_controller.c ****         break;
+  74:Core/Src/fsm_controller.c ****     case WARNING:
+  75:Core/Src/fsm_controller.c ****         is_cli_active = 1;
+  76:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
+  77:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
+  78:Core/Src/fsm_controller.c ****         break;
+  79:Core/Src/fsm_controller.c ****     default:
+  80:Core/Src/fsm_controller.c ****         change_state(fsm, FSMERROR);
+  81:Core/Src/fsm_controller.c ****         NVIC_SystemReset();
+  82:Core/Src/fsm_controller.c ****         break;
+  83:Core/Src/fsm_controller.c ****     }
+  84:Core/Src/fsm_controller.c **** }
+ 356              		.loc 1 84 1 is_stmt 0 view .LVU63
+ 357 003a 38BD     		pop	{r3, r4, r5, pc}
+ 358              	.LVL18:
+ 359              	.L24:
+  60:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim2);
+ 360              		.loc 1 60 9 is_stmt 1 view .LVU64
+ 361 003c 0321     		movs	r1, #3
+ 362 003e FFF7FEFF 		bl	change_state
+ 363              	.LVL19:
+  61:Core/Src/fsm_controller.c ****         is_cli_active = 1;
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 48
 
 
- 367 0022 0022     		movs	r2, #0
- 368 0024 2021     		movs	r1, #32
- 369 0026 4048     		ldr	r0, .L31
- 370 0028 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 371              	.LVL24:
-  66:Core/Src/fsm_controller.c ****         is_cli_active = 1;
- 372              		.loc 1 66 9 view .LVU70
- 373              		.loc 1 66 23 is_stmt 0 view .LVU71
- 374 002c 0125     		movs	r5, #1
- 375 002e 3F4B     		ldr	r3, .L31+4
- 376 0030 1D60     		str	r5, [r3]
-  67:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
- 377              		.loc 1 67 9 is_stmt 1 view .LVU72
- 378 0032 4FF0FF33 		mov	r3, #-1
- 379 0036 0E22     		movs	r2, #14
- 380 0038 3D49     		ldr	r1, .L31+8
- 381 003a 3E48     		ldr	r0, .L31+12
- 382 003c FFF7FEFF 		bl	HAL_UART_Transmit
- 383              	.LVL25:
-  68:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
- 384              		.loc 1 68 9 view .LVU73
- 385 0040 2946     		mov	r1, r5
- 386 0042 2046     		mov	r0, r4
- 387 0044 FFF7FEFF 		bl	change_state
- 388              	.LVL26:
-  69:Core/Src/fsm_controller.c ****         break;
- 389              		.loc 1 69 9 view .LVU74
- 390              	.L18:
-  70:Core/Src/fsm_controller.c ****     case WAIT_REQUEST:
-  71:Core/Src/fsm_controller.c ****         
+ 364              		.loc 1 61 9 view .LVU65
+ 365 0042 2148     		ldr	r0, .L28+20
+ 366 0044 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 367              	.LVL20:
+  62:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 368              		.loc 1 62 9 view .LVU66
+  62:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 369              		.loc 1 62 23 is_stmt 0 view .LVU67
+ 370 0048 1B4B     		ldr	r3, .L28+4
+ 371 004a 0122     		movs	r2, #1
+ 372 004c 1A60     		str	r2, [r3]
+  63:Core/Src/fsm_controller.c ****         HAL_ADC_Stop_DMA(&hadc1);
+ 373              		.loc 1 63 9 is_stmt 1 view .LVU68
+  63:Core/Src/fsm_controller.c ****         HAL_ADC_Stop_DMA(&hadc1);
+ 374              		.loc 1 63 26 is_stmt 0 view .LVU69
+ 375 004e 1B4B     		ldr	r3, .L28+8
+ 376 0050 0022     		movs	r2, #0
+ 377 0052 1A60     		str	r2, [r3]
+  64:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"PAUSE\r\n", strlen("PAUSE\r\n"), HAL_MAX_DELAY);
+ 378              		.loc 1 64 9 is_stmt 1 view .LVU70
+ 379 0054 1B48     		ldr	r0, .L28+16
+ 380 0056 FFF7FEFF 		bl	HAL_ADC_Stop_DMA
+ 381              	.LVL21:
+  65:Core/Src/fsm_controller.c ****         break;
+ 382              		.loc 1 65 9 view .LVU71
+ 383 005a 4FF0FF33 		mov	r3, #-1
+ 384 005e 0722     		movs	r2, #7
+ 385 0060 1A49     		ldr	r1, .L28+24
+ 386 0062 1B48     		ldr	r0, .L28+28
+ 387 0064 FFF7FEFF 		bl	HAL_UART_Transmit
+ 388              	.LVL22:
+  66:Core/Src/fsm_controller.c ****     case PAUSE:
+ 389              		.loc 1 66 9 view .LVU72
+ 390 0068 E7E7     		b	.L19
+ 391              	.LVL23:
+ 392              	.L23:
+  68:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Stop_IT(&htim2);
+ 393              		.loc 1 68 9 view .LVU73
+ 394 006a 0221     		movs	r1, #2
+ 395 006c FFF7FEFF 		bl	change_state
+ 396              	.LVL24:
+  69:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 397              		.loc 1 69 9 view .LVU74
+ 398 0070 1548     		ldr	r0, .L28+20
+ 399 0072 FFF7FEFF 		bl	HAL_TIM_Base_Stop_IT
+ 400              	.LVL25:
+  70:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
+ 401              		.loc 1 70 9 view .LVU75
+  70:Core/Src/fsm_controller.c ****         is_sensor_active = 1;
+ 402              		.loc 1 70 23 is_stmt 0 view .LVU76
+ 403 0076 104B     		ldr	r3, .L28+4
+ 404 0078 0022     		movs	r2, #0
+ 405 007a 1A60     		str	r2, [r3]
+  71:Core/Src/fsm_controller.c ****         HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
+ 406              		.loc 1 71 9 is_stmt 1 view .LVU77
+  71:Core/Src/fsm_controller.c ****         HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
+ 407              		.loc 1 71 26 is_stmt 0 view .LVU78
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 49
+
+
+ 408 007c 0122     		movs	r2, #1
+ 409 007e 0F4B     		ldr	r3, .L28+8
+ 410 0080 1A60     		str	r2, [r3]
   72:Core/Src/fsm_controller.c ****         break;
-  73:Core/Src/fsm_controller.c ****     case LISTENING:
-  74:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
-  75:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
-  76:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
-  77:Core/Src/fsm_controller.c ****                 }else{
-  78:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
-  79:Core/Src/fsm_controller.c ****                         change_state(fsm, WARNING);
-  80:Core/Src/fsm_controller.c ****                         hall_sensor_time = 0;
-  81:Core/Src/fsm_controller.c ****                     }
-  82:Core/Src/fsm_controller.c ****                 }
-  83:Core/Src/fsm_controller.c ****         }else{
-  84:Core/Src/fsm_controller.c ****             hall_sensor_time = 0;
-  85:Core/Src/fsm_controller.c ****         }
-  86:Core/Src/fsm_controller.c ****         HAL_ADC_Start(&hadc1);
-  87:Core/Src/fsm_controller.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
-  88:Core/Src/fsm_controller.c ****         adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
-  89:Core/Src/fsm_controller.c ****         sprintf(msg, "Analog:%lu\r\n", adc_value);
-  90:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-  91:Core/Src/fsm_controller.c ****         HAL_Delay(100);
-  92:Core/Src/fsm_controller.c **** 
-  93:Core/Src/fsm_controller.c ****         break;
-  94:Core/Src/fsm_controller.c ****     case PAUSE:
+ 411              		.loc 1 72 9 is_stmt 1 view .LVU79
+ 412 0082 0F49     		ldr	r1, .L28+12
+ 413 0084 0F48     		ldr	r0, .L28+16
+ 414 0086 FFF7FEFF 		bl	HAL_ADC_Start_DMA
+ 415              	.LVL26:
+  73:Core/Src/fsm_controller.c ****     case WARNING:
+ 416              		.loc 1 73 9 view .LVU80
+ 417 008a D6E7     		b	.L19
+ 418              	.LVL27:
+ 419              	.L21:
+  75:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
+ 420              		.loc 1 75 9 view .LVU81
+  75:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
+ 421              		.loc 1 75 23 is_stmt 0 view .LVU82
+ 422 008c 0125     		movs	r5, #1
+ 423 008e 0A4B     		ldr	r3, .L28+4
+ 424 0090 1D60     		str	r5, [r3]
+  76:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
+ 425              		.loc 1 76 9 is_stmt 1 view .LVU83
+ 426 0092 4FF0FF33 		mov	r3, #-1
+ 427 0096 0E22     		movs	r2, #14
+ 428 0098 0E49     		ldr	r1, .L28+32
+ 429 009a 0D48     		ldr	r0, .L28+28
+ 430              	.LVL28:
+  76:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
+ 431              		.loc 1 76 9 is_stmt 0 view .LVU84
+ 432 009c FFF7FEFF 		bl	HAL_UART_Transmit
+ 433              	.LVL29:
+  77:Core/Src/fsm_controller.c ****         break;
+ 434              		.loc 1 77 9 is_stmt 1 view .LVU85
+ 435 00a0 2946     		mov	r1, r5
+ 436 00a2 2046     		mov	r0, r4
+ 437 00a4 FFF7FEFF 		bl	change_state
+ 438              	.LVL30:
+  78:Core/Src/fsm_controller.c ****     default:
+ 439              		.loc 1 78 9 view .LVU86
+ 440 00a8 C7E7     		b	.L19
+ 441              	.LVL31:
+ 442              	.L20:
+  80:Core/Src/fsm_controller.c ****         NVIC_SystemReset();
+ 443              		.loc 1 80 9 view .LVU87
+ 444 00aa 0521     		movs	r1, #5
+ 445 00ac FFF7FEFF 		bl	change_state
+ 446              	.LVL32:
+  81:Core/Src/fsm_controller.c ****         break;
+ 447              		.loc 1 81 9 view .LVU88
+ 448 00b0 FFF7FEFF 		bl	__NVIC_SystemReset
+ 449              	.LVL33:
+ 450              	.L29:
+ 451              		.align	2
+ 452              	.L28:
+ 453 00b4 00000240 		.word	1073872896
+ 454 00b8 00000000 		.word	is_cli_active
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 50
+
+
+ 455 00bc 00000000 		.word	is_sensor_active
+ 456 00c0 00000000 		.word	adc_buffer
+ 457 00c4 00000000 		.word	hadc1
+ 458 00c8 00000000 		.word	htim2
+ 459 00cc 00000000 		.word	.LC1
+ 460 00d0 00000000 		.word	huart2
+ 461 00d4 08000000 		.word	.LC2
+ 462              		.cfi_endproc
+ 463              	.LFE246:
+ 465              		.section	.rodata.fsm_run.str1.4,"aMS",%progbits,1
+ 466              		.align	2
+ 467              	.LC3:
+ 468 0000 5741524E 		.ascii	"WARNING\015\012\000"
+ 468      494E470D 
+ 468      0A00
+ 469 000a 0000     		.align	2
+ 470              	.LC4:
+ 471 000c 4552524F 		.ascii	"ERROR\015\012\000"
+ 471      520D0A00 
+ 472              		.section	.text.fsm_run,"ax",%progbits
+ 473              		.align	1
+ 474              		.global	fsm_run
+ 475              		.syntax unified
+ 476              		.thumb
+ 477              		.thumb_func
+ 479              	fsm_run:
+ 480              	.LVL34:
+ 481              	.LFB247:
+  85:Core/Src/fsm_controller.c **** 
+  86:Core/Src/fsm_controller.c **** void fsm_run(FsmController* fsm) {
+ 482              		.loc 1 86 34 view -0
+ 483              		.cfi_startproc
+ 484              		@ args = 0, pretend = 0, frame = 0
+ 485              		@ frame_needed = 0, uses_anonymous_args = 0
+ 486              		.loc 1 86 34 is_stmt 0 view .LVU90
+ 487 0000 38B5     		push	{r3, r4, r5, lr}
+ 488              		.cfi_def_cfa_offset 16
+ 489              		.cfi_offset 3, -16
+ 490              		.cfi_offset 4, -12
+ 491              		.cfi_offset 5, -8
+ 492              		.cfi_offset 14, -4
+ 493 0002 0446     		mov	r4, r0
+  87:Core/Src/fsm_controller.c ****     switch (fsm->state) {
+ 494              		.loc 1 87 5 is_stmt 1 view .LVU91
+ 495              		.loc 1 87 16 is_stmt 0 view .LVU92
+ 496 0004 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+ 497              		.loc 1 87 5 view .LVU93
+ 498 0006 052B     		cmp	r3, #5
+ 499 0008 71D8     		bhi	.L31
+ 500 000a DFE803F0 		tbb	[pc, r3]
+ 501              	.L33:
+ 502 000e 03       		.byte	(.L37-.L33)/2
+ 503 000f 1C       		.byte	(.L30-.L33)/2
+ 504 0010 1D       		.byte	(.L36-.L33)/2
+ 505 0011 1C       		.byte	(.L30-.L33)/2
+ 506 0012 46       		.byte	(.L34-.L33)/2
+ 507 0013 5A       		.byte	(.L32-.L33)/2
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 51
+
+
+ 508              		.p2align 1
+ 509              	.L37:
+  88:Core/Src/fsm_controller.c ****     case INIT:
+  89:Core/Src/fsm_controller.c ****         srand(HAL_GetTick());
+ 510              		.loc 1 89 9 is_stmt 1 view .LVU94
+ 511              		.loc 1 89 15 is_stmt 0 view .LVU95
+ 512 0014 FFF7FEFF 		bl	HAL_GetTick
+ 513              	.LVL35:
+ 514              		.loc 1 89 9 discriminator 1 view .LVU96
+ 515 0018 FFF7FEFF 		bl	srand
+ 516              	.LVL36:
+  90:Core/Src/fsm_controller.c ****         CLI_Init();
+ 517              		.loc 1 90 9 is_stmt 1 view .LVU97
+ 518 001c FFF7FEFF 		bl	CLI_Init
+ 519              	.LVL37:
+  91:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+ 520              		.loc 1 91 9 view .LVU98
+ 521 0020 0022     		movs	r2, #0
+ 522 0022 2021     		movs	r1, #32
+ 523 0024 3448     		ldr	r0, .L45
+ 524 0026 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 525              	.LVL38:
+  92:Core/Src/fsm_controller.c ****         is_cli_active = 1;
+ 526              		.loc 1 92 9 view .LVU99
+ 527              		.loc 1 92 23 is_stmt 0 view .LVU100
+ 528 002a 0125     		movs	r5, #1
+ 529 002c 334B     		ldr	r3, .L45+4
+ 530 002e 1D60     		str	r5, [r3]
+  93:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MA
+ 531              		.loc 1 93 9 is_stmt 1 view .LVU101
+ 532 0030 4FF0FF33 		mov	r3, #-1
+ 533 0034 0E22     		movs	r2, #14
+ 534 0036 3249     		ldr	r1, .L45+8
+ 535 0038 3248     		ldr	r0, .L45+12
+ 536 003a FFF7FEFF 		bl	HAL_UART_Transmit
+ 537              	.LVL39:
+  94:Core/Src/fsm_controller.c ****         change_state(fsm, WAIT_REQUEST);
+ 538              		.loc 1 94 9 view .LVU102
+ 539 003e 2946     		mov	r1, r5
+ 540 0040 2046     		mov	r0, r4
+ 541 0042 FFF7FEFF 		bl	change_state
+ 542              	.LVL40:
   95:Core/Src/fsm_controller.c ****         break;
-  96:Core/Src/fsm_controller.c ****     case WARNING:
-  97:Core/Src/fsm_controller.c ****         // Add logic for WARNING state
-  98:Core/Src/fsm_controller.c ****         is_cli_active = 0;
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 49
+ 543              		.loc 1 95 9 view .LVU103
+ 544              	.L30:
+  96:Core/Src/fsm_controller.c ****     case WAIT_REQUEST:
+  97:Core/Src/fsm_controller.c ****         
+  98:Core/Src/fsm_controller.c ****         break;
+  99:Core/Src/fsm_controller.c ****     case LISTENING:
+ 100:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
+ 101:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
+ 102:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
+ 103:Core/Src/fsm_controller.c ****                 }else{
+ 104:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
+ 105:Core/Src/fsm_controller.c ****                         change_state(fsm, WARNING);
+ 106:Core/Src/fsm_controller.c ****                         hall_sensor_time = 0;
+ 107:Core/Src/fsm_controller.c ****                     }
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 52
 
 
-  99:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 100:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
- 101:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
- 102:Core/Src/fsm_controller.c ****         HAL_Delay(100);
- 103:Core/Src/fsm_controller.c ****         break;
- 104:Core/Src/fsm_controller.c ****     case FSMERROR:
- 105:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 106:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 107:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim3);
- 108:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
- 109:Core/Src/fsm_controller.c ****         HAL_Delay(100);
- 110:Core/Src/fsm_controller.c ****         break;
- 111:Core/Src/fsm_controller.c ****     default:
- 112:Core/Src/fsm_controller.c ****         change_state(fsm, FSMERROR);
- 113:Core/Src/fsm_controller.c ****         break;
- 114:Core/Src/fsm_controller.c ****     }
- 115:Core/Src/fsm_controller.c **** }...
- 391              		.loc 1 115 1 is_stmt 0 view .LVU75
- 392 0048 38BD     		pop	{r3, r4, r5, pc}
- 393              	.LVL27:
- 394              	.L24:
-  74:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
- 395              		.loc 1 74 9 is_stmt 1 view .LVU76
-  74:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
- 396              		.loc 1 74 12 is_stmt 0 view .LVU77
- 397 004a 3B4B     		ldr	r3, .L31+16
- 398 004c 1B68     		ldr	r3, [r3]
-  74:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
- 399              		.loc 1 74 11 view .LVU78
- 400 004e C3B1     		cbz	r3, .L26
-  75:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
- 401              		.loc 1 75 17 is_stmt 1 view .LVU79
-  75:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
- 402              		.loc 1 75 37 is_stmt 0 view .LVU80
- 403 0050 3A4B     		ldr	r3, .L31+20
- 404 0052 1B68     		ldr	r3, [r3]
-  75:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
- 405              		.loc 1 75 19 view .LVU81
- 406 0054 23B9     		cbnz	r3, .L27
-  76:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
- 407              		.loc 1 76 21 is_stmt 1 view .LVU82
-  76:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
- 408              		.loc 1 76 40 is_stmt 0 view .LVU83
- 409 0056 FFF7FEFF 		bl	HAL_GetTick
- 410              	.LVL28:
-  76:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
- 411              		.loc 1 76 38 discriminator 1 view .LVU84
- 412 005a 384B     		ldr	r3, .L31+20
- 413 005c 1860     		str	r0, [r3]
- 414 005e 13E0     		b	.L28
- 415              	.LVL29:
- 416              	.L27:
-  78:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
- 417              		.loc 1 78 21 is_stmt 1 view .LVU85
-  78:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
- 418              		.loc 1 78 24 is_stmt 0 view .LVU86
- 419 0060 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 50
+ 108:Core/Src/fsm_controller.c ****                 }
+ 109:Core/Src/fsm_controller.c ****         }else{
+ 110:Core/Src/fsm_controller.c ****             hall_sensor_time = 0;
+ 111:Core/Src/fsm_controller.c ****         }
+ 112:Core/Src/fsm_controller.c ****         if(conversion_complete){
+ 113:Core/Src/fsm_controller.c ****             ProcessADCData();
+ 114:Core/Src/fsm_controller.c ****         }
+ 115:Core/Src/fsm_controller.c ****         
+ 116:Core/Src/fsm_controller.c ****         HAL_Delay(100);
+ 117:Core/Src/fsm_controller.c **** 
+ 118:Core/Src/fsm_controller.c ****         break;
+ 119:Core/Src/fsm_controller.c ****     case PAUSE:
+ 120:Core/Src/fsm_controller.c ****         break;
+ 121:Core/Src/fsm_controller.c ****     case WARNING:
+ 122:Core/Src/fsm_controller.c ****         // Add logic for WARNING state
+ 123:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 124:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 125:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+ 126:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
+ 127:Core/Src/fsm_controller.c ****         HAL_Delay(100);
+ 128:Core/Src/fsm_controller.c ****         break;
+ 129:Core/Src/fsm_controller.c ****     case FSMERROR:
+ 130:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 131:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 132:Core/Src/fsm_controller.c ****         HAL_ADC_Stop_DMA(&hadc1);
+ 133:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim3);
+ 134:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
+ 135:Core/Src/fsm_controller.c ****         HAL_Delay(100);
+ 136:Core/Src/fsm_controller.c ****         break;
+ 137:Core/Src/fsm_controller.c ****     default:
+ 138:Core/Src/fsm_controller.c ****         change_state(fsm, FSMERROR);
+ 139:Core/Src/fsm_controller.c ****         break;
+ 140:Core/Src/fsm_controller.c ****     }
+ 141:Core/Src/fsm_controller.c **** }...
+ 545              		.loc 1 141 1 is_stmt 0 view .LVU104
+ 546 0046 38BD     		pop	{r3, r4, r5, pc}
+ 547              	.LVL41:
+ 548              	.L36:
+ 100:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
+ 549              		.loc 1 100 9 is_stmt 1 view .LVU105
+ 100:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
+ 550              		.loc 1 100 12 is_stmt 0 view .LVU106
+ 551 0048 2F4B     		ldr	r3, .L45+16
+ 552 004a 1B68     		ldr	r3, [r3]
+ 100:Core/Src/fsm_controller.c ****         if(is_magnet_detected){
+ 553              		.loc 1 100 11 view .LVU107
+ 554 004c C3B1     		cbz	r3, .L38
+ 101:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
+ 555              		.loc 1 101 17 is_stmt 1 view .LVU108
+ 101:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
+ 556              		.loc 1 101 37 is_stmt 0 view .LVU109
+ 557 004e 2F4B     		ldr	r3, .L45+20
+ 558 0050 1B68     		ldr	r3, [r3]
+ 101:Core/Src/fsm_controller.c ****                 if(hall_sensor_time == 0){
+ 559              		.loc 1 101 19 view .LVU110
+ 560 0052 23B9     		cbnz	r3, .L39
+ 102:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 53
 
 
- 420              	.LVL30:
-  78:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
- 421              		.loc 1 78 38 discriminator 1 view .LVU87
- 422 0064 354B     		ldr	r3, .L31+20
- 423 0066 1B68     		ldr	r3, [r3]
- 424 0068 C01A     		subs	r0, r0, r3
-  78:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
- 425              		.loc 1 78 23 discriminator 1 view .LVU88
- 426 006a 41F28733 		movw	r3, #4999
- 427 006e 9842     		cmp	r0, r3
- 428 0070 0AD9     		bls	.L28
-  79:Core/Src/fsm_controller.c ****                         change_state(fsm, WARNING);
- 429              		.loc 1 79 25 is_stmt 1 view .LVU89
- 430 0072 0421     		movs	r1, #4
- 431 0074 2046     		mov	r0, r4
- 432 0076 FFF7FEFF 		bl	change_state
- 433              	.LVL31:
-  80:Core/Src/fsm_controller.c ****                         hall_sensor_time = 0;
- 434              		.loc 1 80 25 view .LVU90
-  80:Core/Src/fsm_controller.c ****                         hall_sensor_time = 0;
- 435              		.loc 1 80 42 is_stmt 0 view .LVU91
- 436 007a 304B     		ldr	r3, .L31+20
- 437 007c 0022     		movs	r2, #0
- 438 007e 1A60     		str	r2, [r3]
- 439 0080 02E0     		b	.L28
- 440              	.LVL32:
- 441              	.L26:
-  84:Core/Src/fsm_controller.c ****             hall_sensor_time = 0;
- 442              		.loc 1 84 13 is_stmt 1 view .LVU92
-  84:Core/Src/fsm_controller.c ****             hall_sensor_time = 0;
- 443              		.loc 1 84 30 is_stmt 0 view .LVU93
- 444 0082 2E4B     		ldr	r3, .L31+20
- 445 0084 0022     		movs	r2, #0
- 446 0086 1A60     		str	r2, [r3]
- 447              	.LVL33:
- 448              	.L28:
-  86:Core/Src/fsm_controller.c ****         HAL_ADC_Start(&hadc1);
- 449              		.loc 1 86 9 is_stmt 1 view .LVU94
- 450 0088 2D4C     		ldr	r4, .L31+24
- 451              	.LVL34:
-  86:Core/Src/fsm_controller.c ****         HAL_ADC_Start(&hadc1);
- 452              		.loc 1 86 9 is_stmt 0 view .LVU95
- 453 008a 2046     		mov	r0, r4
- 454 008c FFF7FEFF 		bl	HAL_ADC_Start
- 455              	.LVL35:
-  87:Core/Src/fsm_controller.c ****         HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
- 456              		.loc 1 87 9 is_stmt 1 view .LVU96
- 457 0090 4FF0FF31 		mov	r1, #-1
- 458 0094 2046     		mov	r0, r4
- 459 0096 FFF7FEFF 		bl	HAL_ADC_PollForConversion
- 460              	.LVL36:
-  88:Core/Src/fsm_controller.c ****         adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
- 461              		.loc 1 88 9 view .LVU97
-  88:Core/Src/fsm_controller.c ****         adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
- 462              		.loc 1 88 39 is_stmt 0 view .LVU98
- 463 009a 2046     		mov	r0, r4
- 464 009c FFF7FEFF 		bl	HAL_ADC_GetValue
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 51
+ 561              		.loc 1 102 21 is_stmt 1 view .LVU111
+ 102:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
+ 562              		.loc 1 102 40 is_stmt 0 view .LVU112
+ 563 0054 FFF7FEFF 		bl	HAL_GetTick
+ 564              	.LVL42:
+ 102:Core/Src/fsm_controller.c ****                     hall_sensor_time = HAL_GetTick();
+ 565              		.loc 1 102 38 discriminator 1 view .LVU113
+ 566 0058 2C4B     		ldr	r3, .L45+20
+ 567 005a 1860     		str	r0, [r3]
+ 568 005c 13E0     		b	.L40
+ 569              	.LVL43:
+ 570              	.L39:
+ 104:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
+ 571              		.loc 1 104 21 is_stmt 1 view .LVU114
+ 104:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
+ 572              		.loc 1 104 24 is_stmt 0 view .LVU115
+ 573 005e FFF7FEFF 		bl	HAL_GetTick
+ 574              	.LVL44:
+ 104:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
+ 575              		.loc 1 104 38 discriminator 1 view .LVU116
+ 576 0062 2A4B     		ldr	r3, .L45+20
+ 577 0064 1B68     		ldr	r3, [r3]
+ 578 0066 C01A     		subs	r0, r0, r3
+ 104:Core/Src/fsm_controller.c ****                     if(HAL_GetTick() - hall_sensor_time >= 5000){
+ 579              		.loc 1 104 23 discriminator 1 view .LVU117
+ 580 0068 41F28733 		movw	r3, #4999
+ 581 006c 9842     		cmp	r0, r3
+ 582 006e 0AD9     		bls	.L40
+ 105:Core/Src/fsm_controller.c ****                         change_state(fsm, WARNING);
+ 583              		.loc 1 105 25 is_stmt 1 view .LVU118
+ 584 0070 0421     		movs	r1, #4
+ 585 0072 2046     		mov	r0, r4
+ 586 0074 FFF7FEFF 		bl	change_state
+ 587              	.LVL45:
+ 106:Core/Src/fsm_controller.c ****                         hall_sensor_time = 0;
+ 588              		.loc 1 106 25 view .LVU119
+ 106:Core/Src/fsm_controller.c ****                         hall_sensor_time = 0;
+ 589              		.loc 1 106 42 is_stmt 0 view .LVU120
+ 590 0078 244B     		ldr	r3, .L45+20
+ 591 007a 0022     		movs	r2, #0
+ 592 007c 1A60     		str	r2, [r3]
+ 593 007e 02E0     		b	.L40
+ 594              	.LVL46:
+ 595              	.L38:
+ 110:Core/Src/fsm_controller.c ****             hall_sensor_time = 0;
+ 596              		.loc 1 110 13 is_stmt 1 view .LVU121
+ 110:Core/Src/fsm_controller.c ****             hall_sensor_time = 0;
+ 597              		.loc 1 110 30 is_stmt 0 view .LVU122
+ 598 0080 224B     		ldr	r3, .L45+20
+ 599 0082 0022     		movs	r2, #0
+ 600 0084 1A60     		str	r2, [r3]
+ 601              	.LVL47:
+ 602              	.L40:
+ 112:Core/Src/fsm_controller.c ****         if(conversion_complete){
+ 603              		.loc 1 112 9 is_stmt 1 view .LVU123
+ 112:Core/Src/fsm_controller.c ****         if(conversion_complete){
+ 604              		.loc 1 112 12 is_stmt 0 view .LVU124
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 54
 
 
- 465              	.LVL37:
-  88:Core/Src/fsm_controller.c ****         adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
- 466              		.loc 1 88 21 discriminator 1 view .LVU99
- 467 00a0 FFF7FEFF 		bl	get_analog_signal
- 468              	.LVL38:
- 469 00a4 0246     		mov	r2, r0
-  88:Core/Src/fsm_controller.c ****         adc_value = get_analog_signal(HAL_ADC_GetValue(&hadc1));
- 470              		.loc 1 88 19 discriminator 2 view .LVU100
- 471 00a6 274B     		ldr	r3, .L31+28
- 472 00a8 1860     		str	r0, [r3]
-  89:Core/Src/fsm_controller.c ****         sprintf(msg, "Analog:%lu\r\n", adc_value);
- 473              		.loc 1 89 9 is_stmt 1 view .LVU101
- 474 00aa 274C     		ldr	r4, .L31+32
- 475 00ac 2749     		ldr	r1, .L31+36
- 476 00ae 2046     		mov	r0, r4
- 477 00b0 FFF7FEFF 		bl	sprintf
- 478              	.LVL39:
-  90:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
- 479              		.loc 1 90 9 view .LVU102
-  90:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
- 480              		.loc 1 90 51 is_stmt 0 view .LVU103
- 481 00b4 2046     		mov	r0, r4
- 482 00b6 FFF7FEFF 		bl	strlen
- 483              	.LVL40:
-  90:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
- 484              		.loc 1 90 9 discriminator 1 view .LVU104
- 485 00ba 4FF0FF33 		mov	r3, #-1
- 486 00be 82B2     		uxth	r2, r0
- 487 00c0 2146     		mov	r1, r4
- 488 00c2 1C48     		ldr	r0, .L31+12
- 489 00c4 FFF7FEFF 		bl	HAL_UART_Transmit
- 490              	.LVL41:
-  91:Core/Src/fsm_controller.c ****         HAL_Delay(100);
- 491              		.loc 1 91 9 is_stmt 1 view .LVU105
- 492 00c8 6420     		movs	r0, #100
- 493 00ca FFF7FEFF 		bl	HAL_Delay
- 494              	.LVL42:
-  93:Core/Src/fsm_controller.c ****         break;
- 495              		.loc 1 93 9 view .LVU106
- 496 00ce BBE7     		b	.L18
- 497              	.LVL43:
- 498              	.L22:
-  98:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 499              		.loc 1 98 9 view .LVU107
-  98:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 500              		.loc 1 98 23 is_stmt 0 view .LVU108
- 501 00d0 0022     		movs	r2, #0
- 502 00d2 164B     		ldr	r3, .L31+4
- 503 00d4 1A60     		str	r2, [r3]
-  99:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 504              		.loc 1 99 9 is_stmt 1 view .LVU109
-  99:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 505              		.loc 1 99 26 is_stmt 0 view .LVU110
- 506 00d6 1E4B     		ldr	r3, .L31+40
- 507 00d8 1A60     		str	r2, [r3]
- 100:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
- 508              		.loc 1 100 9 is_stmt 1 view .LVU111
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 52
+ 605 0086 224B     		ldr	r3, .L45+24
+ 606 0088 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 112:Core/Src/fsm_controller.c ****         if(conversion_complete){
+ 607              		.loc 1 112 11 view .LVU125
+ 608 008a 1BB9     		cbnz	r3, .L44
+ 609              	.L41:
+ 116:Core/Src/fsm_controller.c ****         HAL_Delay(100);
+ 610              		.loc 1 116 9 is_stmt 1 view .LVU126
+ 611 008c 6420     		movs	r0, #100
+ 612 008e FFF7FEFF 		bl	HAL_Delay
+ 613              	.LVL48:
+ 118:Core/Src/fsm_controller.c ****         break;
+ 614              		.loc 1 118 9 view .LVU127
+ 615 0092 D8E7     		b	.L30
+ 616              	.L44:
+ 113:Core/Src/fsm_controller.c ****             ProcessADCData();
+ 617              		.loc 1 113 13 view .LVU128
+ 618 0094 FFF7FEFF 		bl	ProcessADCData
+ 619              	.LVL49:
+ 620 0098 F8E7     		b	.L41
+ 621              	.LVL50:
+ 622              	.L34:
+ 123:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 623              		.loc 1 123 9 view .LVU129
+ 123:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 624              		.loc 1 123 23 is_stmt 0 view .LVU130
+ 625 009a 0022     		movs	r2, #0
+ 626 009c 174B     		ldr	r3, .L45+4
+ 627 009e 1A60     		str	r2, [r3]
+ 124:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 628              		.loc 1 124 9 is_stmt 1 view .LVU131
+ 124:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 629              		.loc 1 124 26 is_stmt 0 view .LVU132
+ 630 00a0 1C4B     		ldr	r3, .L45+28
+ 631 00a2 1A60     		str	r2, [r3]
+ 125:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+ 632              		.loc 1 125 9 is_stmt 1 view .LVU133
+ 633 00a4 2021     		movs	r1, #32
+ 634 00a6 1448     		ldr	r0, .L45
+ 635              	.LVL51:
+ 125:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+ 636              		.loc 1 125 9 is_stmt 0 view .LVU134
+ 637 00a8 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 638              	.LVL52:
+ 126:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
+ 639              		.loc 1 126 9 is_stmt 1 view .LVU135
+ 640 00ac 4FF0FF33 		mov	r3, #-1
+ 641 00b0 0922     		movs	r2, #9
+ 642 00b2 1949     		ldr	r1, .L45+32
+ 643 00b4 1348     		ldr	r0, .L45+12
+ 644 00b6 FFF7FEFF 		bl	HAL_UART_Transmit
+ 645              	.LVL53:
+ 127:Core/Src/fsm_controller.c ****         HAL_Delay(100);
+ 646              		.loc 1 127 9 view .LVU136
+ 647 00ba 6420     		movs	r0, #100
+ 648 00bc FFF7FEFF 		bl	HAL_Delay
+ 649              	.LVL54:
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 55
 
 
- 509 00da 2021     		movs	r1, #32
- 510 00dc 1248     		ldr	r0, .L31
- 511              	.LVL44:
- 100:Core/Src/fsm_controller.c ****         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
- 512              		.loc 1 100 9 is_stmt 0 view .LVU112
- 513 00de FFF7FEFF 		bl	HAL_GPIO_WritePin
- 514              	.LVL45:
- 101:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"WARNING\r\n", strlen("WARNING\r\n"), HAL_MAX_DELAY);
- 515              		.loc 1 101 9 is_stmt 1 view .LVU113
- 516 00e2 4FF0FF33 		mov	r3, #-1
- 517 00e6 0922     		movs	r2, #9
- 518 00e8 1A49     		ldr	r1, .L31+44
- 519 00ea 1248     		ldr	r0, .L31+12
- 520 00ec FFF7FEFF 		bl	HAL_UART_Transmit
- 521              	.LVL46:
- 102:Core/Src/fsm_controller.c ****         HAL_Delay(100);
- 522              		.loc 1 102 9 view .LVU114
- 523 00f0 6420     		movs	r0, #100
- 524 00f2 FFF7FEFF 		bl	HAL_Delay
- 525              	.LVL47:
- 103:Core/Src/fsm_controller.c ****         break;
- 526              		.loc 1 103 9 view .LVU115
- 527 00f6 A7E7     		b	.L18
- 528              	.LVL48:
- 529              	.L20:
- 105:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 530              		.loc 1 105 9 view .LVU116
- 105:Core/Src/fsm_controller.c ****         is_cli_active = 0;
- 531              		.loc 1 105 23 is_stmt 0 view .LVU117
- 532 00f8 0023     		movs	r3, #0
- 533 00fa 0C4A     		ldr	r2, .L31+4
- 534 00fc 1360     		str	r3, [r2]
- 106:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 535              		.loc 1 106 9 is_stmt 1 view .LVU118
- 106:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
- 536              		.loc 1 106 26 is_stmt 0 view .LVU119
- 537 00fe 144A     		ldr	r2, .L31+40
- 538 0100 1360     		str	r3, [r2]
- 107:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim3);
- 539              		.loc 1 107 9 is_stmt 1 view .LVU120
- 540 0102 1548     		ldr	r0, .L31+48
- 541              	.LVL49:
- 107:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim3);
- 542              		.loc 1 107 9 is_stmt 0 view .LVU121
- 543 0104 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
- 544              	.LVL50:
- 108:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
- 545              		.loc 1 108 9 is_stmt 1 view .LVU122
- 546 0108 4FF0FF33 		mov	r3, #-1
- 547 010c 0722     		movs	r2, #7
- 548 010e 1349     		ldr	r1, .L31+52
- 549 0110 0848     		ldr	r0, .L31+12
- 550 0112 FFF7FEFF 		bl	HAL_UART_Transmit
- 551              	.LVL51:
- 109:Core/Src/fsm_controller.c ****         HAL_Delay(100);
- 552              		.loc 1 109 9 view .LVU123
- 553 0116 6420     		movs	r0, #100
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 53
+ 128:Core/Src/fsm_controller.c ****         break;
+ 650              		.loc 1 128 9 view .LVU137
+ 651 00c0 C1E7     		b	.L30
+ 652              	.LVL55:
+ 653              	.L32:
+ 130:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 654              		.loc 1 130 9 view .LVU138
+ 130:Core/Src/fsm_controller.c ****         is_cli_active = 0;
+ 655              		.loc 1 130 23 is_stmt 0 view .LVU139
+ 656 00c2 0023     		movs	r3, #0
+ 657 00c4 0D4A     		ldr	r2, .L45+4
+ 658 00c6 1360     		str	r3, [r2]
+ 131:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 659              		.loc 1 131 9 is_stmt 1 view .LVU140
+ 131:Core/Src/fsm_controller.c ****         is_sensor_active = 0;
+ 660              		.loc 1 131 26 is_stmt 0 view .LVU141
+ 661 00c8 124A     		ldr	r2, .L45+28
+ 662 00ca 1360     		str	r3, [r2]
+ 132:Core/Src/fsm_controller.c ****         HAL_ADC_Stop_DMA(&hadc1);
+ 663              		.loc 1 132 9 is_stmt 1 view .LVU142
+ 664 00cc 1348     		ldr	r0, .L45+36
+ 665              	.LVL56:
+ 132:Core/Src/fsm_controller.c ****         HAL_ADC_Stop_DMA(&hadc1);
+ 666              		.loc 1 132 9 is_stmt 0 view .LVU143
+ 667 00ce FFF7FEFF 		bl	HAL_ADC_Stop_DMA
+ 668              	.LVL57:
+ 133:Core/Src/fsm_controller.c ****         HAL_TIM_Base_Start_IT(&htim3);
+ 669              		.loc 1 133 9 is_stmt 1 view .LVU144
+ 670 00d2 1348     		ldr	r0, .L45+40
+ 671 00d4 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 672              	.LVL58:
+ 134:Core/Src/fsm_controller.c ****         HAL_UART_Transmit(&huart2, (uint8_t*)"ERROR\r\n", strlen("ERROR\r\n"), HAL_MAX_DELAY);
+ 673              		.loc 1 134 9 view .LVU145
+ 674 00d8 4FF0FF33 		mov	r3, #-1
+ 675 00dc 0722     		movs	r2, #7
+ 676 00de 1149     		ldr	r1, .L45+44
+ 677 00e0 0848     		ldr	r0, .L45+12
+ 678 00e2 FFF7FEFF 		bl	HAL_UART_Transmit
+ 679              	.LVL59:
+ 135:Core/Src/fsm_controller.c ****         HAL_Delay(100);
+ 680              		.loc 1 135 9 view .LVU146
+ 681 00e6 6420     		movs	r0, #100
+ 682 00e8 FFF7FEFF 		bl	HAL_Delay
+ 683              	.LVL60:
+ 136:Core/Src/fsm_controller.c ****         break;
+ 684              		.loc 1 136 9 view .LVU147
+ 685 00ec ABE7     		b	.L30
+ 686              	.LVL61:
+ 687              	.L31:
+ 138:Core/Src/fsm_controller.c ****         change_state(fsm, FSMERROR);
+ 688              		.loc 1 138 9 view .LVU148
+ 689 00ee 0521     		movs	r1, #5
+ 690 00f0 FFF7FEFF 		bl	change_state
+ 691              	.LVL62:
+ 139:Core/Src/fsm_controller.c ****         break;
+ 692              		.loc 1 139 9 view .LVU149
+ 693              		.loc 1 141 1 is_stmt 0 view .LVU150
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 56
 
 
- 554 0118 FFF7FEFF 		bl	HAL_Delay
- 555              	.LVL52:
- 110:Core/Src/fsm_controller.c ****         break;
- 556              		.loc 1 110 9 view .LVU124
- 557 011c 94E7     		b	.L18
- 558              	.LVL53:
- 559              	.L19:
- 112:Core/Src/fsm_controller.c ****         change_state(fsm, FSMERROR);
- 560              		.loc 1 112 9 view .LVU125
- 561 011e 0521     		movs	r1, #5
- 562 0120 FFF7FEFF 		bl	change_state
- 563              	.LVL54:
- 113:Core/Src/fsm_controller.c ****         break;
- 564              		.loc 1 113 9 view .LVU126
- 565              		.loc 1 115 1 is_stmt 0 view .LVU127
- 566 0124 90E7     		b	.L18
- 567              	.L32:
- 568 0126 00BF     		.align	2
- 569              	.L31:
- 570 0128 00000240 		.word	1073872896
- 571 012c 00000000 		.word	is_cli_active
- 572 0130 08000000 		.word	.LC1
- 573 0134 00000000 		.word	huart2
- 574 0138 00000000 		.word	is_magnet_detected
- 575 013c 00000000 		.word	hall_sensor_time
- 576 0140 00000000 		.word	hadc1
- 577 0144 00000000 		.word	adc_value
- 578 0148 00000000 		.word	msg
- 579 014c 00000000 		.word	.LC2
- 580 0150 00000000 		.word	is_sensor_active
- 581 0154 10000000 		.word	.LC3
- 582 0158 00000000 		.word	htim3
- 583 015c 1C000000 		.word	.LC4
- 584              		.cfi_endproc
- 585              	.LFE245:
- 587              		.global	msg
- 588              		.section	.bss.msg,"aw",%nobits
- 589              		.align	2
- 592              	msg:
- 593 0000 00000000 		.space	20
- 593      00000000 
- 593      00000000 
- 593      00000000 
- 593      00000000 
- 594              		.global	adc_value
- 595              		.section	.bss.adc_value,"aw",%nobits
- 596              		.align	2
- 599              	adc_value:
- 600 0000 00000000 		.space	4
- 601              		.global	hall_sensor_time
- 602              		.section	.bss.hall_sensor_time,"aw",%nobits
- 603              		.align	2
- 606              	hall_sensor_time:
- 607 0000 00000000 		.space	4
- 608              		.text
- 609              	.Letext0:
- 610              		.file 4 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 54
+ 694 00f4 A7E7     		b	.L30
+ 695              	.L46:
+ 696 00f6 00BF     		.align	2
+ 697              	.L45:
+ 698 00f8 00000240 		.word	1073872896
+ 699 00fc 00000000 		.word	is_cli_active
+ 700 0100 08000000 		.word	.LC2
+ 701 0104 00000000 		.word	huart2
+ 702 0108 00000000 		.word	is_magnet_detected
+ 703 010c 00000000 		.word	hall_sensor_time
+ 704 0110 00000000 		.word	conversion_complete
+ 705 0114 00000000 		.word	is_sensor_active
+ 706 0118 00000000 		.word	.LC3
+ 707 011c 00000000 		.word	hadc1
+ 708 0120 00000000 		.word	htim3
+ 709 0124 0C000000 		.word	.LC4
+ 710              		.cfi_endproc
+ 711              	.LFE247:
+ 713              		.global	msg
+ 714              		.section	.bss.msg,"aw",%nobits
+ 715              		.align	2
+ 718              	msg:
+ 719 0000 00000000 		.space	20
+ 719      00000000 
+ 719      00000000 
+ 719      00000000 
+ 719      00000000 
+ 720              		.global	conversion_complete
+ 721              		.section	.bss.conversion_complete,"aw",%nobits
+ 724              	conversion_complete:
+ 725 0000 00       		.space	1
+ 726              		.global	adc_buffer
+ 727              		.section	.bss.adc_buffer,"aw",%nobits
+ 728              		.align	2
+ 731              	adc_buffer:
+ 732 0000 0000     		.space	2
+ 733              		.global	adc_value
+ 734              		.section	.bss.adc_value,"aw",%nobits
+ 735              		.align	2
+ 738              	adc_value:
+ 739 0000 00000000 		.space	4
+ 740              		.global	hall_sensor_time
+ 741              		.section	.bss.hall_sensor_time,"aw",%nobits
+ 742              		.align	2
+ 745              	hall_sensor_time:
+ 746 0000 00000000 		.space	4
+ 747              		.text
+ 748              	.Letext0:
+ 749              		.file 4 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 750              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 751              		.file 6 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
+ 752              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 753              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 754              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 755              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 756              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 757              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 57
 
 
- 611              		.file 5 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 612              		.file 6 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
- 613              		.file 7 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
- 614              		.file 8 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 615              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 616              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 617              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 618              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
- 619              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 620              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 621              		.file 15 "Core/Inc/fsm_controller.h"
- 622              		.file 16 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 623              		.file 17 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 624              		.file 18 "Core/Inc/analog_signal_controller.h"
- 625              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 626              		.file 20 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
- 627              		.file 21 "Core/Inc/cli_controller.h"
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccyWplo3.s 			page 55
+ 758              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 759              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 760              		.file 15 "Core/Inc/fsm_controller.h"
+ 761              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 762              		.file 17 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 763              		.file 18 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 764              		.file 19 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-t
+ 765              		.file 20 "Core/Inc/cli_controller.h"
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 58
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 fsm_controller.c
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:21     .text.__NVIC_SystemReset:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:26     .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:89     .text.__NVIC_SystemReset:0000001c $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:95     .text.fsm_init:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:101    .text.fsm_init:00000000 fsm_init
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:119    .text.change_state:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:125    .text.change_state:00000000 change_state
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:142    .rodata.button_pressed.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:149    .text.button_pressed:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:155    .text.button_pressed:00000000 button_pressed
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:179    .text.button_pressed:00000010 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:183    .text.button_pressed:00000014 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:298    .text.button_pressed:000000a0 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:309    .rodata.fsm_run.str1.4:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:319    .text.fsm_run:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:325    .text.fsm_run:00000000 fsm_run
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:348    .text.fsm_run:00000010 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:354    .text.fsm_run:00000016 $t
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:570    .text.fsm_run:00000128 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:606    .bss.hall_sensor_time:00000000 hall_sensor_time
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:599    .bss.adc_value:00000000 adc_value
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:592    .bss.msg:00000000 msg
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:589    .bss.msg:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:596    .bss.adc_value:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccyWplo3.s:603    .bss.hall_sensor_time:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:21     .text.__NVIC_SystemReset:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:26     .text.__NVIC_SystemReset:00000000 __NVIC_SystemReset
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:89     .text.__NVIC_SystemReset:0000001c $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:95     .text.fsm_init:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:101    .text.fsm_init:00000000 fsm_init
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:119    .text.change_state:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:125    .text.change_state:00000000 change_state
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:142    .text.HAL_ADC_ConvCpltCallback:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:148    .text.HAL_ADC_ConvCpltCallback:00000000 HAL_ADC_ConvCpltCallback
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:189    .text.HAL_ADC_ConvCpltCallback:00000020 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:731    .bss.adc_buffer:00000000 adc_buffer
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:724    .bss.conversion_complete:00000000 conversion_complete
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:197    .rodata.ProcessADCData.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:201    .text.ProcessADCData:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:207    .text.ProcessADCData:00000000 ProcessADCData
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:273    .text.ProcessADCData:00000038 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:718    .bss.msg:00000000 msg
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:283    .rodata.button_pressed.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:290    .text.button_pressed:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:296    .text.button_pressed:00000000 button_pressed
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:320    .text.button_pressed:00000010 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:324    .text.button_pressed:00000014 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:453    .text.button_pressed:000000b4 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:466    .rodata.fsm_run.str1.4:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:473    .text.fsm_run:00000000 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:479    .text.fsm_run:00000000 fsm_run
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:502    .text.fsm_run:0000000e $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:508    .text.fsm_run:00000014 $t
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:698    .text.fsm_run:000000f8 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:745    .bss.hall_sensor_time:00000000 hall_sensor_time
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:715    .bss.msg:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:725    .bss.conversion_complete:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:728    .bss.adc_buffer:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:738    .bss.adc_value:00000000 adc_value
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:735    .bss.adc_value:00000000 $d
+C:\Users\valer\AppData\Local\Temp\cc97SXYo.s:742    .bss.hall_sensor_time:00000000 $d
 
 UNDEFINED SYMBOLS
+HAL_ADC_Start_DMA
+hadc1
+sprintf
+strlen
+HAL_UART_Transmit
+huart2
 HAL_GPIO_WritePin
 HAL_TIM_Base_Start_IT
-HAL_UART_Transmit
+HAL_ADC_Stop_DMA
 HAL_TIM_Base_Stop_IT
 is_cli_active
 is_sensor_active
 htim2
-huart2
 HAL_GetTick
 srand
 CLI_Init
-HAL_ADC_Start
-HAL_ADC_PollForConversion
-HAL_ADC_GetValue
-get_analog_signal
-sprintf
-strlen
 HAL_Delay
+ARM GAS  C:\Users\valer\AppData\Local\Temp\cc97SXYo.s 			page 59
+
+
 is_magnet_detected
-hadc1
 htim3

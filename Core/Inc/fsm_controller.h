@@ -22,6 +22,8 @@ void change_state(FsmController* fsm, State new_state);
 void button_pressed(FsmController* fsm);
 void fsm_run(FsmController* fsm);
 void fsm_init(FsmController* fsm);
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
+void ProcessADCData();
 
 
 

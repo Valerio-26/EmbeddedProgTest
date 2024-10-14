@@ -31,8 +31,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define ADC_BUFFER_SIZE 1
-uint32_t adc_buffer[ADC_BUFFER_SIZE];
 
 /* USER CODE END PD */
 
