@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 1
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 1
    9:Core/Src/analog_signal_controller.c ****         if (new_value < 0) {
   10:Core/Src/analog_signal_controller.c ****             new_value = 0;
   11:Core/Src/analog_signal_controller.c ****         }
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 2
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s 			page 2
 
 
   12:Core/Src/analog_signal_controller.c ****     }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 1
   83              		.loc 1 10 23 view .LVU15
   84 0034 E9E7     		b	.L2
   85              	.LVL8:
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 3
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s 			page 3
 
 
   86              	.L7:
@@ -158,18 +158,18 @@ ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 1
  122              		.file 4 "Core/Inc/analog_signal_controller.h"
  123              		.file 5 "Core/Inc/average_filter.h"
  124              		.file 6 "C:/Users/valer/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-to
-ARM GAS  C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s 			page 4
+ARM GAS  C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 analog_signal_controller.c
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:21     .text.get_analog_signal:00000000 $t
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:27     .text.get_analog_signal:00000000 get_analog_signal
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:99     .text.get_analog_signal:00000040 $d
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:110    .bss.random_noise:00000000 random_noise
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:116    .bss.signal_type:00000000 signal_type
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:107    .bss.random_noise:00000000 $d
-C:\Users\valer\AppData\Local\Temp\ccs9sVKW.s:117    .bss.signal_type:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:21     .text.get_analog_signal:00000000 $t
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:27     .text.get_analog_signal:00000000 get_analog_signal
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:99     .text.get_analog_signal:00000040 $d
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:110    .bss.random_noise:00000000 random_noise
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:116    .bss.signal_type:00000000 signal_type
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:107    .bss.random_noise:00000000 $d
+C:\Users\valer\AppData\Local\Temp\ccoZpg6h.s:117    .bss.signal_type:00000000 $d
 
 UNDEFINED SYMBOLS
 rand

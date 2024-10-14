@@ -7,7 +7,7 @@
 #define ADC_RESOLUTION 12;
 #define ADC_MAX_VALUE ((1 << ADC_RESOLUTION) - 1) // 4095 for 12-bit ADC
 #define VREF 5 // volts
-#define BUFFER_SIZE 1
+#define BUFFER_SIZE 150
 
 extern ADC_HandleTypeDef hadc1;
 extern UART_HandleTypeDef huart2;
@@ -18,10 +18,10 @@ extern int is_cli_active;
 extern int is_sensor_active;
 
 uint32_t hall_sensor_time = 0;
-uint32_t adc_value = 0;
+//uint32_t adc_value = 0;
 uint16_t adc_buffer[BUFFER_SIZE];
 volatile uint8_t conversion_complete = 0;
-char msg[20];
+char msg[50];
 
 void fsm_init(FsmController* fsm) {
     fsm->state = INIT;
@@ -33,17 +33,13 @@ void change_state(FsmController* fsm, State new_state) {
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
     if(hadc->Instance == ADC1){
-       conversion_complete = 1;
+        conversion_complete = 1;
     }
-    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
 }
 
 void ProcessADCData(){
-    for(int i = 0; i < BUFFER_SIZE; ++i){
-        uint16_t rawValue = adc_buffer[0];
-        sprintf(msg, "Analog: %d\r\n", rawValue);
-        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-    }
+    snprintf(msg, sizeof(msg), "Analog:%lu\r\n", get_analog_signal(adc_buffer[0]));
+    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
     conversion_complete = 0;
 }
 
@@ -53,7 +49,7 @@ void button_pressed(FsmController* fsm) {
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
         is_cli_active = 0;
         is_sensor_active = 1;
-        HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buffer, BUFFER_SIZE);
+        HAL_ADC_Start_DMA(&hadc1, (uint8_t*)adc_buffer, BUFFER_SIZE);
         change_state(fsm, LISTENING);
         break;
     case LISTENING:
@@ -90,6 +86,7 @@ void fsm_run(FsmController* fsm) {
         CLI_Init();
         HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
         is_cli_active = 1;
+        HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 2, 0);
         HAL_UART_Transmit(&huart2, (uint8_t*)"WAIT_REQUEST\r\n", strlen("WAIT_REQUEST\r\n"), HAL_MAX_DELAY);
         change_state(fsm, WAIT_REQUEST);
         break;
@@ -109,10 +106,7 @@ void fsm_run(FsmController* fsm) {
         }else{
             hall_sensor_time = 0;
         }
-        if(conversion_complete){
-            ProcessADCData();
-        }
-        
+        ProcessADCData();
         HAL_Delay(100);
 
         break;
