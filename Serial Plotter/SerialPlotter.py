@@ -93,6 +93,16 @@ class SerialMonitor:
     def generate_tone(self, freq, duration=0.1, sample_rate=44100):
         t = np.linspace(0, duration, int(sample_rate * duration), False)
         tone = 0.5 * np.sin(2 * np.pi * freq * t)
+        fade_in_duration = int(sample_rate * 0.01)
+        fade_out_duration = int(sample_rate * 0.01)
+
+        fade_in = np.linspace(0.0, 1.0, fade_in_duration)
+        fade_out = np.linspace(1.0, 0.0, fade_out_duration)
+
+        tone[:fade_in_duration] *= fade_in
+        tone[-fade_out_duration:] *= fade_out
+
+
         return tone.astype(np.float32).tobytes()
 
     def toggle_sound(self):
